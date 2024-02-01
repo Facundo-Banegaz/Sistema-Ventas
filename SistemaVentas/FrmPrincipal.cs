@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace SistemaVentas
+{
+    public partial class FrmPrincipal : Form
+    {
+        public FrmPrincipal()
+        {
+            InitializeComponent();
+        }
+
+
+
+        private void tn_tiempo_Tick(object sender, EventArgs e)
+        {
+            lbl_hora.Text = DateTime.Now.ToString("HH:mm:ss tt", CultureInfo.InvariantCulture);
+            lbl_fecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void menu_item_categorias_Click(object sender, EventArgs e)
+        {
+            FrmCategoria frmCategoria = new FrmCategoria(); 
+            frmCategoria.ShowDialog();
+        }
+
+        private void menu_item_articulos_Click(object sender, EventArgs e)
+        {
+            FrmArticulo frmArticulo = new FrmArticulo();
+            frmArticulo.ShowDialog();
+        }
+
+
+
+        private void menu_item_presentacion_Click(object sender, EventArgs e)
+        {
+            FrmPresentacion frmPresentacion = new FrmPresentacion();
+            frmPresentacion.ShowDialog();
+        }
+
+
+
+        
+
+        private void menu_persona_Click(object sender, EventArgs e)
+        {
+            FrmPersona frmPersona = new FrmPersona();   
+            frmPersona.ShowDialog();
+        }
+    }
+}
