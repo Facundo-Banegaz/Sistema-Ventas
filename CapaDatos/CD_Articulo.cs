@@ -23,7 +23,7 @@ namespace CapaDatos
 
             try
             {
-                Conexion.SetConsutar("select art.Id_articulo, art.Codigo, art.Nombre, art.UrlImagen, art.Descripcion, art.Id_categoria, cat.Nombre as Categoria, art.Id_presentacion, pres.Nombre as Presentacion from Articulo as art inner join Categoria as cat on art.Id_categoria = cat.Id_categoria inner join Presentacion as pres on art.Id_presentacion= pres.Id_presentacion order by art.Nombre desc");
+                Conexion.SetConsutar("SpMostrar_articulo");
 
                 Conexion.EjecutarLectura();
 
@@ -31,7 +31,7 @@ namespace CapaDatos
                 {
                     //articulo = new Articulo();
 
-                    Articulo articulo = new Articulo();
+                    articulo = new Articulo();
 
 
                     articulo.Id_articulo = (int)Conexion.Lector["Id_articulo"];
@@ -68,5 +68,162 @@ namespace CapaDatos
             }
 
         }
+
+
+
+        //metodo insertar
+
+        public void InsertarArticulo(Articulo Nuevo)
+        {
+            Conexion = new CD_Conexion();
+
+            try
+            {
+                Conexion.SetConsutarProcedure("SpInsertar_articulo");
+
+                Conexion.SetearParametro("@Codigo", Nuevo.Codigo);
+                Conexion.SetearParametro("@Nombre", Nuevo.Nombre);
+                Conexion.SetearParametro("@Descripcion", Nuevo.Descripcion);
+                Conexion.SetearParametro("@UrlImagen", Nuevo.UrlImagen);
+                Conexion.SetearParametro("@Id_categoria", Nuevo.Categoria.Id_categoria);
+                Conexion.SetearParametro("@Id_presentacion", Nuevo.Presentacion.Id_presentacion);
+
+                Conexion.EjecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+        }
+
+
+        //metodo editar
+
+        public void EditarArticulo(Articulo articulo)
+        {
+            Conexion = new CD_Conexion();
+
+            try
+            {
+                Conexion.SetConsutarProcedure("SpEditar_articulo");
+
+                Conexion.SetearParametro("@Id_articulo", articulo.Id_articulo);
+                Conexion.SetearParametro("@Codigo", articulo.Codigo);
+                Conexion.SetearParametro("@Nombre", articulo.Nombre);
+                Conexion.SetearParametro("@Descripcion", articulo.Descripcion);
+                Conexion.SetearParametro("@UrlImagen", articulo.UrlImagen);
+                Conexion.SetearParametro("@Id_categoria", articulo.Categoria.Id_categoria);
+                Conexion.SetearParametro("@Id_presentacion", articulo.Presentacion.Id_presentacion);
+
+                Conexion.EjecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+
+        }
+
+        //Metodo eliminar
+        public void EliminarArticulo(int Id_articulo)
+        {
+            Conexion = new CD_Conexion();
+
+            try
+            {
+                Conexion.SetConsutarProcedure("SpEliminar_articulo");
+
+                Conexion.SetearParametro("@Id_articulo", Id_articulo);
+
+
+                Conexion.EjecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+        }
+
+        //Metodo Buscar
+
+        public List<Articulo> ArticuloBuscar(string buscar)
+        {
+            Conexion = new CD_Conexion();
+            listaArticulo = new List<Articulo>();
+
+            try
+            {
+                Conexion.SetConsutarProcedure("SpBuscar_articulo");
+
+
+                Conexion.SetearParametro("@txt_buscar", buscar);
+
+
+                Conexion.EjecutarLectura();
+
+                while (Conexion.Lector.Read())
+                {
+
+                    articulo = new Articulo();
+
+                    articulo.Id_articulo = (int)Conexion.Lector["Id_articulo"];
+                    articulo.Codigo = (string)Conexion.Lector["Codigo"];
+                    articulo.Nombre = (string)Conexion.Lector["Nombre"];
+                    articulo.Descripcion = (string)Conexion.Lector["Descripcion"];
+
+                    articulo.Categoria = new Categoria();
+
+                    articulo.Categoria.Id_categoria = (int)Conexion.Lector["Id_categoria"];
+                    articulo.Categoria.Nombre = (string)Conexion.Lector["Categoria"];
+
+
+                    articulo.Presentacion = new Presentacion();
+                    articulo.Presentacion.Id_presentacion = (int)Conexion.Lector["Id_presentacion"];
+                    articulo.Presentacion.Nombre = (string)Conexion.Lector["Presentacion"];
+
+                    if (!(Conexion.Lector["UrlImagen"] is DBNull))
+            
+                        articulo.UrlImagen = (string)Conexion.Lector["UrlImagen"];
+
+                    listaArticulo.Add(articulo);
+                }
+
+
+                return listaArticulo;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+        }
+
+
+
     }
 }

@@ -17,7 +17,5 @@ namespace CapaDominio
         {
             return Nombre;
         }
-
-
     }
 }

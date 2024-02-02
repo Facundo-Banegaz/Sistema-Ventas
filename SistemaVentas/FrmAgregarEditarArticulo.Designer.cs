@@ -45,7 +45,7 @@
             this.lbl_cargo = new System.Windows.Forms.Label();
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.lbl_presentacion = new System.Windows.Forms.Label();
-            this.lbl_costo = new System.Windows.Forms.Label();
+            this.lbl_Id = new System.Windows.Forms.Label();
             this.txt_codigo_producto = new System.Windows.Forms.TextBox();
             this.lbl_codigo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).BeginInit();
@@ -69,6 +69,7 @@
             this.btn_subir_imagen.Text = "Subir Una Imagen Local";
             this.btn_subir_imagen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_subir_imagen.UseVisualStyleBackColor = false;
+            this.btn_subir_imagen.Click += new System.EventHandler(this.btn_subir_imagen_Click);
             // 
             // label2
             // 
@@ -108,6 +109,7 @@
             this.btn_Agregar.Text = "Agregar";
             this.btn_Agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Agregar.UseVisualStyleBackColor = false;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // btn_cancelar
             // 
@@ -125,6 +127,7 @@
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // cbo_presentacion_producto
             // 
@@ -167,6 +170,7 @@
             this.txt_url_imagen.Name = "txt_url_imagen";
             this.txt_url_imagen.Size = new System.Drawing.Size(555, 35);
             this.txt_url_imagen.TabIndex = 78;
+            this.txt_url_imagen.TextChanged += new System.EventHandler(this.txt_url_imagen_TextChanged);
             // 
             // label1
             // 
@@ -198,6 +202,7 @@
             this.txt_id_articulo.Name = "txt_id_articulo";
             this.txt_id_articulo.Size = new System.Drawing.Size(555, 35);
             this.txt_id_articulo.TabIndex = 75;
+            this.txt_id_articulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_nombre_producto
             // 
@@ -244,17 +249,17 @@
             this.lbl_presentacion.TabIndex = 71;
             this.lbl_presentacion.Text = "Presentación Producto:";
             // 
-            // lbl_costo
+            // lbl_Id
             // 
-            this.lbl_costo.AutoSize = true;
-            this.lbl_costo.BackColor = System.Drawing.Color.Black;
-            this.lbl_costo.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_costo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_costo.Location = new System.Drawing.Point(184, 9);
-            this.lbl_costo.Name = "lbl_costo";
-            this.lbl_costo.Size = new System.Drawing.Size(181, 35);
-            this.lbl_costo.TabIndex = 70;
-            this.lbl_costo.Text = "Id Del Articulo:";
+            this.lbl_Id.AutoSize = true;
+            this.lbl_Id.BackColor = System.Drawing.Color.Black;
+            this.lbl_Id.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Id.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbl_Id.Location = new System.Drawing.Point(184, 9);
+            this.lbl_Id.Name = "lbl_Id";
+            this.lbl_Id.Size = new System.Drawing.Size(181, 35);
+            this.lbl_Id.TabIndex = 70;
+            this.lbl_Id.Text = "Id Del Articulo:";
             // 
             // txt_codigo_producto
             // 
@@ -292,7 +297,7 @@
             this.Controls.Add(this.lbl_cargo);
             this.Controls.Add(this.lbl_nombre);
             this.Controls.Add(this.lbl_presentacion);
-            this.Controls.Add(this.lbl_costo);
+            this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.txt_codigo_producto);
             this.Controls.Add(this.lbl_codigo);
             this.Controls.Add(this.btn_cancelar);
@@ -304,6 +309,7 @@
             this.Name = "FrmAgregarEditarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Articulo";
+            this.Load += new System.EventHandler(this.FrmAgregarEditarArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -329,7 +335,7 @@
         private System.Windows.Forms.Label lbl_cargo;
         private System.Windows.Forms.Label lbl_nombre;
         private System.Windows.Forms.Label lbl_presentacion;
-        private System.Windows.Forms.Label lbl_costo;
+        private System.Windows.Forms.Label lbl_Id;
         private System.Windows.Forms.TextBox txt_codigo_producto;
         private System.Windows.Forms.Label lbl_codigo;
     }

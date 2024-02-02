@@ -75,9 +75,7 @@ namespace SistemaVentas
             dgv_productos.Columns["Nombre"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_productos.Columns["Descripcion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            
-            dgv_productos.Columns["Nombre"].DefaultCellStyle.Format = "#,##0,00";
-            dgv_productos.Columns["Descripcion"].DefaultCellStyle.Format = "#,##0,00";
+
 
             _Metodos.AlternarColor(dgv_productos);
         }
@@ -151,6 +149,16 @@ namespace SistemaVentas
         {
             txt_buscar.Clear();
             CargarGrilla();
+        }
+
+        private void txt_buscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

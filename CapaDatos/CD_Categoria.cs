@@ -104,7 +104,7 @@ namespace CapaDatos
             {
                 Conexion.SetConsutarProcedure("SpEditar_categoria");
 
-                Conexion.SetearParametro("Id_categoria", categoria.Id_categoria);
+                Conexion.SetearParametro("@Id_categoria", categoria.Id_categoria);
                 Conexion.SetearParametro("@Nombre", categoria.Nombre);
                 Conexion.SetearParametro("@Descripcion", categoria.Descripcion);
                 Conexion.SetearParametro("@UrlImagen", categoria.UrlImagen);
@@ -134,7 +134,7 @@ namespace CapaDatos
             {
                 Conexion.SetConsutarProcedure("SpEliminar_categoria");
 
-                Conexion.SetearParametro("Id_categoria", Id_categoria);
+                Conexion.SetearParametro("@Id_categoria", Id_categoria);
 
 
                 Conexion.EjecutarAccion();

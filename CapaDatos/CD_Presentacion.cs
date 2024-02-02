@@ -118,7 +118,7 @@ namespace CapaDatos
             {
                 Conexion.SetConsutarProcedure("SpEliminar_presentacion");
 
-                Conexion.SetearParametro("Id_categoria", Id_presentacion);
+                Conexion.SetearParametro("@Id_presentacion", Id_presentacion);
 
 
                 Conexion.EjecutarAccion();
