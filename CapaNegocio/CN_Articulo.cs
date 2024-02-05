@@ -46,6 +46,8 @@ namespace CapaNegocio
 
             _CD_Articulo.EliminarArticulo(Id_articulo);
         }
+        
+
         //Metodo para Buscar un producto en la Base de Datos
         public List<Articulo> ArticuloBuscar(string buscar)
         {

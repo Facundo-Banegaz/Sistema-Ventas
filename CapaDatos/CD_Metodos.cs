@@ -9,7 +9,10 @@ using System.Drawing;
 namespace CapaDatos
 {
     public class CD_Metodos
+
     {
+
+             
         // Metodo para alternar los colores en las filas de un data grid
         public void AlternarColor(DataGridView Dgv)
         {

@@ -35,7 +35,6 @@
             this.txt_url_imagen = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pbx_img = new System.Windows.Forms.PictureBox();
-            this.cbo_tipo_categoria = new System.Windows.Forms.ComboBox();
             this.txt_id_articulo = new System.Windows.Forms.TextBox();
             this.txt_nombre_producto = new System.Windows.Forms.TextBox();
             this.lbl_cargo = new System.Windows.Forms.Label();
@@ -44,8 +43,9 @@
             this.txt_codigo_producto = new System.Windows.Forms.TextBox();
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.lbl_presentacion = new System.Windows.Forms.Label();
-            this.cbo_presentacion_producto = new System.Windows.Forms.ComboBox();
             this.btn_cancelar = new System.Windows.Forms.Button();
+            this.txt_categoria = new System.Windows.Forms.TextBox();
+            this.txt_presentacion = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +77,7 @@
             // txt_descripcion_producto
             // 
             this.txt_descripcion_producto.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_descripcion_producto.Enabled = false;
             this.txt_descripcion_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_descripcion_producto.Location = new System.Drawing.Point(38, 47);
             this.txt_descripcion_producto.Multiline = true;
@@ -87,11 +88,13 @@
             // txt_url_imagen
             // 
             this.txt_url_imagen.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_url_imagen.Enabled = false;
             this.txt_url_imagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_url_imagen.Location = new System.Drawing.Point(610, 206);
             this.txt_url_imagen.Name = "txt_url_imagen";
             this.txt_url_imagen.Size = new System.Drawing.Size(601, 35);
             this.txt_url_imagen.TabIndex = 64;
+            this.txt_url_imagen.TextChanged += new System.EventHandler(this.txt_url_imagen_TextChanged);
             // 
             // label1
             // 
@@ -107,7 +110,6 @@
             // 
             // pbx_img
             // 
-            this.pbx_img.Image = ((System.Drawing.Image)(resources.GetObject("pbx_img.Image")));
             this.pbx_img.Location = new System.Drawing.Point(1276, 87);
             this.pbx_img.Name = "pbx_img";
             this.pbx_img.Size = new System.Drawing.Size(512, 572);
@@ -115,19 +117,10 @@
             this.pbx_img.TabIndex = 62;
             this.pbx_img.TabStop = false;
             // 
-            // cbo_tipo_categoria
-            // 
-            this.cbo_tipo_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_tipo_categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_tipo_categoria.FormattingEnabled = true;
-            this.cbo_tipo_categoria.Location = new System.Drawing.Point(610, 333);
-            this.cbo_tipo_categoria.Name = "cbo_tipo_categoria";
-            this.cbo_tipo_categoria.Size = new System.Drawing.Size(601, 37);
-            this.cbo_tipo_categoria.TabIndex = 61;
-            // 
             // txt_id_articulo
             // 
             this.txt_id_articulo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_id_articulo.Enabled = false;
             this.txt_id_articulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id_articulo.Location = new System.Drawing.Point(15, 87);
             this.txt_id_articulo.Name = "txt_id_articulo";
@@ -137,6 +130,7 @@
             // txt_nombre_producto
             // 
             this.txt_nombre_producto.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_nombre_producto.Enabled = false;
             this.txt_nombre_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nombre_producto.Location = new System.Drawing.Point(610, 87);
             this.txt_nombre_producto.Name = "txt_nombre_producto";
@@ -182,6 +176,7 @@
             // txt_codigo_producto
             // 
             this.txt_codigo_producto.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_codigo_producto.Enabled = false;
             this.txt_codigo_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_codigo_producto.Location = new System.Drawing.Point(15, 206);
             this.txt_codigo_producto.Name = "txt_codigo_producto";
@@ -212,16 +207,6 @@
             this.lbl_presentacion.TabIndex = 54;
             this.lbl_presentacion.Text = "Presentación Producto:";
             // 
-            // cbo_presentacion_producto
-            // 
-            this.cbo_presentacion_producto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_presentacion_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_presentacion_producto.FormattingEnabled = true;
-            this.cbo_presentacion_producto.Location = new System.Drawing.Point(15, 333);
-            this.cbo_presentacion_producto.Name = "cbo_presentacion_producto";
-            this.cbo_presentacion_producto.Size = new System.Drawing.Size(528, 37);
-            this.cbo_presentacion_producto.TabIndex = 67;
-            // 
             // btn_cancelar
             // 
             this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -238,20 +223,41 @@
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
+            // txt_categoria
+            // 
+            this.txt_categoria.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_categoria.Enabled = false;
+            this.txt_categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_categoria.Location = new System.Drawing.Point(607, 332);
+            this.txt_categoria.Name = "txt_categoria";
+            this.txt_categoria.Size = new System.Drawing.Size(601, 35);
+            this.txt_categoria.TabIndex = 70;
+            // 
+            // txt_presentacion
+            // 
+            this.txt_presentacion.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_presentacion.Enabled = false;
+            this.txt_presentacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_presentacion.Location = new System.Drawing.Point(12, 332);
+            this.txt_presentacion.Name = "txt_presentacion";
+            this.txt_presentacion.Size = new System.Drawing.Size(528, 35);
+            this.txt_presentacion.TabIndex = 69;
             // 
             // FrmDetalleArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1801, 760);
+            this.Controls.Add(this.txt_categoria);
+            this.Controls.Add(this.txt_presentacion);
             this.Controls.Add(this.btn_cancelar);
-            this.Controls.Add(this.cbo_presentacion_producto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txt_url_imagen);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbx_img);
-            this.Controls.Add(this.cbo_tipo_categoria);
             this.Controls.Add(this.txt_id_articulo);
             this.Controls.Add(this.txt_nombre_producto);
             this.Controls.Add(this.lbl_cargo);
@@ -264,6 +270,7 @@
             this.Name = "FrmDetalleArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDetalleArticulo";
+            this.Load += new System.EventHandler(this.FrmDetalleArticulo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).EndInit();
@@ -280,7 +287,6 @@
         private System.Windows.Forms.TextBox txt_url_imagen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbx_img;
-        private System.Windows.Forms.ComboBox cbo_tipo_categoria;
         private System.Windows.Forms.TextBox txt_id_articulo;
         private System.Windows.Forms.TextBox txt_nombre_producto;
         private System.Windows.Forms.Label lbl_cargo;
@@ -289,7 +295,8 @@
         private System.Windows.Forms.TextBox txt_codigo_producto;
         private System.Windows.Forms.Label lbl_codigo;
         private System.Windows.Forms.Label lbl_presentacion;
-        private System.Windows.Forms.ComboBox cbo_presentacion_producto;
         private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.TextBox txt_categoria;
+        private System.Windows.Forms.TextBox txt_presentacion;
     }
 }

@@ -20,6 +20,13 @@ namespace CapaNegocio
             return _CD_Categoria.ListaCategoria();
         }
 
+        //Metodo para Listar los Productos em la DataWirdView
+        public List<Categoria> CargarCbo()
+        {
+            _CD_Categoria = new CD_Categoria();
+
+            return _CD_Categoria.CargarCbo();
+        }
         //Metodo para cargar un producto en la Base de Datos
         public void InsertarCategoria(Categoria Nuevo)
         {

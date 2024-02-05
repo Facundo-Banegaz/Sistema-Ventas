@@ -54,6 +54,45 @@ namespace CapaDatos
 
         }
 
+        public List<Presentacion> CargarCbo()
+        {
+
+            Conexion = new CD_Conexion();
+            listaPresentacion = new List<Presentacion>();
+
+
+            try
+            {
+                Conexion.SetConsutar("Select Id_presentacion, Nombre from Presentacion");
+
+                Conexion.EjecutarLectura();
+
+                while (Conexion.Lector.Read())
+                {
+                    Presentacion presentacion = new Presentacion();
+
+                    presentacion.Id_presentacion = (int)Conexion.Lector["Id_presentacion"];
+                    presentacion.Nombre = (string)Conexion.Lector["Nombre"];
+
+
+
+                    listaPresentacion.Add(presentacion);
+
+                }
+
+                return listaPresentacion;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+
+        }
 
         public void InsertarPresentacion(Presentacion Nuevo)
         {

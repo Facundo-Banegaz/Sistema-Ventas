@@ -21,6 +21,13 @@ namespace CapaNegocio
             return CD_Presentacion.ListarPresentacion();
         }
 
+        //Metodo para Listar los Productos em la DataWirdView
+        public List<Presentacion> CargarCbo()
+        {
+            CD_Presentacion = new CD_Presentacion();
+
+            return CD_Presentacion.CargarCbo();
+        }
         //Metodo para cargar un producto en la Base de Datos
         public void InsertarCategoria(Presentacion Nuevo)
         {

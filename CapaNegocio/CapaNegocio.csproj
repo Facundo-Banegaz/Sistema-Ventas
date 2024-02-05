@@ -49,6 +49,7 @@
     <Compile Include="CN_Metodos.cs" />
     <Compile Include="CN_Persona.cs" />
     <Compile Include="CN_Presentacion.cs" />
+    <Compile Include="CN_Proveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

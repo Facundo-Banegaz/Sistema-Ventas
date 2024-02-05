@@ -50,6 +50,7 @@
     <Compile Include="CD_Metodos.cs" />
     <Compile Include="CD_Presentacion.cs" />
     <Compile Include="CD_Persona.cs" />
+    <Compile Include="CD_Proveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

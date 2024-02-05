@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarEditarArticulo));
             this.btn_subir_imagen = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,8 +49,11 @@
             this.lbl_Id = new System.Windows.Forms.Label();
             this.txt_codigo_producto = new System.Windows.Forms.TextBox();
             this.lbl_codigo = new System.Windows.Forms.Label();
+            this.tt_mensaje = new System.Windows.Forms.ToolTip(this.components);
+            this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_subir_imagen
@@ -197,6 +201,7 @@
             // txt_id_articulo
             // 
             this.txt_id_articulo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_id_articulo.Enabled = false;
             this.txt_id_articulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id_articulo.Location = new System.Drawing.Point(22, 82);
             this.txt_id_articulo.Name = "txt_id_articulo";
@@ -282,6 +287,10 @@
             this.lbl_codigo.TabIndex = 68;
             this.lbl_codigo.Text = "Código Producto:";
             // 
+            // errorIcono
+            // 
+            this.errorIcono.ContainerControl = this;
+            // 
             // FrmAgregarEditarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -313,6 +322,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,5 +348,7 @@
         private System.Windows.Forms.Label lbl_Id;
         private System.Windows.Forms.TextBox txt_codigo_producto;
         private System.Windows.Forms.Label lbl_codigo;
+        private System.Windows.Forms.ToolTip tt_mensaje;
+        private System.Windows.Forms.ErrorProvider errorIcono;
     }
 }

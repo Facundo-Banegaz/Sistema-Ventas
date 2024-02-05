@@ -30,6 +30,7 @@ namespace SistemaVentas
         {
             FrmAgregarEditarArticulo frmAgregar = new FrmAgregarEditarArticulo();
             frmAgregar.ShowDialog();
+            CargarGrilla();
         }
 
         private void btn_editar_Click(object sender, EventArgs e)
@@ -40,7 +41,7 @@ namespace SistemaVentas
             if (respuesta == DialogResult.Yes)
             {
                 seleccionado = (Articulo)dgv_productos.CurrentRow.DataBoundItem;
-                FrmAgregarEditarCategoria frmEditar = new FrmAgregarEditarArticulo(seleccionado);
+                FrmAgregarEditarArticulo frmEditar = new FrmAgregarEditarArticulo(seleccionado);
                 frmEditar.ShowDialog();
                 CargarGrilla();
             }
@@ -53,7 +54,17 @@ namespace SistemaVentas
 
         private void btn_ver_detalle_Click(object sender, EventArgs e)
         {
+            Articulo seleccionado;
+            DialogResult respuesta = MessageBox.Show("¿Quieres Ver el detalle este Articulo?", "Detalle", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
+            if (respuesta == DialogResult.Yes)
+            {
+                seleccionado = (Articulo)dgv_productos.CurrentRow.DataBoundItem;
+
+                FrmDetalleArticulo frmDetalle = new FrmDetalleArticulo(seleccionado);
+                frmDetalle.ShowDialog();
+                CargarGrilla();
+            }
         }
         private void CargarGrilla()
         {
@@ -148,6 +159,15 @@ namespace SistemaVentas
         {
             txt_buscar.Clear();
             CargarGrilla();
+        }
+
+        private void dgv_productos_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo seleccionado = (Articulo)dgv_productos.CurrentRow.DataBoundItem;
+
+            CN_Metodos _Metodos = new CN_Metodos();
+
+            _Metodos.CargarImg(pbx_img, seleccionado.UrlImagen);
         }
     }
 }

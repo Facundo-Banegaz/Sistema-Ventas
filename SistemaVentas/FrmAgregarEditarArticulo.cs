@@ -9,12 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemaVentas
 {
     public partial class FrmAgregarEditarArticulo : Form
     {
         private Articulo _Articulo = null;
+        private OpenFileDialog archivo = null;
         public FrmAgregarEditarArticulo()
         {
             InitializeComponent();
@@ -23,32 +25,41 @@ namespace SistemaVentas
         public FrmAgregarEditarArticulo(Articulo articulo)
         {
             InitializeComponent();
-            Text = "Agregar Articulo";
-            this._Articulo = new Articulo();
+            Text = "Modificar Articulo";
+            this._Articulo= articulo;
+
         }
         private void FrmAgregarEditarArticulo_Load(object sender, EventArgs e)
         {
-            if (_Articulo != null)
-            {
-                //MostrarDatos();
-            }
+            MostrarDatos();
+            
         }
 
 
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            //GuardarArticulo();
+           this.Close();
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-
+            GuardarArticulo();
         }
 
         private void btn_subir_imagen_Click(object sender, EventArgs e)
         {
+            CN_Metodos _Metodos = new CN_Metodos();
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg;|png|*.png";
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txt_url_imagen.Text = archivo.FileName;
 
+
+                _Metodos.CargarImg(pbx_img, archivo.FileName);
+
+            }
         }
 
         private void txt_url_imagen_TextChanged(object sender, EventArgs e)
@@ -59,82 +70,129 @@ namespace SistemaVentas
         }
 
 
-        //private void MostrarDatos()
-        //{
+        private void MostrarDatos()
+        {
 
-        //    txt_id_articulo.Text = _Articulo.Id_articulo.ToString();
-        //    txt_codigo_producto.Text = _Articulo.Codigo;
-        //    txt_nombre_producto.Text = _Articulo.Nombre;
-        //    txt_url_imagen.Text = _Articulo.UrlImagen;
-        //    txt_descripcion_producto.Text = _Articulo.Descripcion;
-        //}
-
-        //private void GuardarArticulo()
-        //{
-        //    CN_Articulo _CN_Articulo = new CN_Articulo();
-
-        //    try
-        //    {
-
-        //        if (ValidarVacio())
-        //        {
-        //            errorIcono.Clear();
-
-        //            if (_Categoria == null)
-        //                _Categoria = new Categoria();
-
-        //            _Categoria.Nombre = txt_nombre_categoria.Text.Trim().ToUpper();
-        //            _Categoria.Descripcion = txt_descripcion_categoria.Text.Trim();
-        //            _Categoria.UrlImagen = txt_imagen.Text.Trim();
+            CN_Categoria categoria = new CN_Categoria();
+            CN_Presentacion presentacion = new CN_Presentacion();   
 
 
-        //            if (_Categoria.Id_categoria != 0)
-        //            {
-        //                _Categoria.Id_categoria = int.Parse(lbl_categoria.Text.Trim());
-        //                logicaCategoria.EditarCategoria(_Categoria);
-        //                MessageBox.Show("La Categoria Fue Modificada Exitosamente!!", "Modificado");
-        //                this.Close();
-        //            }
-        //            else
-        //            {
-        //                logicaCategoria.InsertarCategoria(_Categoria);
-        //                MessageBox.Show("La Categoria Fue Agregada Exitosamente!!", "Agregado");
-        //                this.Close();
-        //            }
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Debe Completar Todos los Campos!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
+            try
+            {
+                cbo_presentacion_producto.DataSource = presentacion.CargarCbo();
+                cbo_presentacion_producto.ValueMember = "Id_presentacion";
+                cbo_presentacion_producto.DisplayMember = "Nombre";
 
-        //        throw ex;
-        //    }
+                cbo_tipo_categoria.DataSource = categoria.CargarCbo();
+                cbo_tipo_categoria.ValueMember = "Id_categoria";
+                cbo_tipo_categoria.DisplayMember = "Nombre";
+
+                if (_Articulo != null)
+                {
 
 
-        //}
+                    txt_id_articulo.Text = _Articulo.Id_articulo.ToString();
+                    txt_codigo_producto.Text = _Articulo.Codigo;
+                    txt_nombre_producto.Text = _Articulo.Nombre;
+                    txt_url_imagen.Text = _Articulo.UrlImagen;
+                    txt_descripcion_producto.Text = _Articulo.Descripcion;
 
-        //private bool ValidarVacio()
-        //{
+                    cbo_tipo_categoria.SelectedValue = _Articulo.Categoria.Id_categoria;
+                    cbo_presentacion_producto.SelectedValue = _Articulo.Presentacion.Id_presentacion;
 
-        //    bool error = true;
+                }
+            }
+            catch (Exception ex)
+            {
 
-        //    if (txt_nombre_producto.Text == string.Empty)
-        //    {
-        //        errorIcono.SetError(txt_nombre_categoria, "El campo  es obligatorio, ingrese el Nombre ");
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void GuardarArticulo()
+        {
+            CN_Articulo _CN_Articulo = new CN_Articulo();
+
+            try
+            {
+
+                if (ValidarVacio())
+                {
+                    errorIcono.Clear();
+
+                    if (_Articulo == null)
+
+                        _Articulo = new Articulo();
+
+                    _Articulo.Codigo = txt_codigo_producto.Text.Trim().ToUpper();
+                    _Articulo.Nombre = txt_nombre_producto.Text.Trim().ToUpper();
+                    _Articulo.Descripcion = txt_descripcion_producto.Text.Trim();
+                    _Articulo.UrlImagen = txt_url_imagen.Text.Trim();
+
+                    _Articulo.Categoria = (Categoria)cbo_tipo_categoria.SelectedItem;
+                    _Articulo.Presentacion = (Presentacion)cbo_presentacion_producto.SelectedItem;
 
 
-        //        error = false;
-        //    }
-        //    else
-        //    {
-        //        errorIcono.Clear();
-        //    }
+                    if (_Articulo.Id_articulo != 0)
+                    {
+                        _CN_Articulo.EditarArticulo(_Articulo);
+                        MessageBox.Show("La Categoria Fue Modificada Exitosamente!!", "Modificado");
+                        this.Close();
+                    }
+                    else
+                    {
+                        _CN_Articulo.InsertarArticulo(_Articulo);
+                        MessageBox.Show("La Categoria Fue Agregada Exitosamente!!", "Agregado");
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe Completar Todos los Campos!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
 
-        //    return error;
-        //}
+                throw ex;
+            }
+
+
+        }
+
+        private bool ValidarVacio()
+        {
+
+            bool error = true;
+
+            if (txt_nombre_producto.Text == string.Empty)
+            {
+                errorIcono.SetError(txt_nombre_producto, "El campo  es obligatorio, ingrese el Nombre ");
+
+
+                error = false;
+            }
+            else if (txt_codigo_producto.Text == string.Empty)
+            {
+                errorIcono.SetError(txt_codigo_producto, "El campo  es obligatorio, ingrese el Codigo ");
+
+
+                error = false;
+            }
+            else if (txt_url_imagen.Text == string.Empty)
+            {
+                errorIcono.SetError(txt_codigo_producto, "El campo  es obligatorio, ingrese la Url de la imagen ");
+
+
+                error = false;
+            }
+            else
+            {
+                errorIcono.Clear();
+            }
+
+            return error;
+        }
 
     }
 }

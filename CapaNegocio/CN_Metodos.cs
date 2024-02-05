@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using CapaDominio;
 
 
 namespace CapaNegocio
@@ -20,6 +21,9 @@ namespace CapaNegocio
         {
             objMetodos.AlternarColor(Dgv);
         }
+        //Metodo para cargar cbo
+
+     
 
 
         //Metodo para dar formato moneda a un texBox 

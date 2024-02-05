@@ -203,7 +203,7 @@ namespace CapaDatos
                     articulo.Presentacion.Nombre = (string)Conexion.Lector["Presentacion"];
 
                     if (!(Conexion.Lector["UrlImagen"] is DBNull))
-            
+
                         articulo.UrlImagen = (string)Conexion.Lector["UrlImagen"];
 
                     listaArticulo.Add(articulo);
@@ -223,7 +223,6 @@ namespace CapaDatos
             }
         }
 
-
-
+        
     }
 }
