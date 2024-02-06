@@ -55,5 +55,11 @@ namespace SistemaVentas
             FrmPersona frmPersona = new FrmPersona();   
             frmPersona.ShowDialog();
         }
+
+        private void menu_item_proveedor_Click(object sender, EventArgs e)
+        {
+            FrmProveedor frmProveedor = new FrmProveedor();
+            frmProveedor.ShowDialog();
+        }
     }
 }

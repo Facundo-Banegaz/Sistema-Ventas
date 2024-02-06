@@ -33,7 +33,8 @@ namespace SistemaVentas
 
         private void MostrarDatos()
         {
-            txt_codigo_producto.Text = _Articulo.Id_articulo.ToString();
+            txt_id_articulo.Text = _Articulo.Id_articulo.ToString();
+            txt_codigo_producto.Text = _Articulo.Codigo.ToString();
             txt_nombre_producto.Text = _Articulo.Nombre;
              txt_codigo_producto.Text = _Articulo.Codigo;
             txt_url_imagen.Text = _Articulo.UrlImagen;

@@ -48,6 +48,7 @@
             this.menu_configuracion = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_persona = new System.Windows.Forms.ToolStripMenuItem();
             this.tn_tiempo = new System.Windows.Forms.Timer(this.components);
+            this.menu_item_proveedor = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,7 +143,7 @@
             this.menu_item_articulos.ForeColor = System.Drawing.Color.Orange;
             this.menu_item_articulos.Image = ((System.Drawing.Image)(resources.GetObject("menu_item_articulos.Image")));
             this.menu_item_articulos.Name = "menu_item_articulos";
-            this.menu_item_articulos.Size = new System.Drawing.Size(242, 36);
+            this.menu_item_articulos.Size = new System.Drawing.Size(278, 42);
             this.menu_item_articulos.Text = "Articulos";
             this.menu_item_articulos.Click += new System.EventHandler(this.menu_item_articulos_Click);
             // 
@@ -152,7 +153,7 @@
             this.menu_item_categorias.ForeColor = System.Drawing.Color.Orange;
             this.menu_item_categorias.Image = ((System.Drawing.Image)(resources.GetObject("menu_item_categorias.Image")));
             this.menu_item_categorias.Name = "menu_item_categorias";
-            this.menu_item_categorias.Size = new System.Drawing.Size(242, 36);
+            this.menu_item_categorias.Size = new System.Drawing.Size(278, 42);
             this.menu_item_categorias.Text = "Categorias";
             this.menu_item_categorias.Click += new System.EventHandler(this.menu_item_categorias_Click);
             // 
@@ -162,13 +163,15 @@
             this.menu_item_presentacion.ForeColor = System.Drawing.Color.Orange;
             this.menu_item_presentacion.Image = ((System.Drawing.Image)(resources.GetObject("menu_item_presentacion.Image")));
             this.menu_item_presentacion.Name = "menu_item_presentacion";
-            this.menu_item_presentacion.Size = new System.Drawing.Size(242, 36);
+            this.menu_item_presentacion.Size = new System.Drawing.Size(278, 42);
             this.menu_item_presentacion.Text = "Presentación";
             this.menu_item_presentacion.Click += new System.EventHandler(this.menu_item_presentacion_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
             this.proveedoresToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menu_item_proveedor});
             this.proveedoresToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold);
             this.proveedoresToolStripMenuItem.ForeColor = System.Drawing.Color.Orange;
             this.proveedoresToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("proveedoresToolStripMenuItem.Image")));
@@ -245,7 +248,7 @@
             this.menu_persona.ForeColor = System.Drawing.Color.Orange;
             this.menu_persona.Image = ((System.Drawing.Image)(resources.GetObject("menu_persona.Image")));
             this.menu_persona.Name = "menu_persona";
-            this.menu_persona.Size = new System.Drawing.Size(278, 42);
+            this.menu_persona.Size = new System.Drawing.Size(204, 36);
             this.menu_persona.Text = "Personas";
             this.menu_persona.Click += new System.EventHandler(this.menu_persona_Click);
             // 
@@ -253,6 +256,16 @@
             // 
             this.tn_tiempo.Enabled = true;
             this.tn_tiempo.Tick += new System.EventHandler(this.tn_tiempo_Tick);
+            // 
+            // menu_item_proveedor
+            // 
+            this.menu_item_proveedor.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.menu_item_proveedor.ForeColor = System.Drawing.Color.Orange;
+            this.menu_item_proveedor.Image = ((System.Drawing.Image)(resources.GetObject("menu_item_proveedor.Image")));
+            this.menu_item_proveedor.Name = "menu_item_proveedor";
+            this.menu_item_proveedor.Size = new System.Drawing.Size(278, 42);
+            this.menu_item_proveedor.Text = "Proveedores";
+            this.menu_item_proveedor.Click += new System.EventHandler(this.menu_item_proveedor_Click);
             // 
             // FrmPrincipal
             // 
@@ -296,5 +309,6 @@
         private System.Windows.Forms.ToolStripMenuItem menu_item_categorias;
         private System.Windows.Forms.ToolStripMenuItem menu_item_presentacion;
         private System.Windows.Forms.ToolStripMenuItem menu_persona;
+        private System.Windows.Forms.ToolStripMenuItem menu_item_proveedor;
     }
 }

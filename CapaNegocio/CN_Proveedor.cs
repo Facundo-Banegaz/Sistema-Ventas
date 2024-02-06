@@ -13,7 +13,7 @@ namespace CapaNegocio
         private CD_Proveedor _Proveedor;
 
         //Metodo para Listar los Productos em la DataWirdView
-        public List<Proveedor> LiListarProveedores()
+        public List<Proveedor> ListarProveedores()
         {
             _Proveedor = new CD_Proveedor();
 

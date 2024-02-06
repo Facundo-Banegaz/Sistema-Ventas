@@ -25,3 +25,5 @@ C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.
 C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmAgregarEditarPresentacion.resources
 C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmPresentacion.resources
 C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmPersona.resources
+C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmProveedor.resources
+C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmAgregarEditarProveedor.resources

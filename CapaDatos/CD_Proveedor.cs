@@ -32,10 +32,9 @@ namespace CapaDatos
                     Proveedor = new Proveedor();
 
                     Proveedor.Id_proveedor = (int)Conexion.Lector["Id_proveedor"];
-                    Proveedor.RazonSocial = (string)Conexion.Lector["RazonSocial"];
-                    Proveedor.SectorComercial = (string)Conexion.Lector["SectorComercial"];
-                    Proveedor.TipoDocumento = (string)Conexion.Lector["TipoDocumento"];
-                    Proveedor.NumeroDocumento = (string)Conexion.Lector["NumeroDocumento"];
+                    Proveedor.RazonSocial = (string)Conexion.Lector["Razon_social"];
+                    Proveedor.SectorComercial = (string)Conexion.Lector["Sector_comercial"];
+                    Proveedor.PaginaWeb = (string)Conexion.Lector["Pagina_web"];
                     Proveedor.Direccion = (string)Conexion.Lector["Direccion"];
                     Proveedor.Telefono = (string)Conexion.Lector["Telefono"];
                     Proveedor.Email = (string)Conexion.Lector["Email"];
@@ -79,8 +78,7 @@ namespace CapaDatos
 
                 Conexion.SetearParametro("@Razon_social", Nuevo.RazonSocial);
                 Conexion.SetearParametro("@Sector_comercial", Nuevo.SectorComercial);
-                Conexion.SetearParametro("@Tipo_documento", Nuevo.TipoDocumento);
-                Conexion.SetearParametro("@Numero_documento", Nuevo.NumeroDocumento);
+                Conexion.SetearParametro("@Pagina_web", Nuevo.PaginaWeb);
                 Conexion.SetearParametro("@Direccion", Nuevo.Direccion); 
                 Conexion.SetearParametro("@Telefono", Nuevo.Telefono); 
                 Conexion.SetearParametro("@Email", Nuevo.Email);
@@ -116,8 +114,7 @@ namespace CapaDatos
                 Conexion.SetearParametro("@Id_proveedor", proveedor.Id_proveedor);
                 Conexion.SetearParametro("@Razon_social", proveedor.RazonSocial);
                 Conexion.SetearParametro("@Sector_comercial", proveedor.SectorComercial);
-                Conexion.SetearParametro("@Tipo_documento", proveedor);
-                Conexion.SetearParametro("@Numero_documento", proveedor.NumeroDocumento);
+                Conexion.SetearParametro("@Pagina_web", proveedor.PaginaWeb);
                 Conexion.SetearParametro("@Direccion", proveedor.Direccion);
                 Conexion.SetearParametro("@Telefono", proveedor.Telefono);
                 Conexion.SetearParametro("@Email", proveedor.Email);
@@ -191,8 +188,7 @@ namespace CapaDatos
                     Proveedor.Id_proveedor = (int)Conexion.Lector["Id_proveedor"];
                     Proveedor.RazonSocial = (string)Conexion.Lector["RazonSocial"];
                     Proveedor.SectorComercial = (string)Conexion.Lector["SectorComercial"];
-                    Proveedor.TipoDocumento = (string)Conexion.Lector["TipoDocumento"];
-                    Proveedor.NumeroDocumento = (string)Conexion.Lector["NumeroDocumento"];
+                    Proveedor.PaginaWeb = (string)Conexion.Lector["Pagina_web"];
                     Proveedor.Direccion = (string)Conexion.Lector["Direccion"];
                     Proveedor.Telefono = (string)Conexion.Lector["Telefono"];
                     Proveedor.Email = (string)Conexion.Lector["Email"];

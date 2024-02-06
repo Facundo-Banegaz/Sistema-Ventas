@@ -1,6 +1,6 @@
 ﻿namespace SistemaVentas
 {
-    partial class FrmPersona
+    partial class FrmProveedor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPersona));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProveedor));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_resultado = new System.Windows.Forms.Label();
@@ -39,13 +39,13 @@
             this.pbx_img = new System.Windows.Forms.PictureBox();
             this.lbl_buscar = new System.Windows.Forms.Label();
             this.txt_buscar = new System.Windows.Forms.TextBox();
-            this.dgv_personas = new System.Windows.Forms.DataGridView();
+            this.dgv_proveedores = new System.Windows.Forms.DataGridView();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_nuevo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_personas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_proveedores)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_resultado
@@ -149,16 +149,16 @@
             this.txt_buscar.Size = new System.Drawing.Size(528, 37);
             this.txt_buscar.TabIndex = 52;
             // 
-            // dgv_personas
+            // dgv_proveedores
             // 
-            this.dgv_personas.AllowUserToAddRows = false;
-            this.dgv_personas.AllowUserToDeleteRows = false;
-            this.dgv_personas.AllowUserToOrderColumns = true;
-            this.dgv_personas.AllowUserToResizeRows = false;
-            this.dgv_personas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv_proveedores.AllowUserToAddRows = false;
+            this.dgv_proveedores.AllowUserToDeleteRows = false;
+            this.dgv_proveedores.AllowUserToOrderColumns = true;
+            this.dgv_proveedores.AllowUserToResizeRows = false;
+            this.dgv_proveedores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_personas.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgv_proveedores.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -166,8 +166,8 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_personas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_personas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_proveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,19 +175,19 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_personas.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_personas.EnableHeadersVisualStyles = false;
-            this.dgv_personas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dgv_personas.Location = new System.Drawing.Point(12, 141);
-            this.dgv_personas.Name = "dgv_personas";
-            this.dgv_personas.ReadOnly = true;
-            this.dgv_personas.RowHeadersVisible = false;
-            this.dgv_personas.RowHeadersWidth = 62;
-            this.dgv_personas.RowTemplate.Height = 28;
-            this.dgv_personas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_personas.Size = new System.Drawing.Size(1393, 545);
-            this.dgv_personas.TabIndex = 51;
-            this.dgv_personas.SelectionChanged += new System.EventHandler(this.dgv_personas_SelectionChanged);
+            this.dgv_proveedores.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_proveedores.EnableHeadersVisualStyles = false;
+            this.dgv_proveedores.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dgv_proveedores.Location = new System.Drawing.Point(12, 141);
+            this.dgv_proveedores.Name = "dgv_proveedores";
+            this.dgv_proveedores.ReadOnly = true;
+            this.dgv_proveedores.RowHeadersVisible = false;
+            this.dgv_proveedores.RowHeadersWidth = 62;
+            this.dgv_proveedores.RowTemplate.Height = 28;
+            this.dgv_proveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_proveedores.Size = new System.Drawing.Size(1393, 545);
+            this.dgv_proveedores.TabIndex = 51;
+            this.dgv_proveedores.SelectionChanged += new System.EventHandler(this.dgv_proveedor_SelectionChanged);
             // 
             // btn_cancelar
             // 
@@ -223,6 +223,7 @@
             this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_eliminar.UseVisualStyleBackColor = false;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_editar
             // 
@@ -240,6 +241,7 @@
             this.btn_editar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_editar.UseVisualStyleBackColor = false;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // btn_nuevo
             // 
@@ -257,8 +259,9 @@
             this.btn_nuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_nuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_nuevo.UseVisualStyleBackColor = false;
+            this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
-            // FrmPersona
+            // FrmProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -271,17 +274,18 @@
             this.Controls.Add(this.pbx_img);
             this.Controls.Add(this.lbl_buscar);
             this.Controls.Add(this.txt_buscar);
-            this.Controls.Add(this.dgv_personas);
+            this.Controls.Add(this.dgv_proveedores);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.btn_nuevo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "FrmPersona";
+            this.Name = "FrmProveedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Persona";
             this.Load += new System.EventHandler(this.FrmPersona_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_personas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_proveedores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,7 +301,7 @@
         private System.Windows.Forms.PictureBox pbx_img;
         private System.Windows.Forms.Label lbl_buscar;
         private System.Windows.Forms.TextBox txt_buscar;
-        public System.Windows.Forms.DataGridView dgv_personas;
+        public System.Windows.Forms.DataGridView dgv_proveedores;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_editar;
