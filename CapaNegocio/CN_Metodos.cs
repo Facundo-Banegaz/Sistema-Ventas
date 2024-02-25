@@ -39,5 +39,6 @@ namespace CapaNegocio
         {
             objMetodos.CargarImg(picture, img);
         }
+
     }
 }

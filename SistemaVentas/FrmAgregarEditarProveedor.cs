@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,6 +61,7 @@ namespace SistemaVentas
         private void txt_url_imagen_TextChanged(object sender, EventArgs e)
         {
             CN_Metodos _Metodos = new CN_Metodos();
+
 
             _Metodos.CargarImg(pbx_img, txt_url_imagen.Text);
         }
