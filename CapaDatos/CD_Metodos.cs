@@ -48,9 +48,9 @@ namespace CapaDatos
             catch (Exception)
             {
 
-                //picture.Load("C:\\Users\\baneg\\source\\repos\\SistemaVentas\\SistemaVentas\\Resources\\defecto.jpg");
+                picture.Load("C:\\Users\\baneg\\source\\repos\\SistemaVentas\\SistemaVentas\\Resources\\defecto.jpg");
 
-                picture.Load("https://tse3.mm.bing.net/th?id=OIP.-CiVIfCy46VrgitiIjfahwAAAA&pid=Api&P=0&h=180");
+                //picture.Load("https://tse3.mm.bing.net/th?id=OIP.-CiVIfCy46VrgitiIjfahwAAAA&pid=Api&P=0&h=180");
             }
         }
 

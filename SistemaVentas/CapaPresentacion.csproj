@@ -76,6 +76,12 @@
     <Compile Include="FrmAgregarEditarPresentacion.Designer.cs">
       <DependentUpon>FrmAgregarEditarPresentacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmArgregarEditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmArgregarEditarCliente.Designer.cs">
+      <DependentUpon>FrmArgregarEditarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,12 @@
     </Compile>
     <Compile Include="FrmCategoria.Designer.cs">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCliente.Designer.cs">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDetalleArticulo.cs">
       <SubType>Form</SubType>
@@ -144,11 +156,17 @@
     <EmbeddedResource Include="FrmAgregarEditarProveedor.resx">
       <DependentUpon>FrmAgregarEditarProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmArgregarEditarCliente.resx">
+      <DependentUpon>FrmArgregarEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmArticulo.resx">
       <DependentUpon>FrmArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCliente.resx">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDetalleArticulo.resx">
       <DependentUpon>FrmDetalleArticulo.cs</DependentUpon>
@@ -205,6 +223,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\clasificacion.png" />
     <Content Include="Resources\defecto.jpg" />
     <Content Include="Resources\foto-portada-tienda.jpeg" />
   </ItemGroup>

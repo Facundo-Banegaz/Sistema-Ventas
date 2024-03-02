@@ -63,6 +63,16 @@ namespace SistemaVentas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clasificacion {
+            get {
+                object obj = ResourceManager.GetObject("clasificacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap foto_portada_tienda {
             get {
                 object obj = ResourceManager.GetObject("foto-portada-tienda", resourceCulture);

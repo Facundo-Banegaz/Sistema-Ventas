@@ -50,6 +50,7 @@
             this.lbl_hora = new System.Windows.Forms.Label();
             this.lbl_titulo_hora = new System.Windows.Forms.Label();
             this.lbl_titulo_fecha = new System.Windows.Forms.Label();
+            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -137,13 +138,15 @@
             this.menu_item_proveedor.ForeColor = System.Drawing.Color.Orange;
             this.menu_item_proveedor.Image = ((System.Drawing.Image)(resources.GetObject("menu_item_proveedor.Image")));
             this.menu_item_proveedor.Name = "menu_item_proveedor";
-            this.menu_item_proveedor.Size = new System.Drawing.Size(239, 36);
+            this.menu_item_proveedor.Size = new System.Drawing.Size(278, 42);
             this.menu_item_proveedor.Text = "Proveedores";
             this.menu_item_proveedor.Click += new System.EventHandler(this.menu_item_proveedor_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clientesToolStripMenuItem1});
             this.clientesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold);
             this.clientesToolStripMenuItem.ForeColor = System.Drawing.Color.Orange;
             this.clientesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("clientesToolStripMenuItem.Image")));
@@ -179,7 +182,7 @@
             this.menu_item_inventario.ForeColor = System.Drawing.Color.Orange;
             this.menu_item_inventario.Image = ((System.Drawing.Image)(resources.GetObject("menu_item_inventario.Image")));
             this.menu_item_inventario.Name = "menu_item_inventario";
-            this.menu_item_inventario.Size = new System.Drawing.Size(357, 36);
+            this.menu_item_inventario.Size = new System.Drawing.Size(365, 42);
             this.menu_item_inventario.Text = "Inventario De Productos";
             // 
             // ventasToolStripMenuItem
@@ -234,35 +237,40 @@
             // 
             this.lbl_fecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_fecha.AutoSize = true;
-            this.lbl_fecha.Font = new System.Drawing.Font("Segoe UI Black", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fecha.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_fecha.Location = new System.Drawing.Point(1078, 351);
+            this.lbl_fecha.BackColor = System.Drawing.Color.White;
+            this.lbl_fecha.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fecha.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lbl_fecha.Location = new System.Drawing.Point(489, 606);
             this.lbl_fecha.Name = "lbl_fecha";
-            this.lbl_fecha.Size = new System.Drawing.Size(0, 60);
+            this.lbl_fecha.Size = new System.Drawing.Size(0, 44);
             this.lbl_fecha.TabIndex = 14;
             this.lbl_fecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_fecha.Click += new System.EventHandler(this.lbl_fecha_Click);
             // 
             // lbl_hora
             // 
             this.lbl_hora.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_hora.AutoSize = true;
-            this.lbl_hora.Font = new System.Drawing.Font("Segoe UI Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_hora.BackColor = System.Drawing.Color.White;
+            this.lbl_hora.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_hora.ForeColor = System.Drawing.Color.Orange;
-            this.lbl_hora.Location = new System.Drawing.Point(1077, 241);
+            this.lbl_hora.Location = new System.Drawing.Point(1168, 606);
             this.lbl_hora.Name = "lbl_hora";
-            this.lbl_hora.Size = new System.Drawing.Size(0, 65);
+            this.lbl_hora.Size = new System.Drawing.Size(0, 44);
             this.lbl_hora.TabIndex = 13;
             this.lbl_hora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_hora.Click += new System.EventHandler(this.lbl_hora_Click);
             // 
             // lbl_titulo_hora
             // 
             this.lbl_titulo_hora.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_titulo_hora.AutoSize = true;
-            this.lbl_titulo_hora.Font = new System.Drawing.Font("Segoe UI Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titulo_hora.ForeColor = System.Drawing.Color.Orange;
-            this.lbl_titulo_hora.Location = new System.Drawing.Point(848, 241);
+            this.lbl_titulo_hora.BackColor = System.Drawing.Color.White;
+            this.lbl_titulo_hora.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_titulo_hora.ForeColor = System.Drawing.Color.Goldenrod;
+            this.lbl_titulo_hora.Location = new System.Drawing.Point(1036, 602);
             this.lbl_titulo_hora.Name = "lbl_titulo_hora";
-            this.lbl_titulo_hora.Size = new System.Drawing.Size(160, 65);
+            this.lbl_titulo_hora.Size = new System.Drawing.Size(109, 48);
             this.lbl_titulo_hora.TabIndex = 12;
             this.lbl_titulo_hora.Text = "Hora:";
             this.lbl_titulo_hora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -271,14 +279,26 @@
             // 
             this.lbl_titulo_fecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_titulo_fecha.AutoSize = true;
-            this.lbl_titulo_fecha.Font = new System.Drawing.Font("Segoe UI Black", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titulo_fecha.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_titulo_fecha.Location = new System.Drawing.Point(846, 351);
+            this.lbl_titulo_fecha.BackColor = System.Drawing.Color.White;
+            this.lbl_titulo_fecha.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_titulo_fecha.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lbl_titulo_fecha.Location = new System.Drawing.Point(343, 602);
             this.lbl_titulo_fecha.Name = "lbl_titulo_fecha";
-            this.lbl_titulo_fecha.Size = new System.Drawing.Size(162, 60);
+            this.lbl_titulo_fecha.Size = new System.Drawing.Size(131, 48);
             this.lbl_titulo_fecha.TabIndex = 11;
             this.lbl_titulo_fecha.Text = "Fecha:";
             this.lbl_titulo_fecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_titulo_fecha.Click += new System.EventHandler(this.tn_tiempo_Tick);
+            // 
+            // clientesToolStripMenuItem1
+            // 
+            this.clientesToolStripMenuItem1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.clientesToolStripMenuItem1.ForeColor = System.Drawing.Color.Orange;
+            this.clientesToolStripMenuItem1.Image = global::SistemaVentas.Properties.Resources.clasificacion;
+            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(278, 42);
+            this.clientesToolStripMenuItem1.Text = "Clientes";
+            this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
             // 
             // FrmPrincipal
             // 
@@ -325,5 +345,6 @@
         private System.Windows.Forms.Label lbl_hora;
         private System.Windows.Forms.Label lbl_titulo_hora;
         private System.Windows.Forms.Label lbl_titulo_fecha;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
     }
 }

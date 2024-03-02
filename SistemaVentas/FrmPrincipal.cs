@@ -61,5 +61,23 @@ namespace SistemaVentas
             FrmProveedor frmProveedor = new FrmProveedor();
             frmProveedor.ShowDialog();
         }
+
+        private void lbl_hora_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_fecha_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmCliente frmCliente = new FrmCliente();
+
+            frmCliente.ShowDialog();
+            
+        }
     }
 }
