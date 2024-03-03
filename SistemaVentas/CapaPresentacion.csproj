@@ -150,6 +150,9 @@
     <EmbeddedResource Include="FrmAgregarEditarCategoria.resx">
       <DependentUpon>FrmAgregarEditarCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarEditarPersona.resx">
+      <DependentUpon>FrmAgregarEditarPersona.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAgregarEditarPresentacion.resx">
       <DependentUpon>FrmAgregarEditarPresentacion.cs</DependentUpon>
     </EmbeddedResource>

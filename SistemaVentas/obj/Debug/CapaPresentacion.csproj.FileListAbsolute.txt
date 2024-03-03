@@ -29,3 +29,4 @@ C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.
 C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmAgregarEditarProveedor.resources
 C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmArgregarEditarCliente.resources
 C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmCliente.resources
+C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmAgregarEditarPersona.resources
