@@ -8,8 +8,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace SistemaVentas
 {
@@ -199,7 +201,6 @@ namespace SistemaVentas
 
             }
 
-            
             else if (txt_email.Text == string.Empty)
             {
                 errorIcono.SetError(txt_email, "El campo  es obligatorio, ingrese el Email");
@@ -214,6 +215,45 @@ namespace SistemaVentas
             }
 
             return error;
+        }
+
+        private void txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        public static bool validarEmail(string pCorreo)
+        {
+            return pCorreo != null && Regex.IsMatch(pCorreo, @"^[^@\s]+@[^@\s]+\.(com)$");
+        }
+
+        public static bool validarUrl(string url)
+        {
+            return url != null && Regex.IsMatch(url, @"^(https?|ftp)://[^\s/$.?#].[^\s]*$");
+        }
+
+
+
+
+        private void txt_pagina_web_Validating(object sender, CancelEventArgs e)
+        {
+            if (!validarUrl(txt_pagina_web.Text))
+            {
+                MessageBox.Show("Por favor, ingrese una Url  válida.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txt_email_Validating(object sender, CancelEventArgs e)
+        {
+            if (!validarEmail(txt_email.Text))
+            {
+                MessageBox.Show("Por favor, ingrese una dirección de correo electrónico de Gmail válida.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

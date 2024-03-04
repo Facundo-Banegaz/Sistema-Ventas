@@ -172,7 +172,7 @@ namespace CapaDatos
 
             try
             {
-                Conexion.SetConsutarProcedure("spBuscar_proveedor_razon_social");
+                Conexion.SetConsutarProcedure("SpBuscar_proveedor");
 
 
                 Conexion.SetearParametro("@txt_buscar", buscar);
@@ -186,8 +186,8 @@ namespace CapaDatos
                     Proveedor = new Proveedor();
 
                     Proveedor.Id_proveedor = (int)Conexion.Lector["Id_proveedor"];
-                    Proveedor.RazonSocial = (string)Conexion.Lector["RazonSocial"];
-                    Proveedor.SectorComercial = (string)Conexion.Lector["SectorComercial"];
+                    Proveedor.RazonSocial = (string)Conexion.Lector["Razon_social"];
+                    Proveedor.SectorComercial = (string)Conexion.Lector["Sector_comercial"];
                     Proveedor.PaginaWeb = (string)Conexion.Lector["Pagina_web"];
                     Proveedor.Direccion = (string)Conexion.Lector["Direccion"];
                     Proveedor.Telefono = (string)Conexion.Lector["Telefono"];

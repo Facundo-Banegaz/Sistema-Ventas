@@ -130,5 +130,33 @@ namespace SistemaVentas
             frmProveedor.ShowDialog();
             CargarGrilla();
         }
+        private void BuscarProveedor()
+        {
+            CN_Proveedor _Proveedor = new CN_Proveedor();
+
+            if (txt_buscar.Text == string.Empty)
+            {
+                MessageBox.Show("El CAMPO NO PUEDE QUEDAR VACIO!!", "ADVERTENCIA");
+
+                lbl_resultado.Text = "No escribio nada en el campo  'Buscador'.";
+            }
+            else
+            {
+                dgv_proveedores.DataSource = _Proveedor.ProveedorBuscar(txt_buscar.Text);
+
+                lbl_total.Text = "Total de Registros Encontrados:" + " " + Convert.ToString(dgv_proveedores.Rows.Count);
+                lbl_resultado.Text = "Para volver a ver el listado completo 'Limpiar' el campo!!.";
+            }
+        }
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            BuscarProveedor();
+        }
+
+        private void btn_limpiar_Click(object sender, EventArgs e)
+        {
+            txt_buscar.Clear();
+            CargarGrilla();
+        }
     }
 }

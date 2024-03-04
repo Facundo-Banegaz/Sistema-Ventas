@@ -261,6 +261,7 @@
             this.txt_pagina_web.Name = "txt_pagina_web";
             this.txt_pagina_web.Size = new System.Drawing.Size(555, 35);
             this.txt_pagina_web.TabIndex = 99;
+            this.txt_pagina_web.Validating += new System.ComponentModel.CancelEventHandler(this.txt_pagina_web_Validating);
             // 
             // txt_email
             // 
@@ -270,6 +271,7 @@
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(555, 35);
             this.txt_email.TabIndex = 104;
+            this.txt_email.Validating += new System.ComponentModel.CancelEventHandler(this.txt_email_Validating);
             // 
             // txt_telefono
             // 
@@ -279,6 +281,7 @@
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(555, 35);
             this.txt_telefono.TabIndex = 103;
+            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
             // 
             // label3
             // 
