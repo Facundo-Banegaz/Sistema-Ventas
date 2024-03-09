@@ -339,7 +339,7 @@
             this.Controls.Add(this.pbx_img);
             this.Name = "FrmAgregarEditarProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAgregarEditarPersona";
+            this.Text = "FrmAgregarEditarProveedor";
             this.Load += new System.EventHandler(this.FrmAgregarEditarProveedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();

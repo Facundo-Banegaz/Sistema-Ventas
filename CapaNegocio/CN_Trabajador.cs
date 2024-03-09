@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    public class CN_Persona
+    public class CN_Trabajador
     {
 
-        private CD_Persona CD_Persona;
+        private CD_Trabajador CD_Trabajador;
 
         //Metodo para Listar los Productos em la DataWirdView
-        public List<Persona> ListaPersona()
+        public List<Trabajador> ListaTrabajador()
         {
-            CD_Persona = new CD_Persona();
+            CD_Trabajador = new CD_Trabajador();
 
-            return CD_Persona.ListarPersona();
+            return CD_Trabajador.ListarTrabajador();
         }
     }
 }

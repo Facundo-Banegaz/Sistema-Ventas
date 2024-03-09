@@ -52,7 +52,7 @@ namespace SistemaVentas
 
         private void menu_persona_Click(object sender, EventArgs e)
         {
-            FrmPersona frmPersona = new FrmPersona();   
+            FrmTrabajador frmPersona = new FrmTrabajador();   
             frmPersona.ShowDialog();
         }
 
@@ -61,6 +61,17 @@ namespace SistemaVentas
             FrmProveedor frmProveedor = new FrmProveedor();
             frmProveedor.ShowDialog();
         }
+
+        private void menu_item_cliente_Click(object sender, EventArgs e)
+        {
+            FrmCliente frmCliente = new FrmCliente();
+
+            frmCliente.ShowDialog();
+        }
+
+
+
+
 
         private void lbl_hora_Click(object sender, EventArgs e)
         {
@@ -72,12 +83,9 @@ namespace SistemaVentas
 
         }
 
-        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            FrmCliente frmCliente = new FrmCliente();
 
-            frmCliente.ShowDialog();
-            
         }
     }
 }

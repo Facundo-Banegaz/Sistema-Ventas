@@ -66,8 +66,8 @@ namespace CapaDatos
 
 
 
-        //metodo insertar
-
+       //metodo insertar
+ 
         public void InsertarProveedor (Proveedor Nuevo)
         {
             Conexion = new CD_Conexion();

@@ -47,11 +47,10 @@
     <Compile Include="DetalleIngreso.cs" />
     <Compile Include="DetalleVenta.cs" />
     <Compile Include="Ingreso.cs" />
-    <Compile Include="Persona.cs" />
+    <Compile Include="Trabajador.cs" />
     <Compile Include="Presentacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedor.cs" />
-    <Compile Include="Trabajador.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Venta.cs" />
   </ItemGroup>

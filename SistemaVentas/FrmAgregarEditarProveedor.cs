@@ -113,7 +113,7 @@ namespace SistemaVentas
                     if (_Proveedor == null)
 
                         _Proveedor = new Proveedor();
-                    //_Proveedor.Id_proveedor = int.Parse(txt_id_proveedor.Text.Trim());
+
                     _Proveedor.RazonSocial = txt_razon_social.Text.Trim().ToUpper();
                     _Proveedor.PaginaWeb = txt_pagina_web.Text.Trim().ToLower();
                     _Proveedor.SectorComercial = txt_sector_comercial.Text.Trim().ToUpper();

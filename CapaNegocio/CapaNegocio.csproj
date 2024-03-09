@@ -47,7 +47,7 @@
     <Compile Include="CN_Categoria.cs" />
     <Compile Include="CN_Cliente.cs" />
     <Compile Include="CN_Metodos.cs" />
-    <Compile Include="CN_Persona.cs" />
+    <Compile Include="CN_Trabajador.cs" />
     <Compile Include="CN_Presentacion.cs" />
     <Compile Include="CN_Proveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

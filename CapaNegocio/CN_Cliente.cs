@@ -20,5 +20,39 @@ namespace CapaNegocio
 
             return _CD_Cliente.ListaCliente();
         }
+
+        //Metodo para cargar un producto en la Base de Datos
+        public void InsertarCliente(Cliente Nuevo)
+        {
+            _CD_Cliente = new CD_Cliente();
+
+            _CD_Cliente.InsertarCliente(Nuevo);
+
+        }
+
+        //Metodo para Editar un producto en la Base de Datos
+        public void EditarCliente(Cliente cliente)
+        {
+            _CD_Cliente = new CD_Cliente();
+
+            _CD_Cliente.EditarCliente(cliente);
+        }
+
+        //Metodo para Eliminar un producto en la Base de Datos
+        public void EliminarCliente(int Id_Cliente)
+        {
+            _CD_Cliente = new CD_Cliente();
+
+            _CD_Cliente.EliminarCliente(Id_Cliente);
+        }
+
+
+        //Metodo para Buscar un producto en la Base de Datos
+        public List<Cliente> ClienteBuscar(string buscar)
+        {
+            _CD_Cliente = new CD_Cliente();
+
+            return _CD_Cliente.ClienteBuscar(buscar);
+        }
     }
 }

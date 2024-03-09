@@ -38,6 +38,7 @@
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_item_proveedor = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_item_cliente = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_inventario = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_item_inventario = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +51,6 @@
             this.lbl_hora = new System.Windows.Forms.Label();
             this.lbl_titulo_hora = new System.Windows.Forms.Label();
             this.lbl_titulo_fecha = new System.Windows.Forms.Label();
-            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -138,7 +138,7 @@
             this.menu_item_proveedor.ForeColor = System.Drawing.Color.Orange;
             this.menu_item_proveedor.Image = ((System.Drawing.Image)(resources.GetObject("menu_item_proveedor.Image")));
             this.menu_item_proveedor.Name = "menu_item_proveedor";
-            this.menu_item_proveedor.Size = new System.Drawing.Size(278, 42);
+            this.menu_item_proveedor.Size = new System.Drawing.Size(239, 36);
             this.menu_item_proveedor.Text = "Proveedores";
             this.menu_item_proveedor.Click += new System.EventHandler(this.menu_item_proveedor_Click);
             // 
@@ -146,13 +146,23 @@
             // 
             this.clientesToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientesToolStripMenuItem1});
+            this.menu_item_cliente});
             this.clientesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold);
             this.clientesToolStripMenuItem.ForeColor = System.Drawing.Color.Orange;
             this.clientesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("clientesToolStripMenuItem.Image")));
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(250, 36);
             this.clientesToolStripMenuItem.Text = "Gestión de Clientes";
+            // 
+            // menu_item_cliente
+            // 
+            this.menu_item_cliente.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.menu_item_cliente.ForeColor = System.Drawing.Color.Orange;
+            this.menu_item_cliente.Image = global::SistemaVentas.Properties.Resources.clasificacion;
+            this.menu_item_cliente.Name = "menu_item_cliente";
+            this.menu_item_cliente.Size = new System.Drawing.Size(192, 36);
+            this.menu_item_cliente.Text = "Clientes";
+            this.menu_item_cliente.Click += new System.EventHandler(this.menu_item_cliente_Click);
             // 
             // comprasToolStripMenuItem
             // 
@@ -182,7 +192,7 @@
             this.menu_item_inventario.ForeColor = System.Drawing.Color.Orange;
             this.menu_item_inventario.Image = ((System.Drawing.Image)(resources.GetObject("menu_item_inventario.Image")));
             this.menu_item_inventario.Name = "menu_item_inventario";
-            this.menu_item_inventario.Size = new System.Drawing.Size(365, 42);
+            this.menu_item_inventario.Size = new System.Drawing.Size(357, 36);
             this.menu_item_inventario.Text = "Inventario De Productos";
             // 
             // ventasToolStripMenuItem
@@ -232,6 +242,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lbl_fecha
             // 
@@ -290,16 +301,6 @@
             this.lbl_titulo_fecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_titulo_fecha.Click += new System.EventHandler(this.tn_tiempo_Tick);
             // 
-            // clientesToolStripMenuItem1
-            // 
-            this.clientesToolStripMenuItem1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.clientesToolStripMenuItem1.ForeColor = System.Drawing.Color.Orange;
-            this.clientesToolStripMenuItem1.Image = global::SistemaVentas.Properties.Resources.clasificacion;
-            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(278, 42);
-            this.clientesToolStripMenuItem1.Text = "Clientes";
-            this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -345,6 +346,6 @@
         private System.Windows.Forms.Label lbl_hora;
         private System.Windows.Forms.Label lbl_titulo_hora;
         private System.Windows.Forms.Label lbl_titulo_fecha;
-        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem menu_item_cliente;
     }
 }
