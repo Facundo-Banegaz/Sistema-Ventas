@@ -235,5 +235,46 @@ namespace CapaDatos
                 Conexion.CerrarConection();
             }
         }
+
+
+       
+        public Trabajador Login(string Usuario, string Clave)
+        {
+            Conexion = new CD_Conexion();
+            
+
+            try
+            {
+                Conexion.SetConsutarProcedure("Sp_login");
+
+                Conexion.SetearParametro("@Usuario", Usuario);
+                Conexion.SetearParametro("@Clave", Clave);
+
+                Conexion.EjecutarLectura();
+
+                // Si hay al menos un trabajador en la lista, devolvemos el primero (asumiendo que no debería haber más de uno)
+                if (Conexion.Lector.Read())
+                {
+                    trabajador = new Trabajador();
+                    trabajador.Id_trabajador = Convert.ToInt32(Conexion.Lector["Id_trabajador"]);
+                    trabajador.Nombre = Conexion.Lector["Nombre"].ToString();
+                    trabajador.Apellido = Conexion.Lector["Apellido"].ToString();
+                    trabajador.Acceso = Conexion.Lector["Acceso"].ToString();
+                    trabajador.Usuario = Conexion.Lector["Usuario"].ToString();
+                    trabajador.Clave = Conexion.Lector["Clave"].ToString();
+                }
+
+                return trabajador;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+        }
+
     }
 }

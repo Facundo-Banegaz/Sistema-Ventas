@@ -34,6 +34,9 @@ namespace CapaDatos
             comand.CommandType = System.Data.CommandType.StoredProcedure;
             comand.CommandText = consulta;
         }
+
+
+
         public void EjecutarLectura()
         {
             comand.Connection = conection;

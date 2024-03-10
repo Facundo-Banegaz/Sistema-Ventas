@@ -76,6 +76,12 @@
     <Compile Include="FrmAgregarEditarPresentacion.Designer.cs">
       <DependentUpon>FrmAgregarEditarPresentacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAgregarEditarTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarEditarTrabajador.Designer.cs">
+      <DependentUpon>FrmAgregarEditarTrabajador.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmArgregarEditarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAgregarEditarProveedor.resx">
       <DependentUpon>FrmAgregarEditarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarEditarTrabajador.resx">
+      <DependentUpon>FrmAgregarEditarTrabajador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmArgregarEditarCliente.resx">
       <DependentUpon>FrmArgregarEditarCliente.cs</DependentUpon>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDominio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,19 +14,85 @@ namespace SistemaVentas
 {
     public partial class FrmPrincipal : Form
     {
+
+
+        private Trabajador _Trabajador;
+
         public FrmPrincipal()
         {
             InitializeComponent();
+            
+        }
+        public FrmPrincipal( Trabajador trabajador)
+        {
+            InitializeComponent();
+            this._Trabajador = trabajador;
+            Text = $"¡¡Bienvenido al Sistema de Ventas {_Trabajador.Nombre} {_Trabajador.Apellido}!! Nombre de  Usuario: ''{_Trabajador.Usuario}'' | Acceso: ''{_Trabajador.Acceso}''.";
+
         }
 
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            GestionUsuario();
+        }
 
+        private void GestionUsuario()
+        {
+            if (_Trabajador.Acceso == "ADMINISTRADOR")
+            {
+                this.Menu_almacen.Enabled = true;
+                this.Menu_gestion_compras.Enabled = true;
+                this.Menu_gestion_ventas.Enabled = true;
+                this.Menu_consultas.Enabled = true;
+                this.Menu_mantenimiento.Enabled = true;
+                this.Menu_herramientas.Enabled = true;
+                this.Menu_secundario_compras.Enabled=true;
+                this.Menu_secundario_ventas.Enabled=true;
+            }
 
+            else if(_Trabajador.Acceso == "VENDEDOR")
+            {
+                this.Menu_almacen.Enabled = false;
+                this.Menu_gestion_compras.Enabled = false;
+                this.Menu_gestion_ventas.Enabled = true;
+                this.Menu_consultas.Enabled = true;
+                this.Menu_mantenimiento.Enabled = false;
+                this.Menu_herramientas.Enabled = true;
+                this.Menu_secundario_compras.Enabled = false;
+                this.Menu_secundario_ventas.Enabled = true;
+            }
+            else if (_Trabajador.Acceso == "ALMACENERO")
+            {
+                this.Menu_almacen.Enabled = true;
+                this.Menu_gestion_compras.Enabled = true;
+                this.Menu_gestion_ventas.Enabled = false;
+                this.Menu_consultas.Enabled = true;
+                this.Menu_mantenimiento.Enabled = false;
+                this.Menu_herramientas.Enabled = true;
+                this.Menu_secundario_compras.Enabled = true;
+                this.Menu_secundario_ventas.Enabled = false;
+            }
+
+            else
+            {
+                this.Menu_almacen.Enabled = false;
+                this.Menu_gestion_compras.Enabled = false;
+                this.Menu_gestion_ventas.Enabled = false;
+                this.Menu_consultas.Enabled = false;
+                this.Menu_mantenimiento.Enabled = false;
+                this.Menu_herramientas.Enabled = false;
+                this.Menu_secundario_compras.Enabled = false;
+                this.Menu_secundario_ventas.Enabled = false;
+
+            }
+        }
         private void tn_tiempo_Tick(object sender, EventArgs e)
         {
             lbl_hora.Text = DateTime.Now.ToString("HH:mm:ss tt", CultureInfo.InvariantCulture);
             lbl_fecha.Text = DateTime.Now.ToLongDateString();
         }
 
+        //menu almacen
         private void menu_item_categorias_Click(object sender, EventArgs e)
         {
             FrmCategoria frmCategoria = new FrmCategoria(); 
@@ -47,44 +114,53 @@ namespace SistemaVentas
         }
 
 
+        // Menu compras
 
-        
-
-        private void menu_persona_Click(object sender, EventArgs e)
+        private void Menu_item_ingresos_Click(object sender, EventArgs e)
         {
-            FrmTrabajador frmPersona = new FrmTrabajador();   
-            frmPersona.ShowDialog();
+           
         }
 
-        private void menu_item_proveedor_Click(object sender, EventArgs e)
+        private void Menu_item_proveedores_Click(object sender, EventArgs e)
         {
             FrmProveedor frmProveedor = new FrmProveedor();
             frmProveedor.ShowDialog();
         }
 
-        private void menu_item_cliente_Click(object sender, EventArgs e)
+        //menu ventas
+
+
+
+        private void Menu_item_clientes_Click(object sender, EventArgs e)
         {
             FrmCliente frmCliente = new FrmCliente();
 
             frmCliente.ShowDialog();
         }
-
-
-
-
-
-        private void lbl_hora_Click(object sender, EventArgs e)
+        private void Menu_item_ventas_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void lbl_fecha_Click(object sender, EventArgs e)
+        //menu mantenimiento
+
+
+        private void menu_item_trabajador_Click(object sender, EventArgs e)
         {
+            FrmTrabajador frmTrabajador = new FrmTrabajador();
+            frmTrabajador.ShowDialog();
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void Menu_item_salir_Click(object sender, EventArgs e)
         {
+
+            DialogResult respuesta = MessageBox.Show($"¿Estás seguro de que deseas salir del sistema {_Trabajador.Nombre} {_Trabajador.Apellido}? Nombre de  Usuario: ''{_Trabajador.Usuario}'' | Acceso: ''{_Trabajador.Acceso}''.", "Salir del Sistema de Ventas", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                Application.Exit();
+            } 
 
         }
     }

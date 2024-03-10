@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -37,11 +38,13 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_acceder = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txt_clave = new System.Windows.Forms.TextBox();
+            this.txt_constraseña = new System.Windows.Forms.Label();
             this.lbl_usuario = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_usuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbl_hora = new System.Windows.Forms.Label();
+            this.tn_tiempo = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -82,10 +85,10 @@
             this.groupBox2.Controls.Add(this.pictureBox2);
             this.groupBox2.Controls.Add(this.btn_acceder);
             this.groupBox2.Controls.Add(this.btn_cancelar);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.txt_clave);
+            this.groupBox2.Controls.Add(this.txt_constraseña);
             this.groupBox2.Controls.Add(this.lbl_usuario);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txt_usuario);
             this.groupBox2.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(455, 126);
             this.groupBox2.Name = "groupBox2";
@@ -165,26 +168,26 @@
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // textBox1
+            // txt_clave
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox1.Location = new System.Drawing.Point(81, 220);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(466, 32);
-            this.textBox1.TabIndex = 9;
+            this.txt_clave.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txt_clave.Location = new System.Drawing.Point(81, 220);
+            this.txt_clave.Name = "txt_clave";
+            this.txt_clave.PasswordChar = '*';
+            this.txt_clave.Size = new System.Drawing.Size(466, 32);
+            this.txt_clave.TabIndex = 9;
             // 
-            // label2
+            // txt_constraseña
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label2.Location = new System.Drawing.Point(76, 170);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 25);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Constraseña:";
+            this.txt_constraseña.AutoSize = true;
+            this.txt_constraseña.BackColor = System.Drawing.Color.Black;
+            this.txt_constraseña.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_constraseña.ForeColor = System.Drawing.Color.Cornsilk;
+            this.txt_constraseña.Location = new System.Drawing.Point(76, 170);
+            this.txt_constraseña.Name = "txt_constraseña";
+            this.txt_constraseña.Size = new System.Drawing.Size(118, 25);
+            this.txt_constraseña.TabIndex = 8;
+            this.txt_constraseña.Text = "Constraseña:";
             // 
             // lbl_usuario
             // 
@@ -198,13 +201,13 @@
             this.lbl_usuario.TabIndex = 6;
             this.lbl_usuario.Text = "Usuario:";
             // 
-            // textBox2
+            // txt_usuario
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox2.Location = new System.Drawing.Point(81, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(466, 32);
-            this.textBox2.TabIndex = 7;
+            this.txt_usuario.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txt_usuario.Location = new System.Drawing.Point(81, 116);
+            this.txt_usuario.Name = "txt_usuario";
+            this.txt_usuario.Size = new System.Drawing.Size(466, 32);
+            this.txt_usuario.TabIndex = 7;
             // 
             // label1
             // 
@@ -218,12 +221,29 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Sistema de Ventas";
             // 
+            // lbl_hora
+            // 
+            this.lbl_hora.AutoSize = true;
+            this.lbl_hora.BackColor = System.Drawing.Color.Black;
+            this.lbl_hora.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_hora.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lbl_hora.Location = new System.Drawing.Point(637, 76);
+            this.lbl_hora.Name = "lbl_hora";
+            this.lbl_hora.Size = new System.Drawing.Size(0, 35);
+            this.lbl_hora.TabIndex = 8;
+            // 
+            // tn_tiempo
+            // 
+            this.tn_tiempo.Enabled = true;
+            this.tn_tiempo.Tick += new System.EventHandler(this.tn_tiempo_Tick);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1086, 540);
+            this.Controls.Add(this.lbl_hora);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -231,6 +251,7 @@
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -253,10 +274,12 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btn_acceder;
         private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_clave;
+        private System.Windows.Forms.Label txt_constraseña;
         private System.Windows.Forms.Label lbl_usuario;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_usuario;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_hora;
+        private System.Windows.Forms.Timer tn_tiempo;
     }
 }

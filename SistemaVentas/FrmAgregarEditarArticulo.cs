@@ -193,6 +193,5 @@ namespace SistemaVentas
 
             return error;
         }
-
     }
 }

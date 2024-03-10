@@ -135,6 +135,7 @@
             // 
             // cbo_presentacion_producto
             // 
+            this.cbo_presentacion_producto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbo_presentacion_producto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_presentacion_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_presentacion_producto.FormattingEnabled = true;
@@ -142,6 +143,7 @@
             this.cbo_presentacion_producto.Name = "cbo_presentacion_producto";
             this.cbo_presentacion_producto.Size = new System.Drawing.Size(555, 37);
             this.cbo_presentacion_producto.TabIndex = 80;
+            this.tt_mensaje.SetToolTip(this.cbo_presentacion_producto, "Selecciona una Presentacion");
             // 
             // groupBox1
             // 
@@ -197,6 +199,7 @@
             this.cbo_tipo_categoria.Name = "cbo_tipo_categoria";
             this.cbo_tipo_categoria.Size = new System.Drawing.Size(555, 37);
             this.cbo_tipo_categoria.TabIndex = 76;
+            this.tt_mensaje.SetToolTip(this.cbo_tipo_categoria, "Selecciona una Categoria");
             // 
             // txt_id_articulo
             // 

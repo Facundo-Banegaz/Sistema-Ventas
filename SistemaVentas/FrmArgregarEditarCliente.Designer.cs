@@ -30,12 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmArgregarEditarCliente));
-            this.txt_email = new System.Windows.Forms.TextBox();
-            this.txt_telefono = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_direccion = new System.Windows.Forms.TextBox();
-            this.txt_url_imagen = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_id_cliente = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
@@ -45,52 +41,24 @@
             this.lbl_Id = new System.Windows.Forms.Label();
             this.txt_apellido = new System.Windows.Forms.TextBox();
             this.lbl_sector = new System.Windows.Forms.Label();
-            this.btn_subir_imagen = new System.Windows.Forms.Button();
-            this.pbx_img = new System.Windows.Forms.PictureBox();
             this.dtp_fecha_nacimiento = new System.Windows.Forms.DateTimePicker();
             this.cbo_sexo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_numero_documento = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_cancelar = new System.Windows.Forms.Button();
-            this.btn_Agregar = new System.Windows.Forms.Button();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pbx_img = new System.Windows.Forms.PictureBox();
             this.lb_img = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).BeginInit();
+            this.txt_url_imagen = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_telefono = new System.Windows.Forms.TextBox();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.btn_Agregar = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_subir_imagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txt_email
-            // 
-            this.txt_email.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txt_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_email.Location = new System.Drawing.Point(670, 655);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(555, 35);
-            this.txt_email.TabIndex = 122;
-            this.txt_email.Validating += new System.ComponentModel.CancelEventHandler(this.txt_email_Validating);
-            // 
-            // txt_telefono
-            // 
-            this.txt_telefono.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txt_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_telefono.Location = new System.Drawing.Point(29, 655);
-            this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(555, 35);
-            this.txt_telefono.TabIndex = 121;
-            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Black;
-            this.label3.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(905, 585);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 35);
-            this.label3.TabIndex = 120;
-            this.label3.Text = "Email:";
             // 
             // label4
             // 
@@ -112,16 +80,6 @@
             this.txt_direccion.Name = "txt_direccion";
             this.txt_direccion.Size = new System.Drawing.Size(555, 35);
             this.txt_direccion.TabIndex = 118;
-            // 
-            // txt_url_imagen
-            // 
-            this.txt_url_imagen.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txt_url_imagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_url_imagen.Location = new System.Drawing.Point(326, 789);
-            this.txt_url_imagen.Name = "txt_url_imagen";
-            this.txt_url_imagen.Size = new System.Drawing.Size(555, 35);
-            this.txt_url_imagen.TabIndex = 116;
-            this.txt_url_imagen.TextChanged += new System.EventHandler(this.txt_url_imagen_TextChanged);
             // 
             // label1
             // 
@@ -226,34 +184,6 @@
             this.lbl_sector.TabIndex = 107;
             this.lbl_sector.Text = "Apellido:";
             // 
-            // btn_subir_imagen
-            // 
-            this.btn_subir_imagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_subir_imagen.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btn_subir_imagen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_subir_imagen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_subir_imagen.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_subir_imagen.ForeColor = System.Drawing.Color.Ivory;
-            this.btn_subir_imagen.Image = ((System.Drawing.Image)(resources.GetObject("btn_subir_imagen.Image")));
-            this.btn_subir_imagen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_subir_imagen.Location = new System.Drawing.Point(1266, 658);
-            this.btn_subir_imagen.Name = "btn_subir_imagen";
-            this.btn_subir_imagen.Size = new System.Drawing.Size(512, 60);
-            this.btn_subir_imagen.TabIndex = 106;
-            this.btn_subir_imagen.Text = "Subir Una Imagen Local";
-            this.btn_subir_imagen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_subir_imagen.UseVisualStyleBackColor = false;
-            this.btn_subir_imagen.Click += new System.EventHandler(this.btn_subir_imagen_Click_1);
-            // 
-            // pbx_img
-            // 
-            this.pbx_img.Location = new System.Drawing.Point(1266, 60);
-            this.pbx_img.Name = "pbx_img";
-            this.pbx_img.Size = new System.Drawing.Size(512, 560);
-            this.pbx_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbx_img.TabIndex = 105;
-            this.pbx_img.TabStop = false;
-            // 
             // dtp_fecha_nacimiento
             // 
             this.dtp_fecha_nacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -307,23 +237,72 @@
             this.label5.TabIndex = 127;
             this.label5.Text = "Numero Documento:";
             // 
-            // btn_cancelar
+            // errorIcono
             // 
-            this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_cancelar.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelar.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btn_cancelar.Image = ((System.Drawing.Image)(resources.GetObject("btn_cancelar.Image")));
-            this.btn_cancelar.Location = new System.Drawing.Point(1581, 770);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(197, 66);
-            this.btn_cancelar.TabIndex = 130;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_cancelar.UseVisualStyleBackColor = false;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            this.errorIcono.ContainerControl = this;
+            // 
+            // pbx_img
+            // 
+            this.pbx_img.Location = new System.Drawing.Point(1266, 60);
+            this.pbx_img.Name = "pbx_img";
+            this.pbx_img.Size = new System.Drawing.Size(512, 560);
+            this.pbx_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbx_img.TabIndex = 105;
+            this.pbx_img.TabStop = false;
+            // 
+            // lb_img
+            // 
+            this.lb_img.AutoSize = true;
+            this.lb_img.BackColor = System.Drawing.Color.Black;
+            this.lb_img.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_img.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_img.Location = new System.Drawing.Point(583, 734);
+            this.lb_img.Name = "lb_img";
+            this.lb_img.Size = new System.Drawing.Size(69, 35);
+            this.lb_img.TabIndex = 131;
+            this.lb_img.Text = "Foto:";
+            // 
+            // txt_url_imagen
+            // 
+            this.txt_url_imagen.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_url_imagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_url_imagen.Location = new System.Drawing.Point(326, 789);
+            this.txt_url_imagen.Name = "txt_url_imagen";
+            this.txt_url_imagen.Size = new System.Drawing.Size(555, 35);
+            this.txt_url_imagen.TabIndex = 116;
+            this.txt_url_imagen.TextChanged += new System.EventHandler(this.txt_url_imagen_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Black;
+            this.label3.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(905, 585);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 35);
+            this.label3.TabIndex = 120;
+            this.label3.Text = "Email:";
+            // 
+            // txt_telefono
+            // 
+            this.txt_telefono.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_telefono.Location = new System.Drawing.Point(29, 655);
+            this.txt_telefono.Name = "txt_telefono";
+            this.txt_telefono.Size = new System.Drawing.Size(555, 35);
+            this.txt_telefono.TabIndex = 121;
+            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
+            // 
+            // txt_email
+            // 
+            this.txt_email.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_email.Location = new System.Drawing.Point(670, 655);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(555, 35);
+            this.txt_email.TabIndex = 122;
+            this.txt_email.Validating += new System.ComponentModel.CancelEventHandler(this.txt_email_Validating);
             // 
             // btn_Agregar
             // 
@@ -344,21 +323,42 @@
             this.btn_Agregar.UseVisualStyleBackColor = false;
             this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
-            // errorIcono
+            // btn_cancelar
             // 
-            this.errorIcono.ContainerControl = this;
+            this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_cancelar.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancelar.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btn_cancelar.Image = ((System.Drawing.Image)(resources.GetObject("btn_cancelar.Image")));
+            this.btn_cancelar.Location = new System.Drawing.Point(1581, 770);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(197, 66);
+            this.btn_cancelar.TabIndex = 130;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // lb_img
+            // btn_subir_imagen
             // 
-            this.lb_img.AutoSize = true;
-            this.lb_img.BackColor = System.Drawing.Color.Black;
-            this.lb_img.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_img.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_img.Location = new System.Drawing.Point(583, 734);
-            this.lb_img.Name = "lb_img";
-            this.lb_img.Size = new System.Drawing.Size(69, 35);
-            this.lb_img.TabIndex = 131;
-            this.lb_img.Text = "Foto:";
+            this.btn_subir_imagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_subir_imagen.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btn_subir_imagen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_subir_imagen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_subir_imagen.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_subir_imagen.ForeColor = System.Drawing.Color.Ivory;
+            this.btn_subir_imagen.Image = ((System.Drawing.Image)(resources.GetObject("btn_subir_imagen.Image")));
+            this.btn_subir_imagen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_subir_imagen.Location = new System.Drawing.Point(1274, 655);
+            this.btn_subir_imagen.Name = "btn_subir_imagen";
+            this.btn_subir_imagen.Size = new System.Drawing.Size(512, 60);
+            this.btn_subir_imagen.TabIndex = 106;
+            this.btn_subir_imagen.Text = "Subir Una Imagen Local";
+            this.btn_subir_imagen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_subir_imagen.UseVisualStyleBackColor = false;
+            this.btn_subir_imagen.Click += new System.EventHandler(this.btn_subir_imagen_Click_1);
             // 
             // FrmArgregarEditarCliente
             // 
@@ -394,21 +394,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmArgregarEditarCliente";
             this.Load += new System.EventHandler(this.FrmArgregarEditarCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txt_email;
-        private System.Windows.Forms.TextBox txt_telefono;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_direccion;
-        private System.Windows.Forms.TextBox txt_url_imagen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_id_cliente;
         private System.Windows.Forms.TextBox txt_nombre;
@@ -418,16 +413,20 @@
         private System.Windows.Forms.Label lbl_Id;
         private System.Windows.Forms.TextBox txt_apellido;
         private System.Windows.Forms.Label lbl_sector;
-        private System.Windows.Forms.Button btn_subir_imagen;
-        private System.Windows.Forms.PictureBox pbx_img;
         private System.Windows.Forms.DateTimePicker dtp_fecha_nacimiento;
         private System.Windows.Forms.ComboBox cbo_sexo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_numero_documento;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.Button btn_Agregar;
         private System.Windows.Forms.ErrorProvider errorIcono;
         private System.Windows.Forms.Label lb_img;
+        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Button btn_Agregar;
+        private System.Windows.Forms.TextBox txt_email;
+        private System.Windows.Forms.TextBox txt_telefono;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_url_imagen;
+        private System.Windows.Forms.Button btn_subir_imagen;
+        private System.Windows.Forms.PictureBox pbx_img;
     }
 }

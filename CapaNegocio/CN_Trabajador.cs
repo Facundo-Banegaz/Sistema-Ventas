@@ -20,5 +20,13 @@ namespace CapaNegocio
 
             return CD_Trabajador.ListarTrabajador();
         }
+        //Metodo para el login
+        public Trabajador Login(string Usuario, string Clave)
+        {
+            CD_Trabajador = new CD_Trabajador();
+            return CD_Trabajador.Login(Usuario, Clave);
+        }
+
+
     }
 }

@@ -23,7 +23,7 @@ namespace CapaDatos
 
             try
             {
-                Conexion.SetConsutar("SpMostrar_articulo");
+                Conexion.SetConsutarProcedure("SpMostrar_articulo");
 
                 Conexion.EjecutarLectura();
 
@@ -68,6 +68,8 @@ namespace CapaDatos
             }
 
         }
+
+
 
 
 
