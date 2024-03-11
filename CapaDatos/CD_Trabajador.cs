@@ -262,6 +262,8 @@ namespace CapaDatos
                     trabajador.Acceso = Conexion.Lector["Acceso"].ToString();
                     trabajador.Usuario = Conexion.Lector["Usuario"].ToString();
                     trabajador.Clave = Conexion.Lector["Clave"].ToString();
+                    if (!(Conexion.Lector["Url_imagen"] is DBNull))
+                    trabajador.UrlImagen = (string)Conexion.Lector["Url_imagen"];
                 }
 
                 return trabajador;

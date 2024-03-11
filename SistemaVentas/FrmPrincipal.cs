@@ -1,4 +1,5 @@
 ﻿using CapaDominio;
+using CapaNegocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,11 +30,22 @@ namespace SistemaVentas
             this._Trabajador = trabajador;
             Text = $"¡¡Bienvenido al Sistema de Ventas {_Trabajador.Nombre} {_Trabajador.Apellido}!! Nombre de  Usuario: ''{_Trabajador.Usuario}'' | Acceso: ''{_Trabajador.Acceso}''.";
 
+            CN_Metodos _Metodos = new CN_Metodos();
+            _Metodos.CargarImg(pbx_img, trabajador.UrlImagen);
+            pbx_img.Anchor = AnchorStyles.None; // Desanclar el PictureBox
+            pbx_img.Location = new Point((this.Width - pbx_img.Width) / 2, (this.Height - pbx_img.Height) / 2);
+
         }
+
+
+
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             GestionUsuario();
+
+            lbl_trabajador.Text =  $"¡¡Bienvenido  {_Trabajador.Nombre} {_Trabajador.Apellido}!! Nombre de  Usuario: ''{_Trabajador.Usuario}'' | Acceso: ''{_Trabajador.Acceso}''.";
+
         }
 
         private void GestionUsuario()

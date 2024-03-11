@@ -36,6 +36,10 @@ namespace SistemaVentas
 
             if (trabajador != null)
             {
+
+                CN_Metodos _Metodos = new CN_Metodos();
+                _Metodos.CargarImg(pbx_img, trabajador.UrlImagen);
+
                 // Usuario válido, realizar acciones correspondientes (por ejemplo, mostrar el formulario principal)
                 string mensaje = $"Inicio de sesión exitoso. ¡Bienvenido al Sistema de Ventas, {trabajador.Nombre}  {trabajador.Apellido} | Nombre de Usuario: {txt_usuario.Text} | Accediste como: {trabajador.Acceso}!";
                 MessageBox.Show(mensaje, "¡Bienvenido!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -49,13 +53,23 @@ namespace SistemaVentas
             {
                 // Usuario no válido, mostrar mensaje de error
                 MessageBox.Show("Usuario o contraseña incorrectos"," No tiene Acceso al Sistema de Ventas",MessageBoxButtons.OK, MessageBoxIcon.Error);
+              
+                txt_clave.Clear();
+                txt_usuario.Clear();
+
             }
 
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+
+            DialogResult respuesta = MessageBox.Show("¿Quieres Salir del Sistema de Ventas?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

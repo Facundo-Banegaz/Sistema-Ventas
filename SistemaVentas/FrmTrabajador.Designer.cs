@@ -257,6 +257,7 @@
             this.btn_nuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_nuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_nuevo.UseVisualStyleBackColor = false;
+            this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // FrmTrabajador
             // 

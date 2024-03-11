@@ -59,9 +59,12 @@
             this.Menu_secundario = new System.Windows.Forms.MenuStrip();
             this.Menu_secundario_compras = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_secundario_ventas = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_trabajador = new System.Windows.Forms.Label();
+            this.pbx_img = new System.Windows.Forms.PictureBox();
             this.Menu_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Menu_secundario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).BeginInit();
             this.SuspendLayout();
             // 
             // Menu_principal
@@ -148,7 +151,7 @@
             this.Menu_item_ingresos.ForeColor = System.Drawing.Color.Orange;
             this.Menu_item_ingresos.Image = ((System.Drawing.Image)(resources.GetObject("Menu_item_ingresos.Image")));
             this.Menu_item_ingresos.Name = "Menu_item_ingresos";
-            this.Menu_item_ingresos.Size = new System.Drawing.Size(278, 42);
+            this.Menu_item_ingresos.Size = new System.Drawing.Size(239, 36);
             this.Menu_item_ingresos.Text = "Ingresos";
             this.Menu_item_ingresos.Click += new System.EventHandler(this.Menu_item_ingresos_Click);
             // 
@@ -160,7 +163,7 @@
             this.Menu_item_proveedores.ForeColor = System.Drawing.Color.Orange;
             this.Menu_item_proveedores.Image = ((System.Drawing.Image)(resources.GetObject("Menu_item_proveedores.Image")));
             this.Menu_item_proveedores.Name = "Menu_item_proveedores";
-            this.Menu_item_proveedores.Size = new System.Drawing.Size(278, 42);
+            this.Menu_item_proveedores.Size = new System.Drawing.Size(239, 36);
             this.Menu_item_proveedores.Text = "Proveedores";
             this.Menu_item_proveedores.Click += new System.EventHandler(this.Menu_item_proveedores_Click);
             // 
@@ -192,7 +195,7 @@
             this.Menu_item_clientes.ForeColor = System.Drawing.Color.Orange;
             this.Menu_item_clientes.Image = ((System.Drawing.Image)(resources.GetObject("Menu_item_clientes.Image")));
             this.Menu_item_clientes.Name = "Menu_item_clientes";
-            this.Menu_item_clientes.Size = new System.Drawing.Size(278, 42);
+            this.Menu_item_clientes.Size = new System.Drawing.Size(192, 36);
             this.Menu_item_clientes.Text = "Clientes";
             this.Menu_item_clientes.Click += new System.EventHandler(this.Menu_item_clientes_Click);
             // 
@@ -400,11 +403,36 @@
             this.Menu_secundario_ventas.Size = new System.Drawing.Size(196, 36);
             this.Menu_secundario_ventas.Text = "Hacer  Ventas";
             // 
+            // lbl_trabajador
+            // 
+            this.lbl_trabajador.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_trabajador.AutoSize = true;
+            this.lbl_trabajador.BackColor = System.Drawing.Color.White;
+            this.lbl_trabajador.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_trabajador.ForeColor = System.Drawing.Color.Orange;
+            this.lbl_trabajador.Location = new System.Drawing.Point(182, 534);
+            this.lbl_trabajador.Name = "lbl_trabajador";
+            this.lbl_trabajador.Size = new System.Drawing.Size(234, 48);
+            this.lbl_trabajador.TabIndex = 16;
+            this.lbl_trabajador.Text = "Trabajador:  ";
+            this.lbl_trabajador.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pbx_img
+            // 
+            this.pbx_img.Location = new System.Drawing.Point(190, 139);
+            this.pbx_img.Name = "pbx_img";
+            this.pbx_img.Size = new System.Drawing.Size(309, 335);
+            this.pbx_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbx_img.TabIndex = 17;
+            this.pbx_img.TabStop = false;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 652);
+            this.Controls.Add(this.pbx_img);
+            this.Controls.Add(this.lbl_trabajador);
             this.Controls.Add(this.Menu_secundario);
             this.Controls.Add(this.lbl_fecha);
             this.Controls.Add(this.lbl_hora);
@@ -424,6 +452,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Menu_secundario.ResumeLayout(false);
             this.Menu_secundario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,5 +488,7 @@
         private System.Windows.Forms.MenuStrip Menu_secundario;
         private System.Windows.Forms.ToolStripMenuItem Menu_secundario_compras;
         private System.Windows.Forms.ToolStripMenuItem Menu_secundario_ventas;
+        private System.Windows.Forms.Label lbl_trabajador;
+        private System.Windows.Forms.PictureBox pbx_img;
     }
 }

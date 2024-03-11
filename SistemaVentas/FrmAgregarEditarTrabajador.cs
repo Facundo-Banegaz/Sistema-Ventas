@@ -17,9 +17,7 @@ namespace SistemaVentas
             InitializeComponent();
         }
 
-        private void FrmAgregarEditarTrabajador_Load(object sender, EventArgs e)
-        {
-
-        }
+      
+        
     }
 }

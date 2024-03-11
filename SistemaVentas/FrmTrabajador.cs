@@ -97,5 +97,12 @@ namespace SistemaVentas
 
             _Metodos.CargarImg(pbx_img, seleccionado.UrlImagen);
         }
+
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            FrmAgregarEditarTrabajador frmAgregar = new FrmAgregarEditarTrabajador();
+            frmAgregar.ShowDialog();
+            this.Close();   
+        }
     }
 }
