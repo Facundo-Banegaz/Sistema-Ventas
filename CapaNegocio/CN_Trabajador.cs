@@ -26,7 +26,39 @@ namespace CapaNegocio
             CD_Trabajador = new CD_Trabajador();
             return CD_Trabajador.Login(Usuario, Clave);
         }
+        //Metodo para cargar un producto en la Base de Datos
+        public void InsertarTrabajador(Trabajador Nuevo)
+        {
+            CD_Trabajador = new CD_Trabajador();
 
+            CD_Trabajador.InsertarTrabajador(Nuevo);
+
+        }
+
+        //Metodo para Editar un producto en la Base de Datos
+        public void EditarTrabajador(Trabajador trabajador)
+        {
+            CD_Trabajador = new CD_Trabajador();
+
+            CD_Trabajador.EditarTrabajador(trabajador);
+        }
+
+        //Metodo para Eliminar un producto en la Base de Datos
+        public void EliminarTrabajador(int Id_Trabajador)
+        {
+            CD_Trabajador = new CD_Trabajador();
+
+            CD_Trabajador.EliminarTrabajdor(Id_Trabajador);
+        }
+
+
+        //Metodo para Buscar un producto en la Base de Datos
+        public List<Trabajador> TrabajadorBuscar(string buscar)
+        {
+            CD_Trabajador = new CD_Trabajador();
+
+            return CD_Trabajador.TrabajadorBuscar(buscar);
+        }
 
     }
 }

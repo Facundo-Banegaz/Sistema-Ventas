@@ -39,6 +39,8 @@ namespace SistemaVentas
 
                 CN_Metodos _Metodos = new CN_Metodos();
                 _Metodos.CargarImg(pbx_img, trabajador.UrlImagen);
+                //para que me muestre un mensaje en la ventana 
+                Text = $"Inicio de sesión exitoso. ¡Bienvenido al Sistema de Ventas {trabajador.Nombre}  {trabajador.Apellido}!";
 
                 // Usuario válido, realizar acciones correspondientes (por ejemplo, mostrar el formulario principal)
                 string mensaje = $"Inicio de sesión exitoso. ¡Bienvenido al Sistema de Ventas, {trabajador.Nombre}  {trabajador.Apellido} | Nombre de Usuario: {txt_usuario.Text} | Accediste como: {trabajador.Acceso}!";
@@ -52,7 +54,7 @@ namespace SistemaVentas
             else
             {
                 // Usuario no válido, mostrar mensaje de error
-                MessageBox.Show("Usuario o contraseña incorrectos"," No tiene Acceso al Sistema de Ventas",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuario o contraseña incorrectos, intentar de nuevo."," No tiene Acceso al Sistema de Ventas",MessageBoxButtons.OK, MessageBoxIcon.Error);
               
                 txt_clave.Clear();
                 txt_usuario.Clear();

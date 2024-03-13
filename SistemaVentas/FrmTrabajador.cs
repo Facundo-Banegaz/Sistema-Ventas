@@ -104,5 +104,74 @@ namespace SistemaVentas
             frmAgregar.ShowDialog();
             this.Close();   
         }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            BuscarTrabajador();
+        }
+        private void BuscarTrabajador()
+        {
+           CN_Trabajador _Trabajador = new CN_Trabajador();
+
+
+            if (txt_buscar.Text == string.Empty)
+            {
+                MessageBox.Show("El CAMPO NO PUEDE QUEDAR VACIO!!", "ADVERTENCIA");
+
+                lbl_resultado.Text = "No escribio nada en el campo  'Buscador'.";
+            }
+            else
+            {
+                dgv_trabajador.DataSource = _Trabajador.TrabajadorBuscar(txt_buscar.Text);
+
+                lbl_total.Text = "Total de Registros Encontrados:" + " " + Convert.ToString(dgv_trabajador.Rows.Count);
+                lbl_resultado.Text = "Para volver a ver el listado completo 'Limpiar' el campo!!.";
+            }
+        }
+        private void btn_limpiar_Click(object sender, EventArgs e)
+        {
+            txt_buscar.Clear();
+            CargarGrilla();
+        }
+
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            Trabajador seleccionado;
+            DialogResult respuesta = MessageBox.Show("¿Quieres Editar este Trabajador?", "Editar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                seleccionado = (Trabajador)dgv_trabajador.CurrentRow.DataBoundItem;
+                FrmAgregarEditarTrabajador frmEditar = new FrmAgregarEditarTrabajador(seleccionado);
+                frmEditar.ShowDialog();
+                CargarGrilla();
+            }
+        }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            CN_Trabajador _Trabajador  = new CN_Trabajador();   
+
+            Trabajador seleccionado;
+
+
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Quieres Eliminar este Trabajador?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Trabajador)dgv_trabajador.CurrentRow.DataBoundItem;
+                    _Trabajador.EliminarTrabajador(seleccionado.Id_trabajador);
+
+                    CargarGrilla();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

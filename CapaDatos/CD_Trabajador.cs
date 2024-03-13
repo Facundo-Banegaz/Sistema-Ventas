@@ -84,7 +84,6 @@ namespace CapaDatos
                 Conexion.SetearParametro("@Fecha_nacimiento", Nuevo.FechaNacimiento);
                 Conexion.SetearParametro("@Numero_documento", Nuevo.NumeroDocumento);
                 Conexion.SetearParametro("@Direccion", Nuevo.Direccion);
-                Conexion.SetearParametro("@Direccion", Nuevo.Direccion);
                 Conexion.SetearParametro("@Telefono", Nuevo.Telefono);
                 Conexion.SetearParametro("@Email", Nuevo.Email);
                 Conexion.SetearParametro("@UrlImagen", Nuevo.UrlImagen);
@@ -128,7 +127,6 @@ namespace CapaDatos
                 Conexion.SetearParametro("@Sexo", trabajador.Sexo);
                 Conexion.SetearParametro("@Fecha_nacimiento", trabajador.FechaNacimiento);
                 Conexion.SetearParametro("@Numero_documento", trabajador.NumeroDocumento);
-                Conexion.SetearParametro("@Direccion", trabajador.Direccion);
                 Conexion.SetearParametro("@Direccion", trabajador.Direccion);
                 Conexion.SetearParametro("@Telefono", trabajador.Telefono);
                 Conexion.SetearParametro("@Email", trabajador.Email);
@@ -189,7 +187,7 @@ namespace CapaDatos
 
             try
             {
-                Conexion.SetConsutarProcedure("SpBuscar_trabajador");
+                Conexion.SetConsutarProcedure("SpBuscar_trabajador_apellido");
 
 
                 Conexion.SetearParametro("@txt_buscar", buscar);
@@ -202,7 +200,7 @@ namespace CapaDatos
 
                     trabajador = new Trabajador();
 
-                    trabajador.Id_trabajador = (int)Conexion.Lector["Id_proveedor"];
+                    trabajador.Id_trabajador = (int)Conexion.Lector["Id_trabajador"];
                     trabajador.Nombre = (string)Conexion.Lector["Nombre"];
                     trabajador.Apellido = (string)Conexion.Lector["Apellido"];
                     trabajador.Sexo = (string)Conexion.Lector["Sexo"];
@@ -216,8 +214,8 @@ namespace CapaDatos
                     trabajador.Clave = (string)Conexion.Lector["Clave"];
 
 
-                    if (!(Conexion.Lector["UrlImagen"] is DBNull))
-                        trabajador.UrlImagen = (string)Conexion.Lector["UrlImagen"];
+                    if (!(Conexion.Lector["Url_imagen"] is DBNull))
+                        trabajador.UrlImagen = (string)Conexion.Lector["Url_imagen"];
 
                     listaTrabajador.Add(trabajador);
                 }

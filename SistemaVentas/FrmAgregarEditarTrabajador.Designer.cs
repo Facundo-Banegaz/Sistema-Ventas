@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarEditarTrabajador));
             this.txt_numero_documento = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -38,7 +39,7 @@
             this.txt_telefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_id_cliente = new System.Windows.Forms.TextBox();
+            this.txt_id_trabajador = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_cargo = new System.Windows.Forms.Label();
             this.lbl_nombre = new System.Windows.Forms.Label();
@@ -52,14 +53,16 @@
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.txt_url_imagen = new System.Windows.Forms.TextBox();
-            this.txt_descripcion_producto = new System.Windows.Forms.TextBox();
+            this.txt_direccion_trabajado = new System.Windows.Forms.TextBox();
             this.cbo_acceso = new System.Windows.Forms.ComboBox();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_clave = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_numero_documento
@@ -70,6 +73,7 @@
             this.txt_numero_documento.Name = "txt_numero_documento";
             this.txt_numero_documento.Size = new System.Drawing.Size(394, 35);
             this.txt_numero_documento.TabIndex = 149;
+            this.txt_numero_documento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_numero_documento_KeyPress);
             // 
             // label5
             // 
@@ -112,6 +116,7 @@
             this.dtp_fecha_nacimiento.Name = "dtp_fecha_nacimiento";
             this.dtp_fecha_nacimiento.Size = new System.Drawing.Size(446, 30);
             this.dtp_fecha_nacimiento.TabIndex = 145;
+            this.dtp_fecha_nacimiento.ValueChanged += new System.EventHandler(this.dtp_fecha_nacimiento_ValueChanged);
             // 
             // txt_email
             // 
@@ -121,6 +126,8 @@
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(500, 35);
             this.txt_email.TabIndex = 144;
+            this.txt_email.TextChanged += new System.EventHandler(this.txt_email_TextChanged);
+            this.txt_email.Leave += new System.EventHandler(this.txt_email_Leave);
             // 
             // txt_telefono
             // 
@@ -130,6 +137,7 @@
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(375, 35);
             this.txt_telefono.TabIndex = 143;
+            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
             // 
             // label3
             // 
@@ -155,18 +163,18 @@
             this.label4.TabIndex = 141;
             this.label4.Text = "Telefono:";
             // 
-            // txt_id_cliente
+            // txt_id_trabajador
             // 
-            this.txt_id_cliente.BackColor = System.Drawing.Color.GhostWhite;
-            this.txt_id_cliente.Enabled = false;
-            this.txt_id_cliente.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_id_cliente.ForeColor = System.Drawing.Color.DarkOrange;
-            this.txt_id_cliente.Location = new System.Drawing.Point(16, 70);
-            this.txt_id_cliente.Name = "txt_id_cliente";
-            this.txt_id_cliente.ReadOnly = true;
-            this.txt_id_cliente.Size = new System.Drawing.Size(146, 42);
-            this.txt_id_cliente.TabIndex = 138;
-            this.txt_id_cliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_id_trabajador.BackColor = System.Drawing.Color.GhostWhite;
+            this.txt_id_trabajador.Enabled = false;
+            this.txt_id_trabajador.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id_trabajador.ForeColor = System.Drawing.Color.DarkOrange;
+            this.txt_id_trabajador.Location = new System.Drawing.Point(16, 70);
+            this.txt_id_trabajador.Name = "txt_id_trabajador";
+            this.txt_id_trabajador.ReadOnly = true;
+            this.txt_id_trabajador.Size = new System.Drawing.Size(146, 42);
+            this.txt_id_trabajador.TabIndex = 138;
+            this.txt_id_trabajador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_nombre
             // 
@@ -263,6 +271,7 @@
             this.btn_subir_imagen.Text = "Subir Una Imagen Local";
             this.btn_subir_imagen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_subir_imagen.UseVisualStyleBackColor = false;
+            this.btn_subir_imagen.Click += new System.EventHandler(this.btn_subir_imagen_Click);
             // 
             // pbx_img
             // 
@@ -301,6 +310,7 @@
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_Agregar
             // 
@@ -319,6 +329,7 @@
             this.btn_Agregar.Text = "Agregar";
             this.btn_Agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Agregar.UseVisualStyleBackColor = false;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // txt_url_imagen
             // 
@@ -328,17 +339,18 @@
             this.txt_url_imagen.Name = "txt_url_imagen";
             this.txt_url_imagen.Size = new System.Drawing.Size(500, 32);
             this.txt_url_imagen.TabIndex = 150;
+            this.txt_url_imagen.TextChanged += new System.EventHandler(this.txt_url_imagen_TextChanged);
             // 
-            // txt_descripcion_producto
+            // txt_direccion_trabajado
             // 
-            this.txt_descripcion_producto.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txt_descripcion_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_descripcion_producto.Location = new System.Drawing.Point(80, 636);
-            this.txt_descripcion_producto.Multiline = true;
-            this.txt_descripcion_producto.Name = "txt_descripcion_producto";
-            this.txt_descripcion_producto.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_descripcion_producto.Size = new System.Drawing.Size(1036, 191);
-            this.txt_descripcion_producto.TabIndex = 154;
+            this.txt_direccion_trabajado.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_direccion_trabajado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_direccion_trabajado.Location = new System.Drawing.Point(80, 636);
+            this.txt_direccion_trabajado.Multiline = true;
+            this.txt_direccion_trabajado.Name = "txt_direccion_trabajado";
+            this.txt_direccion_trabajado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_direccion_trabajado.Size = new System.Drawing.Size(1036, 191);
+            this.txt_direccion_trabajado.TabIndex = 154;
             // 
             // cbo_acceso
             // 
@@ -347,7 +359,7 @@
             this.cbo_acceso.FormattingEnabled = true;
             this.cbo_acceso.Location = new System.Drawing.Point(44, 503);
             this.cbo_acceso.Name = "cbo_acceso";
-            this.cbo_acceso.Size = new System.Drawing.Size(305, 34);
+            this.cbo_acceso.Size = new System.Drawing.Size(375, 34);
             this.cbo_acceso.TabIndex = 160;
             // 
             // txt_usuario
@@ -358,6 +370,7 @@
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(379, 35);
             this.txt_usuario.TabIndex = 159;
+            this.txt_usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_usuario_KeyPress);
             // 
             // label1
             // 
@@ -391,6 +404,7 @@
             this.txt_clave.Name = "txt_clave";
             this.txt_clave.Size = new System.Drawing.Size(375, 35);
             this.txt_clave.TabIndex = 156;
+            this.txt_clave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_clave_KeyPress);
             // 
             // label7
             // 
@@ -404,6 +418,10 @@
             this.label7.TabIndex = 155;
             this.label7.Text = "Contraseña:";
             // 
+            // errorIcono
+            // 
+            this.errorIcono.ContainerControl = this;
+            // 
             // FrmAgregarEditarTrabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -415,7 +433,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_clave);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txt_descripcion_producto);
+            this.Controls.Add(this.txt_direccion_trabajado);
             this.Controls.Add(this.lb_img);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_Agregar);
@@ -429,7 +447,7 @@
             this.Controls.Add(this.txt_telefono);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txt_id_cliente);
+            this.Controls.Add(this.txt_id_trabajador);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.lbl_cargo);
             this.Controls.Add(this.lbl_nombre);
@@ -440,8 +458,11 @@
             this.Controls.Add(this.btn_subir_imagen);
             this.Controls.Add(this.pbx_img);
             this.Name = "FrmAgregarEditarTrabajador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAgregarEditarTrabajador";
+            this.Load += new System.EventHandler(this.FrmAgregarEditarTrabajador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,7 +479,7 @@
         private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_id_cliente;
+        private System.Windows.Forms.TextBox txt_id_trabajador;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label lbl_cargo;
         private System.Windows.Forms.Label lbl_nombre;
@@ -472,12 +493,13 @@
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_Agregar;
         private System.Windows.Forms.TextBox txt_url_imagen;
-        private System.Windows.Forms.TextBox txt_descripcion_producto;
+        private System.Windows.Forms.TextBox txt_direccion_trabajado;
         private System.Windows.Forms.ComboBox cbo_acceso;
         private System.Windows.Forms.TextBox txt_usuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_clave;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ErrorProvider errorIcono;
     }
 }

@@ -410,7 +410,7 @@
             this.lbl_trabajador.BackColor = System.Drawing.Color.White;
             this.lbl_trabajador.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_trabajador.ForeColor = System.Drawing.Color.Orange;
-            this.lbl_trabajador.Location = new System.Drawing.Point(182, 534);
+            this.lbl_trabajador.Location = new System.Drawing.Point(99, 526);
             this.lbl_trabajador.Name = "lbl_trabajador";
             this.lbl_trabajador.Size = new System.Drawing.Size(234, 48);
             this.lbl_trabajador.TabIndex = 16;
