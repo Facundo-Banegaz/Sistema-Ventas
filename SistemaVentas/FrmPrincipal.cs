@@ -130,7 +130,8 @@ namespace SistemaVentas
 
         private void Menu_item_ingresos_Click(object sender, EventArgs e)
         {
-           
+            FrmIngreso frmIngreso = new FrmIngreso();   
+            frmIngreso.ShowDialog();
         }
 
         private void Menu_item_proveedores_Click(object sender, EventArgs e)

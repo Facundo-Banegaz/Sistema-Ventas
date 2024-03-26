@@ -21,6 +21,10 @@ namespace CapaDominio
         public string Email { get; set; }
         public string UrlImagen { get; set; }
 
-      
+        public override string ToString()
+        {
+            return RazonSocial;
+        }
+
     }
 }

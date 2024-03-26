@@ -47,10 +47,12 @@
     <Compile Include="CD_Categoria.cs" />
     <Compile Include="CD_Cliente.cs" />
     <Compile Include="CD_Conexion.cs" />
+    <Compile Include="CD_Detalle_ingreso.cs" />
     <Compile Include="CD_Metodos.cs" />
     <Compile Include="CD_Presentacion.cs" />
     <Compile Include="CD_Trabajador.cs" />
     <Compile Include="CD_Proveedor.cs" />
+    <Compile Include="CD_Ingreso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

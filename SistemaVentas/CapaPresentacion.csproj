@@ -58,6 +58,12 @@
     <Compile Include="FrmAgregarEditarCategoria.Designer.cs">
       <DependentUpon>FrmAgregarEditarCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAgregarEditarIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarEditarIngreso.Designer.cs">
+      <DependentUpon>FrmAgregarEditarIngreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAgregarEditarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     <Compile Include="FrmDetalleArticulo.Designer.cs">
       <DependentUpon>FrmDetalleArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngreso.Designer.cs">
+      <DependentUpon>FrmIngreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +162,9 @@
     <EmbeddedResource Include="FrmAgregarEditarCategoria.resx">
       <DependentUpon>FrmAgregarEditarCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarEditarIngreso.resx">
+      <DependentUpon>FrmAgregarEditarIngreso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAgregarEditarPresentacion.resx">
       <DependentUpon>FrmAgregarEditarPresentacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDetalleArticulo.resx">
       <DependentUpon>FrmDetalleArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIngreso.resx">
+      <DependentUpon>FrmIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

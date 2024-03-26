@@ -30,3 +30,5 @@ C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.
 C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmCliente.resources
 C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmTrabajador.resources
 C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmAgregarEditarTrabajador.resources
+C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmIngreso.resources
+C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmAgregarEditarIngreso.resources

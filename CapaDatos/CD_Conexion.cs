@@ -1,86 +1,117 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 using System.Data.SqlClient;
 
-namespace CapaDatos
+public class CD_Conexion
 {
-    public class CD_Conexion
+    private SqlConnection conection;
+    private SqlCommand comand;
+    private SqlDataReader lector;
+    private SqlTransaction transaccion;
+
+    public SqlDataReader Lector
     {
+        get { return lector; }
+    }
 
-        private SqlConnection conection;
-        private SqlCommand comand;
-        private SqlDataReader lector;
+    public CD_Conexion()
+    {
+        conection = new SqlConnection("server=.\\SQLEXPRESS; database=DB-VENTAS; integrated security=true");
+        comand = new SqlCommand();
+    }
 
-        public SqlDataReader Lector
+    public void SetConsutar(string consulta)
+    {
+        comand.CommandType = CommandType.Text;
+        comand.CommandText = consulta;
+    }
+
+    public void SetConsutarProcedure(string consulta)
+    {
+        comand.CommandType = CommandType.StoredProcedure;
+        comand.CommandText = consulta;
+    }
+
+    public void IniciarTransaccion()
+    {
+        conection.Open();
+        transaccion = conection.BeginTransaction();
+        comand.Transaction = transaccion;
+    }
+
+    public void ConfirmarTransaccion()
+    {
+        transaccion.Commit();
+        CerrarConection();
+    }
+
+    public void AnularTransaccion()
+    {
+        transaccion.Rollback();
+        CerrarConection();
+    }
+
+    public void EjecutarLectura()
+    {
+        comand.Connection = conection;
+        try
         {
-            get { return lector; }
+            conection.Open();
+            lector = comand.ExecuteReader();
         }
-        public CD_Conexion()
+        catch (Exception ex)
         {
-
-            conection = new SqlConnection("server=.\\SQLEXPRESS; database=DB-VENTAS;  integrated security=true");
-            comand = new SqlCommand();
+            throw ex;
         }
-        public void SetConsutar(string consulta)
+    }
+
+    public void EjecutarAccion()
+    {
+        comand.Connection = conection;
+        try
         {
-            comand.CommandType = System.Data.CommandType.Text;
-            comand.CommandText = consulta;
+            conection.Open();
+            comand.ExecuteNonQuery();
         }
-        public void SetConsutarProcedure(string consulta)
+        catch (Exception ex)
         {
-            comand.CommandType = System.Data.CommandType.StoredProcedure;
-            comand.CommandText = consulta;
+            throw ex;
         }
+    }
 
+    public void SetearParametro(string nombre, object valor)
+    {
+        comand.Parameters.AddWithValue(nombre, valor);
+    }
 
-
-        public void EjecutarLectura()
+    public int ObtenerValorParametroSalida(string nombre)
+    {
+        if (comand.Parameters.Contains(nombre))
         {
-            comand.Connection = conection;
-            try
-            {
-                conection.Open();
-
-                lector = comand.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+            return Convert.ToInt32(comand.Parameters[nombre].Value);
         }
-        public void EjecutarAccion()
+        else
         {
-            comand.Connection = conection;
-
-            try
-            {
-                conection.Open();
-                comand.ExecuteNonQuery();
-
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-
+            throw new ArgumentException("El parámetro de salida no existe en el comando.");
         }
-        public void SetearParametro(string nombre, object valor)
-        {
-            comand.Parameters.AddWithValue(nombre, valor);
-        }
-        public void CerrarConection()
-        {
-            if (lector != null)
-            {
-                lector.Close();
-                conection.Close();
-            }
+    }
 
+    //public void SetearParametroSalida(string nombre, SqlDbType tipoDato)
+    //{
+    //    SqlParameter parametro = new SqlParameter(nombre, tipoDato);
+    //    parametro.Direction = ParameterDirection.Output;
+    //    comand.Parameters.Add(parametro);
+    //}
+
+    public void CerrarConection()
+    {
+        if (lector != null)
+        {
+            lector.Close();
+        }
+        if (conection.State == ConnectionState.Open)
+        {
+            conection.Close();
         }
     }
 }

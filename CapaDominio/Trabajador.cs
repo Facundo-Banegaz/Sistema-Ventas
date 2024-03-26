@@ -27,7 +27,10 @@ namespace CapaDominio
 
         public string Usuario { get; set; }
         public string Clave { get; set; }
-
+        public override string ToString()
+        {
+            return Nombre;
+        }
 
     }
 }
