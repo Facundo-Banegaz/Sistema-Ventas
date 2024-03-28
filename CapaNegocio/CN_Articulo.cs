@@ -21,7 +21,12 @@ namespace CapaNegocio
             return _CD_Articulo.ListaArticulos();
         }
 
+        public List<Articulo> CargarCbo(int Id_categoria)
+        {
+            _CD_Articulo = new CD_Articulo();
 
+            return _CD_Articulo.CargarCbo(Id_categoria);
+        }
         //Metodo para cargar un producto en la Base de Datos
         public void InsertarArticulo(Articulo Nuevo)
         {

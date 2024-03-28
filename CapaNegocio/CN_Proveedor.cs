@@ -19,6 +19,13 @@ namespace CapaNegocio
 
             return _Proveedor.ListarProveedores();
         }
+        public List<Proveedor> CargarCbo()
+        {
+            _Proveedor = new CD_Proveedor();
+
+            return _Proveedor.CargarCbo();
+        }
+
 
 
         //Metodo para cargar un producto en la Base de Datos

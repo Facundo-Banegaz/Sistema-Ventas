@@ -46,6 +46,7 @@
     <Compile Include="CN_Articulo.cs" />
     <Compile Include="CN_Categoria.cs" />
     <Compile Include="CN_Cliente.cs" />
+    <Compile Include="CN_Detalle_Ingreso.cs" />
     <Compile Include="CN_Ingreso.cs" />
     <Compile Include="CN_Metodos.cs" />
     <Compile Include="CN_Trabajador.cs" />

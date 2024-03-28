@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 public class CD_Conexion
 {
-    private SqlConnection conection;
+    private SqlConnection conection;   
     private SqlCommand comand;
     private SqlDataReader lector;
     private SqlTransaction transaccion;
@@ -14,9 +15,10 @@ public class CD_Conexion
         get { return lector; }
     }
 
+
     public CD_Conexion()
     {
-        conection = new SqlConnection("server=.\\SQLEXPRESS; database=DB-VENTAS; integrated security=true");
+        conection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conexion_DB"].ConnectionString);
         comand = new SqlCommand();
     }
 

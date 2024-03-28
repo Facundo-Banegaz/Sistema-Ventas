@@ -19,6 +19,7 @@ namespace CapaDominio
         public int Stock_Actual { get; set; }
         public DateTime Fecha_Produccion { get; set; }
         public DateTime Fecha_Vencimiento { get; set; }
+        public decimal SubTotal { get; set; }
 
     }
 }

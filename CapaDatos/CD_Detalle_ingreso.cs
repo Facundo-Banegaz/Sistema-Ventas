@@ -10,6 +10,65 @@ namespace CapaDatos
     public class CD_Detalle_ingreso
     {
         private CD_Conexion Conexion;
+        private Detalle_Ingreso  _Detalle_Ingreso;
+        private List<Detalle_Ingreso> listaDetalleIngreso;
+
+        //meto listar 
+        public List<Detalle_Ingreso> ListaDetalleIngreso(string txt_buscar)
+        {
+
+            //instancia
+
+            Conexion = new CD_Conexion();
+
+            listaDetalleIngreso = new List<Detalle_Ingreso>();
+
+            try
+            {
+
+                Conexion.SetConsutarProcedure("SpMostrar_detalle_ingreso");
+
+                Conexion.SetearParametro("@txt_buscar", txt_buscar);
+
+
+                Conexion.EjecutarLectura();
+
+                while (Conexion.Lector.Read())
+                {
+                    _Detalle_Ingreso = new Detalle_Ingreso();
+
+
+
+                    _Detalle_Ingreso.Articulo = new Articulo();
+
+                    _Detalle_Ingreso.Articulo.Id_articulo = (int)Conexion.Lector["Id_articulo"];
+                    _Detalle_Ingreso.Articulo.Nombre = (string)Conexion.Lector["Articulo"];
+                    _Detalle_Ingreso.Precio_Compra = (decimal)Conexion.Lector["Precio_compra"]; 
+                    _Detalle_Ingreso.Precio_Venta = (decimal)Conexion.Lector["Precio_venta"];
+                    _Detalle_Ingreso.Stock_Inicial = (int)Conexion.Lector["Stock_inicial"];
+                    _Detalle_Ingreso.Fecha_Produccion = (DateTime)Conexion.Lector["Fecha_produccion"];
+                    _Detalle_Ingreso.Fecha_Vencimiento = (DateTime)Conexion.Lector["Fecha_vencimiento"];
+                    _Detalle_Ingreso.SubTotal = (decimal)Conexion.Lector["Subtotal"];
+
+        
+
+
+                    listaDetalleIngreso.Add(_Detalle_Ingreso);
+                }
+
+                return listaDetalleIngreso;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+
+        }
 
         //metodo insertar
 

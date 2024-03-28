@@ -169,5 +169,7 @@ namespace SistemaVentas
 
             _Metodos.CargarImg(pbx_img, seleccionado.UrlImagen);
         }
+
+       
     }
 }

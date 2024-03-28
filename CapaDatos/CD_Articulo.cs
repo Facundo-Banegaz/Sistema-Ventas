@@ -71,7 +71,48 @@ namespace CapaDatos
 
 
 
+        public List<Articulo> CargarCbo(int Id_categoria)
+        {
 
+            //instancia
+
+            Conexion = new CD_Conexion();
+
+            listaArticulo = new List<Articulo>();
+
+            try
+            {
+
+                Conexion.SetConsutarProcedure("SpObtener_articulos_por_categoria");
+
+                Conexion.SetearParametro("@Id_categoria", Id_categoria);
+
+                Conexion.EjecutarLectura();
+
+                while (Conexion.Lector.Read())
+                {
+                    articulo = new Articulo();
+
+
+                    articulo.Id_articulo = (int)Conexion.Lector["Id_articulo"];
+                    articulo.Nombre = (string)Conexion.Lector["Nombre"];
+
+                    listaArticulo.Add(articulo);
+                }
+
+                return listaArticulo;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+
+        }
 
         //metodo insertar
 

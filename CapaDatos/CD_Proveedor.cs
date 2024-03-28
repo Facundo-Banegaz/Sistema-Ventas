@@ -64,10 +64,51 @@ namespace CapaDatos
 
         }
 
+        //Metodo del ComboBox
+        public List<Proveedor> CargarCbo()
+        {
+
+            //instancia
+
+            Conexion = new CD_Conexion();
+
+            listaProveedor = new List<Proveedor>();
+
+            try
+            {
+
+                Conexion.SetConsutar("select Id_proveedor, Razon_social from Proveedor");
+
+                Conexion.EjecutarLectura();
+
+                while (Conexion.Lector.Read())
+                {
+                    Proveedor = new Proveedor();
 
 
-       //metodo insertar
- 
+                    Proveedor.Id_proveedor = (int)Conexion.Lector["Id_proveedor"];
+                    Proveedor.RazonSocial = (string)Conexion.Lector["Razon_social"];
+
+                    listaProveedor.Add(Proveedor);
+                }
+
+                return listaProveedor;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+
+        }
+
+
+        //metodo insertar
+
         public void InsertarProveedor (Proveedor Nuevo)
         {
             Conexion = new CD_Conexion();

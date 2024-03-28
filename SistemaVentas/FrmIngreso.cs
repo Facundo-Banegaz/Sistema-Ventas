@@ -87,19 +87,7 @@ namespace SistemaVentas
             CargarGrilla();
         }
 
-        private void btn_editar_Click(object sender, EventArgs e)
-        {
-            Ingreso seleccionado;
-            DialogResult respuesta = MessageBox.Show("¿Quieres Editar este Ingreso?", "Editar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            if (respuesta == DialogResult.Yes)
-            {
-                seleccionado = (Ingreso)dgv_ingresos.CurrentRow.DataBoundItem;
-                FrmAgregarEditarIngreso frmEditar = new FrmAgregarEditarIngreso(seleccionado);
-                frmEditar.ShowDialog();
-                CargarGrilla();
-            }
-        }
 
 
         
