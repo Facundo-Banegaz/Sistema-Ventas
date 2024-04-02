@@ -13,11 +13,11 @@ namespace CapaNegocio
         private CD_Detalle_ingreso Detalle_Ingreso;
 
 
-        public List<Detalle_Ingreso> ListaDetalleIngreso(string txt_buscar)
+        public List<Detalle_Ingreso> ListaDetalleIngreso(int Id_ingreso)
         {
             Detalle_Ingreso = new CD_Detalle_ingreso();
 
-            return Detalle_Ingreso.ListaDetalleIngreso(txt_buscar);
+            return Detalle_Ingreso.ListaDetalleIngreso(Id_ingreso);
         }
 
 

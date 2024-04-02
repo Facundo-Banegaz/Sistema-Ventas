@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarEditarIngreso));
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarEditarIngreso));
             this.lb_img = new System.Windows.Forms.Label();
-            this.txt_numero = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
-            this.txt_iva = new System.Windows.Forms.TextBox();
             this.txt_serie = new System.Windows.Forms.TextBox();
             this.lbl_iva = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_id = new System.Windows.Forms.TextBox();
-            this.txt_codigo = new System.Windows.Forms.TextBox();
             this.lbl_fecha = new System.Windows.Forms.Label();
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.lbl_cat = new System.Windows.Forms.Label();
@@ -47,20 +46,24 @@
             this.txt_stock = new System.Windows.Forms.TextBox();
             this.lbl_sector = new System.Windows.Forms.Label();
             this.dgv_detalle_ingreso = new System.Windows.Forms.GroupBox();
+            this.txt_codigo = new System.Windows.Forms.TextBox();
+            this.dgv_detalles_ingresos = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_iva = new System.Windows.Forms.TextBox();
             this.cbo_proveedor = new System.Windows.Forms.ComboBox();
             this.lbl_total = new System.Windows.Forms.Label();
             this.btn_cancelar = new System.Windows.Forms.Button();
-            this.btn_Agregar = new System.Windows.Forms.Button();
-            this.dgv_detalle_ingresos = new System.Windows.Forms.DataGridView();
+            this.btn_guardar = new System.Windows.Forms.Button();
             this.cbo_comprobante = new System.Windows.Forms.ComboBox();
             this.lbl_comprobante = new System.Windows.Forms.Label();
             this.pl_art = new System.Windows.Forms.Panel();
+            this.btn_editar = new System.Windows.Forms.Button();
             this.cbo_cat = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbo_articulo = new System.Windows.Forms.ComboBox();
-            this.btn_menos = new System.Windows.Forms.Button();
+            this.btn_quitar = new System.Windows.Forms.Button();
             this.dtp_fecha_vencimiento = new System.Windows.Forms.DateTimePicker();
-            this.btn_mas = new System.Windows.Forms.Button();
+            this.btn_agregar = new System.Windows.Forms.Button();
             this.dtp_fecha_produccion = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_precio_compra = new System.Windows.Forms.TextBox();
@@ -68,10 +71,13 @@
             this.txt_precio_venta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_stock = new System.Windows.Forms.Label();
+            this.txt_numero = new System.Windows.Forms.TextBox();
             this.cbo_categoria = new System.Windows.Forms.ComboBox();
+            this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.dgv_detalle_ingreso.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_detalle_ingresos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_detalles_ingresos)).BeginInit();
             this.pl_art.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_img
@@ -85,15 +91,6 @@
             this.lb_img.Size = new System.Drawing.Size(226, 35);
             this.lb_img.TabIndex = 171;
             this.lb_img.Text = "Fecha Produccion:";
-            // 
-            // txt_numero
-            // 
-            this.txt_numero.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txt_numero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_numero.Location = new System.Drawing.Point(710, 226);
-            this.txt_numero.Name = "txt_numero";
-            this.txt_numero.Size = new System.Drawing.Size(241, 35);
-            this.txt_numero.TabIndex = 169;
             // 
             // label5
             // 
@@ -116,23 +113,17 @@
             this.dtp_fecha.Size = new System.Drawing.Size(446, 37);
             this.dtp_fecha.TabIndex = 166;
             // 
-            // txt_iva
-            // 
-            this.txt_iva.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txt_iva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_iva.Location = new System.Drawing.Point(1502, 225);
-            this.txt_iva.Name = "txt_iva";
-            this.txt_iva.Size = new System.Drawing.Size(249, 35);
-            this.txt_iva.TabIndex = 165;
-            // 
             // txt_serie
             // 
             this.txt_serie.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_serie.Enabled = false;
             this.txt_serie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_serie.Location = new System.Drawing.Point(1095, 228);
+            this.txt_serie.Location = new System.Drawing.Point(1156, 228);
             this.txt_serie.Name = "txt_serie";
-            this.txt_serie.Size = new System.Drawing.Size(278, 35);
+            this.txt_serie.ReadOnly = true;
+            this.txt_serie.Size = new System.Drawing.Size(343, 35);
             this.txt_serie.TabIndex = 164;
+            this.txt_serie.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbl_iva
             // 
@@ -140,7 +131,7 @@
             this.lbl_iva.BackColor = System.Drawing.Color.Black;
             this.lbl_iva.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_iva.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_iva.Location = new System.Drawing.Point(1425, 225);
+            this.lbl_iva.Location = new System.Drawing.Point(1544, 225);
             this.lbl_iva.Name = "lbl_iva";
             this.lbl_iva.Size = new System.Drawing.Size(56, 35);
             this.lbl_iva.TabIndex = 163;
@@ -152,7 +143,7 @@
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(996, 228);
+            this.label4.Location = new System.Drawing.Point(1057, 228);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 35);
             this.label4.TabIndex = 162;
@@ -171,26 +162,17 @@
             this.txt_id.TabIndex = 161;
             this.txt_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txt_codigo
-            // 
-            this.txt_codigo.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txt_codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_codigo.Location = new System.Drawing.Point(215, 88);
-            this.txt_codigo.Name = "txt_codigo";
-            this.txt_codigo.Size = new System.Drawing.Size(379, 35);
-            this.txt_codigo.TabIndex = 160;
-            // 
             // lbl_fecha
             // 
             this.lbl_fecha.AutoSize = true;
             this.lbl_fecha.BackColor = System.Drawing.Color.Black;
             this.lbl_fecha.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_fecha.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_fecha.Location = new System.Drawing.Point(1496, 22);
+            this.lbl_fecha.Location = new System.Drawing.Point(1437, 22);
             this.lbl_fecha.Name = "lbl_fecha";
-            this.lbl_fecha.Size = new System.Drawing.Size(89, 35);
+            this.lbl_fecha.Size = new System.Drawing.Size(219, 35);
             this.lbl_fecha.TabIndex = 159;
-            this.lbl_fecha.Text = "Fecha:";
+            this.lbl_fecha.Text = "FechaDel Ingreso:";
             // 
             // lbl_nombre
             // 
@@ -237,6 +219,7 @@
             this.txt_stock.Size = new System.Drawing.Size(299, 35);
             this.txt_stock.TabIndex = 155;
             this.txt_stock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_stock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_stock_KeyPress);
             // 
             // lbl_sector
             // 
@@ -253,11 +236,14 @@
             // dgv_detalle_ingreso
             // 
             this.dgv_detalle_ingreso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_detalle_ingreso.Controls.Add(this.txt_codigo);
+            this.dgv_detalle_ingreso.Controls.Add(this.dgv_detalles_ingresos);
+            this.dgv_detalle_ingreso.Controls.Add(this.label6);
+            this.dgv_detalle_ingreso.Controls.Add(this.txt_iva);
             this.dgv_detalle_ingreso.Controls.Add(this.cbo_proveedor);
             this.dgv_detalle_ingreso.Controls.Add(this.lbl_total);
             this.dgv_detalle_ingreso.Controls.Add(this.btn_cancelar);
-            this.dgv_detalle_ingreso.Controls.Add(this.btn_Agregar);
-            this.dgv_detalle_ingreso.Controls.Add(this.dgv_detalle_ingresos);
+            this.dgv_detalle_ingreso.Controls.Add(this.btn_guardar);
             this.dgv_detalle_ingreso.Controls.Add(this.cbo_comprobante);
             this.dgv_detalle_ingreso.Controls.Add(this.lbl_comprobante);
             this.dgv_detalle_ingreso.Controls.Add(this.pl_art);
@@ -265,12 +251,10 @@
             this.dgv_detalle_ingreso.Controls.Add(this.lbl_sector);
             this.dgv_detalle_ingreso.Controls.Add(this.dtp_fecha);
             this.dgv_detalle_ingreso.Controls.Add(this.lbl_Id);
-            this.dgv_detalle_ingreso.Controls.Add(this.txt_iva);
             this.dgv_detalle_ingreso.Controls.Add(this.lbl_iva);
             this.dgv_detalle_ingreso.Controls.Add(this.label5);
             this.dgv_detalle_ingreso.Controls.Add(this.lbl_fecha);
             this.dgv_detalle_ingreso.Controls.Add(this.lbl_nombre);
-            this.dgv_detalle_ingreso.Controls.Add(this.txt_codigo);
             this.dgv_detalle_ingreso.Controls.Add(this.txt_id);
             this.dgv_detalle_ingreso.Controls.Add(this.txt_serie);
             this.dgv_detalle_ingreso.Controls.Add(this.label4);
@@ -280,6 +264,85 @@
             this.dgv_detalle_ingreso.TabIndex = 172;
             this.dgv_detalle_ingreso.TabStop = false;
             this.dgv_detalle_ingreso.Text = "Ingresos Almacén";
+            // 
+            // txt_codigo
+            // 
+            this.txt_codigo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_codigo.Enabled = false;
+            this.txt_codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_codigo.Location = new System.Drawing.Point(238, 87);
+            this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.ReadOnly = true;
+            this.txt_codigo.Size = new System.Drawing.Size(379, 35);
+            this.txt_codigo.TabIndex = 184;
+            this.txt_codigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dgv_detalles_ingresos
+            // 
+            this.dgv_detalles_ingresos.AllowUserToAddRows = false;
+            this.dgv_detalles_ingresos.AllowUserToDeleteRows = false;
+            this.dgv_detalles_ingresos.AllowUserToOrderColumns = true;
+            this.dgv_detalles_ingresos.AllowUserToResizeRows = false;
+            this.dgv_detalles_ingresos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_detalles_ingresos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_detalles_ingresos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_detalles_ingresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_detalles_ingresos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_detalles_ingresos.EnableHeadersVisualStyles = false;
+            this.dgv_detalles_ingresos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dgv_detalles_ingresos.Location = new System.Drawing.Point(6, 525);
+            this.dgv_detalles_ingresos.Name = "dgv_detalles_ingresos";
+            this.dgv_detalles_ingresos.ReadOnly = true;
+            this.dgv_detalles_ingresos.RowHeadersVisible = false;
+            this.dgv_detalles_ingresos.RowHeadersWidth = 62;
+            this.dgv_detalles_ingresos.RowTemplate.Height = 28;
+            this.dgv_detalles_ingresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_detalles_ingresos.Size = new System.Drawing.Size(1816, 287);
+            this.dgv_detalles_ingresos.TabIndex = 183;
+            this.dgv_detalles_ingresos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_detalles_ingresos_CellClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Black;
+            this.label6.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(1738, 226);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 35);
+            this.label6.TabIndex = 182;
+            this.label6.Text = "%";
+            // 
+            // txt_iva
+            // 
+            this.txt_iva.BackColor = System.Drawing.Color.GhostWhite;
+            this.txt_iva.Enabled = false;
+            this.txt_iva.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_iva.ForeColor = System.Drawing.Color.OrangeRed;
+            this.txt_iva.Location = new System.Drawing.Point(1613, 222);
+            this.txt_iva.Name = "txt_iva";
+            this.txt_iva.ReadOnly = true;
+            this.txt_iva.Size = new System.Drawing.Size(119, 42);
+            this.txt_iva.TabIndex = 181;
+            this.txt_iva.Text = "21";
+            this.txt_iva.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_iva.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_iva_KeyPress);
             // 
             // cbo_proveedor
             // 
@@ -299,9 +362,8 @@
             this.lbl_total.ForeColor = System.Drawing.Color.LawnGreen;
             this.lbl_total.Location = new System.Drawing.Point(10, 847);
             this.lbl_total.Name = "lbl_total";
-            this.lbl_total.Size = new System.Drawing.Size(301, 35);
+            this.lbl_total.Size = new System.Drawing.Size(0, 35);
             this.lbl_total.TabIndex = 179;
-            this.lbl_total.Text = "Total Pagado S/:  2400,00";
             // 
             // btn_cancelar
             // 
@@ -321,54 +383,24 @@
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // btn_Agregar
+            // btn_guardar
             // 
-            this.btn_Agregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_Agregar.BackColor = System.Drawing.Color.LimeGreen;
-            this.btn_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Agregar.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Agregar.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btn_Agregar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar.Image")));
-            this.btn_Agregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Agregar.Location = new System.Drawing.Point(1360, 818);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(180, 66);
-            this.btn_Agregar.TabIndex = 177;
-            this.btn_Agregar.Text = "Agregar";
-            this.btn_Agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Agregar.UseVisualStyleBackColor = false;
-            // 
-            // dgv_detalle_ingresos
-            // 
-            this.dgv_detalle_ingresos.AllowUserToAddRows = false;
-            this.dgv_detalle_ingresos.AllowUserToDeleteRows = false;
-            this.dgv_detalle_ingresos.AllowUserToOrderColumns = true;
-            this.dgv_detalle_ingresos.AllowUserToResizeRows = false;
-            this.dgv_detalle_ingresos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_detalle_ingresos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_detalle_ingresos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_detalle_ingresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_detalle_ingresos.EnableHeadersVisualStyles = false;
-            this.dgv_detalle_ingresos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dgv_detalle_ingresos.Location = new System.Drawing.Point(6, 525);
-            this.dgv_detalle_ingresos.Name = "dgv_detalle_ingresos";
-            this.dgv_detalle_ingresos.ReadOnly = true;
-            this.dgv_detalle_ingresos.RowHeadersVisible = false;
-            this.dgv_detalle_ingresos.RowHeadersWidth = 62;
-            this.dgv_detalle_ingresos.RowTemplate.Height = 28;
-            this.dgv_detalle_ingresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_detalle_ingresos.Size = new System.Drawing.Size(1816, 285);
-            this.dgv_detalle_ingresos.TabIndex = 176;
+            this.btn_guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_guardar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_guardar.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_guardar.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar.Image")));
+            this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_guardar.Location = new System.Drawing.Point(1360, 818);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(180, 66);
+            this.btn_guardar.TabIndex = 177;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // cbo_comprobante
             // 
@@ -395,12 +427,13 @@
             // pl_art
             // 
             this.pl_art.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pl_art.Controls.Add(this.btn_editar);
             this.pl_art.Controls.Add(this.cbo_cat);
             this.pl_art.Controls.Add(this.label3);
             this.pl_art.Controls.Add(this.cbo_articulo);
-            this.pl_art.Controls.Add(this.btn_menos);
+            this.pl_art.Controls.Add(this.btn_quitar);
             this.pl_art.Controls.Add(this.dtp_fecha_vencimiento);
-            this.pl_art.Controls.Add(this.btn_mas);
+            this.pl_art.Controls.Add(this.btn_agregar);
             this.pl_art.Controls.Add(this.dtp_fecha_produccion);
             this.pl_art.Controls.Add(this.label2);
             this.pl_art.Controls.Add(this.lb_img);
@@ -415,6 +448,18 @@
             this.pl_art.Name = "pl_art";
             this.pl_art.Size = new System.Drawing.Size(1816, 229);
             this.pl_art.TabIndex = 173;
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.BackColor = System.Drawing.Color.Orange;
+            this.btn_editar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_editar.Image = ((System.Drawing.Image)(resources.GetObject("btn_editar.Image")));
+            this.btn_editar.Location = new System.Drawing.Point(1714, 85);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(86, 60);
+            this.btn_editar.TabIndex = 184;
+            this.btn_editar.UseVisualStyleBackColor = false;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // cbo_cat
             // 
@@ -449,16 +494,17 @@
             this.cbo_articulo.Size = new System.Drawing.Size(537, 34);
             this.cbo_articulo.TabIndex = 181;
             // 
-            // btn_menos
+            // btn_quitar
             // 
-            this.btn_menos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(192)))));
-            this.btn_menos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_menos.Image = ((System.Drawing.Image)(resources.GetObject("btn_menos.Image")));
-            this.btn_menos.Location = new System.Drawing.Point(1711, 145);
-            this.btn_menos.Name = "btn_menos";
-            this.btn_menos.Size = new System.Drawing.Size(86, 60);
-            this.btn_menos.TabIndex = 175;
-            this.btn_menos.UseVisualStyleBackColor = false;
+            this.btn_quitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(192)))));
+            this.btn_quitar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_quitar.Image = ((System.Drawing.Image)(resources.GetObject("btn_quitar.Image")));
+            this.btn_quitar.Location = new System.Drawing.Point(1714, 160);
+            this.btn_quitar.Name = "btn_quitar";
+            this.btn_quitar.Size = new System.Drawing.Size(86, 60);
+            this.btn_quitar.TabIndex = 175;
+            this.btn_quitar.UseVisualStyleBackColor = false;
+            this.btn_quitar.Click += new System.EventHandler(this.btn_quitar_Click);
             // 
             // dtp_fecha_vencimiento
             // 
@@ -470,16 +516,17 @@
             this.dtp_fecha_vencimiento.Size = new System.Drawing.Size(319, 37);
             this.dtp_fecha_vencimiento.TabIndex = 180;
             // 
-            // btn_mas
+            // btn_agregar
             // 
-            this.btn_mas.BackColor = System.Drawing.Color.Green;
-            this.btn_mas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_mas.Image = ((System.Drawing.Image)(resources.GetObject("btn_mas.Image")));
-            this.btn_mas.Location = new System.Drawing.Point(1711, 38);
-            this.btn_mas.Name = "btn_mas";
-            this.btn_mas.Size = new System.Drawing.Size(86, 60);
-            this.btn_mas.TabIndex = 174;
-            this.btn_mas.UseVisualStyleBackColor = false;
+            this.btn_agregar.BackColor = System.Drawing.Color.Green;
+            this.btn_agregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_agregar.Image = ((System.Drawing.Image)(resources.GetObject("btn_agregar.Image")));
+            this.btn_agregar.Location = new System.Drawing.Point(1714, 10);
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(86, 60);
+            this.btn_agregar.TabIndex = 174;
+            this.btn_agregar.UseVisualStyleBackColor = false;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // dtp_fecha_produccion
             // 
@@ -511,6 +558,8 @@
             this.txt_precio_compra.Name = "txt_precio_compra";
             this.txt_precio_compra.Size = new System.Drawing.Size(319, 35);
             this.txt_precio_compra.TabIndex = 178;
+            this.txt_precio_compra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_precio_compra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_precio_compra_KeyPress);
             // 
             // lbl_precio
             // 
@@ -532,6 +581,8 @@
             this.txt_precio_venta.Name = "txt_precio_venta";
             this.txt_precio_venta.Size = new System.Drawing.Size(319, 35);
             this.txt_precio_venta.TabIndex = 176;
+            this.txt_precio_venta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_precio_venta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_precio_venta_KeyPress);
             // 
             // label1
             // 
@@ -557,12 +608,28 @@
             this.lbl_stock.TabIndex = 173;
             this.lbl_stock.Text = "Stock Incial:";
             // 
+            // txt_numero
+            // 
+            this.txt_numero.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_numero.Enabled = false;
+            this.txt_numero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_numero.Location = new System.Drawing.Point(710, 226);
+            this.txt_numero.Name = "txt_numero";
+            this.txt_numero.ReadOnly = true;
+            this.txt_numero.Size = new System.Drawing.Size(319, 35);
+            this.txt_numero.TabIndex = 169;
+            this.txt_numero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // cbo_categoria
             // 
             this.cbo_categoria.Location = new System.Drawing.Point(0, 0);
             this.cbo_categoria.Name = "cbo_categoria";
             this.cbo_categoria.Size = new System.Drawing.Size(121, 28);
             this.cbo_categoria.TabIndex = 0;
+            // 
+            // errorIcono
+            // 
+            this.errorIcono.ContainerControl = this;
             // 
             // FrmAgregarEditarIngreso
             // 
@@ -576,9 +643,10 @@
             this.Load += new System.EventHandler(this.FrmAgregarEditarIngreso_Load);
             this.dgv_detalle_ingreso.ResumeLayout(false);
             this.dgv_detalle_ingreso.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_detalle_ingresos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_detalles_ingresos)).EndInit();
             this.pl_art.ResumeLayout(false);
             this.pl_art.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -586,16 +654,13 @@
         #endregion
 
         private System.Windows.Forms.Label lb_img;
-        private System.Windows.Forms.TextBox txt_numero;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbo_categoria;
         private System.Windows.Forms.DateTimePicker dtp_fecha;
-        private System.Windows.Forms.TextBox txt_iva;
         private System.Windows.Forms.TextBox txt_serie;
         private System.Windows.Forms.Label lbl_iva;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_id;
-        private System.Windows.Forms.TextBox txt_codigo;
         private System.Windows.Forms.Label lbl_fecha;
         private System.Windows.Forms.Label lbl_nombre;
         private System.Windows.Forms.Label lbl_cat;
@@ -614,15 +679,21 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbo_comprobante;
         private System.Windows.Forms.Label lbl_comprobante;
-        private System.Windows.Forms.Button btn_menos;
-        private System.Windows.Forms.Button btn_mas;
-        public System.Windows.Forms.DataGridView dgv_detalle_ingresos;
+        private System.Windows.Forms.Button btn_quitar;
+        private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.Button btn_Agregar;
+        private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Label lbl_total;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbo_articulo;
         private System.Windows.Forms.ComboBox cbo_proveedor;
         private System.Windows.Forms.ComboBox cbo_cat;
+        private System.Windows.Forms.TextBox txt_iva;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt_numero;
+        public System.Windows.Forms.DataGridView dgv_detalles_ingresos;
+        private System.Windows.Forms.TextBox txt_codigo;
+        private System.Windows.Forms.ErrorProvider errorIcono;
+        private System.Windows.Forms.Button btn_editar;
     }
 }

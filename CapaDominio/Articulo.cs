@@ -18,6 +18,10 @@ namespace CapaDominio
         public Presentacion Presentacion { get; set;}
 
 
+        public override string ToString()
+        {
+            return Nombre;
+        }
 
 
     }

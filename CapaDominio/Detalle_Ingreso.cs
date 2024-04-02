@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ namespace CapaDominio
 {
     public class Detalle_Ingreso
     {
+
+
         //Variables
         public int Id_detalle_ingreso {  get; set; }
         public Ingreso Ingreso { get; set; }
@@ -20,6 +23,7 @@ namespace CapaDominio
         public DateTime Fecha_Produccion { get; set; }
         public DateTime Fecha_Vencimiento { get; set; }
         public decimal SubTotal { get; set; }
+
 
     }
 }

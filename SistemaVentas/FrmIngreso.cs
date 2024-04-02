@@ -16,12 +16,16 @@ namespace SistemaVentas
     {
 
         private List<Ingreso> Listaingresos;
-
+        public Trabajador _Trabajador;
         public FrmIngreso()
         {
             InitializeComponent();
         }
-
+        public FrmIngreso(Trabajador trabajador)
+        {
+            InitializeComponent();
+            this._Trabajador= trabajador;
+        }
         private void FrmIngreso_Load(object sender, EventArgs e)
         {
             CargarGrilla();
@@ -71,6 +75,7 @@ namespace SistemaVentas
             dgv_ingresos.Columns["Iva"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_ingresos.Columns["Estado"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_ingresos.Columns["Total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_ingresos.Columns["Total"].DefaultCellStyle.Format = "N0";
 
             _Metodos.AlternarColor(dgv_ingresos);
         }
@@ -82,7 +87,7 @@ namespace SistemaVentas
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
-            FrmAgregarEditarIngreso frmAgregar = new FrmAgregarEditarIngreso();
+            FrmAgregarEditarIngreso frmAgregar = new FrmAgregarEditarIngreso(_Trabajador);
             frmAgregar.ShowDialog();
             CargarGrilla();
         }
@@ -162,9 +167,19 @@ namespace SistemaVentas
             }
         }
 
-        private void lbl_fin_Click(object sender, EventArgs e)
+        private void btn_ver_detalle_Click(object sender, EventArgs e)
         {
+            Ingreso seleccionado;
+            DialogResult respuesta = MessageBox.Show("¿Quieres Ver el detalle este Ingreso?", "Detalle", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
+            if (respuesta == DialogResult.Yes)
+            {
+                seleccionado = (Ingreso)dgv_ingresos.CurrentRow.DataBoundItem;
+
+                FrmDetalleIngreso frmDetalle = new FrmDetalleIngreso(seleccionado);
+                frmDetalle.ShowDialog();
+                CargarGrilla();
+            }
         }
     }
 }

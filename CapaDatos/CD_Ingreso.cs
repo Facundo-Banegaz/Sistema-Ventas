@@ -83,29 +83,30 @@ namespace CapaDatos
 
             try
             {
-                Conexion.IniciarTransaccion();
+                //Conexion.IniciarTransaccion();
 
                 Conexion.SetConsutarProcedure("SpInsertar_ingreso");
 
                 Conexion.SetearParametro("@Id_trabajador", Nuevo.Trabajador.Id_trabajador);
                 Conexion.SetearParametro("@Id_proveedor", Nuevo.Proveedor.Id_proveedor);
-                Conexion.SetearParametro("@Fecha", Nuevo.Fecha);
+                Conexion.SetearParametro("@Fecha", Nuevo.Fecha.ToString("yyyy-MM-dd hh:mm:ss"));
                 Conexion.SetearParametro("@Tipo_comprobante", Nuevo.Tipo_Comprobante);
                 Conexion.SetearParametro("@Serie", Nuevo.Serie);
                 Conexion.SetearParametro("@Correlativo", Nuevo.Correlativo);
                 Conexion.SetearParametro("@Iva", Nuevo.Iva);
                 Conexion.SetearParametro("@Estado", Nuevo.Estado);
 
+
+
+                // Configurar el parámetro de salida para el ID de ingreso
+
+                Conexion.SetearParametroSalida("@Id_ingreso", SqlDbType.Int);
+
                 Conexion.EjecutarAccion();
-
-                ////capturar el id_ingreso
-
-                //Conexion.SetearParametroSalida("@id_ingreso", SqlDbType.Int);
-
 
 
                 // Capturar el ID del ingreso insertado
-                int idIngreso = Conexion.ObtenerValorParametroSalida("@id_ingreso");
+                int Id_ingreso = Conexion.ObtenerValorParametroSalida("@Id_ingreso");
 
 
 
@@ -115,7 +116,7 @@ namespace CapaDatos
                 // Insertar detalles de ingreso
                 foreach (Detalle_Ingreso detalle in DetalleIngreso)
                 {
-                    detalle.Ingreso.Id_ingreso = idIngreso; // Suponiendo que tienes un método para obtener el último ID de ingreso insertado
+                    detalle.Ingreso.Id_ingreso = Id_ingreso; // Suponiendo que tienes un método para obtener el último ID de ingreso insertado
 
   
 
@@ -124,7 +125,9 @@ namespace CapaDatos
 
 
 
-                Conexion.ConfirmarTransaccion();
+                //Conexion.ConfirmarTransaccion();
+
+
             }
             catch (Exception ex)
             {

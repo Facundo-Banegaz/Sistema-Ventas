@@ -25,10 +25,10 @@ namespace CapaNegocio
         {
             _Ingreso = new CD_Ingreso();
 
-
-
-            _Ingreso.InsertarIngreso(Nuevo, Detalle);
-
+            _Ingreso.InsertarIngreso(Nuevo,Detalle);
+            //// Llamar al método que inserta el ingreso y devuelve el ID del ingreso insertado
+            //int Id_ingreso = _Ingreso.InsertarIngreso(Nuevo, Detalle);
+            //// Retornar el ID del ingreso insertado
         }
 
         //Metodo para Anular un  ingreso en la Base de Datos

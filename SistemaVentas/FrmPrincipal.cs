@@ -17,7 +17,7 @@ namespace SistemaVentas
     {
 
 
-        private Trabajador _Trabajador;
+        public Trabajador _Trabajador;
 
         public FrmPrincipal()
         {
@@ -130,7 +130,7 @@ namespace SistemaVentas
 
         private void Menu_item_ingresos_Click(object sender, EventArgs e)
         {
-            FrmIngreso frmIngreso = new FrmIngreso();   
+            FrmIngreso frmIngreso = new FrmIngreso(_Trabajador);   
             frmIngreso.ShowDialog();
         }
 

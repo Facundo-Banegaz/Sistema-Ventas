@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIngreso));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_anular = new System.Windows.Forms.Button();
             this.lbl_resultado = new System.Windows.Forms.Label();
@@ -44,6 +44,7 @@
             this.lbl_inicio = new System.Windows.Forms.Label();
             this.lbl_fin = new System.Windows.Forms.Label();
             this.btn_nuevo = new System.Windows.Forms.Button();
+            this.btn_ver_detalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ingresos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +75,7 @@
             this.btn_anular.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_anular.ForeColor = System.Drawing.Color.AliceBlue;
             this.btn_anular.Image = ((System.Drawing.Image)(resources.GetObject("btn_anular.Image")));
-            this.btn_anular.Location = new System.Drawing.Point(632, 753);
+            this.btn_anular.Location = new System.Drawing.Point(826, 754);
             this.btn_anular.Name = "btn_anular";
             this.btn_anular.Size = new System.Drawing.Size(270, 65);
             this.btn_anular.TabIndex = 75;
@@ -170,23 +171,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_ingresos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ingresos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ingresos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_ingresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ingresos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ingresos.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_ingresos.EnableHeadersVisualStyles = false;
             this.dgv_ingresos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dgv_ingresos.Location = new System.Drawing.Point(12, 210);
@@ -247,7 +248,7 @@
             this.btn_nuevo.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_nuevo.ForeColor = System.Drawing.Color.AliceBlue;
             this.btn_nuevo.Image = ((System.Drawing.Image)(resources.GetObject("btn_nuevo.Image")));
-            this.btn_nuevo.Location = new System.Drawing.Point(12, 753);
+            this.btn_nuevo.Location = new System.Drawing.Point(17, 751);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(270, 65);
             this.btn_nuevo.TabIndex = 91;
@@ -257,11 +258,30 @@
             this.btn_nuevo.UseVisualStyleBackColor = false;
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
+            // btn_ver_detalle
+            // 
+            this.btn_ver_detalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_ver_detalle.BackColor = System.Drawing.Color.SteelBlue;
+            this.btn_ver_detalle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ver_detalle.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ver_detalle.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btn_ver_detalle.Image = ((System.Drawing.Image)(resources.GetObject("btn_ver_detalle.Image")));
+            this.btn_ver_detalle.Location = new System.Drawing.Point(420, 751);
+            this.btn_ver_detalle.Name = "btn_ver_detalle";
+            this.btn_ver_detalle.Size = new System.Drawing.Size(284, 65);
+            this.btn_ver_detalle.TabIndex = 92;
+            this.btn_ver_detalle.Text = "Ver Detalle Ingreso";
+            this.btn_ver_detalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ver_detalle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_ver_detalle.UseVisualStyleBackColor = false;
+            this.btn_ver_detalle.Click += new System.EventHandler(this.btn_ver_detalle_Click);
+            // 
             // FrmIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1852, 831);
+            this.Controls.Add(this.btn_ver_detalle);
             this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.lbl_fin);
             this.Controls.Add(this.lbl_inicio);
@@ -301,5 +321,6 @@
         private System.Windows.Forms.Label lbl_fin;
         private System.Windows.Forms.Button btn_nuevo;
         private System.Windows.Forms.DateTimePicker dtp_fecha_fin;
+        private System.Windows.Forms.Button btn_ver_detalle;
     }
 }

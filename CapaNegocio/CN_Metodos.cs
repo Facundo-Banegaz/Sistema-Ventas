@@ -26,19 +26,15 @@ namespace CapaNegocio
      
 
 
-        //Metodo para dar formato moneda a un texBox 
-
-        public void FormatoMoneda(TextBox xTextBox)
-        {
-            objMetodos.FormatoMoneda((TextBox)xTextBox);
-        }
-
-
-
         public void CargarImg(PictureBox picture, string img)
         {
             objMetodos.CargarImg(picture, img);
         }
 
+
+        public string GenerarCodigo(string Tabla)
+        {
+           return objMetodos.GenerarCodigo(Tabla);
+        }
     }
 }
