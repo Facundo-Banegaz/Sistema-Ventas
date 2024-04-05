@@ -65,7 +65,47 @@ namespace CapaDatos
             }
 
         }
+        //Metodo del ComboBox
+        public List<Cliente> CargarCbo()
+        {
 
+            //instancia
+
+            Conexion = new CD_Conexion();
+
+            listaCliente = new List<Cliente>();
+
+            try
+            {
+
+                Conexion.SetConsutar("select Id_cliente, Nombre from Cliente");
+
+                Conexion.EjecutarLectura();
+
+                while (Conexion.Lector.Read())
+                {
+                    Cliente = new Cliente();
+
+
+                    Cliente.Id_cliente = (int)Conexion.Lector["Id_cliente"];
+                    Cliente.Nombre = (string)Conexion.Lector["Nombre"];
+
+                    listaCliente.Add(Cliente);
+                }
+
+                return listaCliente;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+
+        }
         //metodo insertar
 
         public void InsertarCliente(Cliente Nuevo)

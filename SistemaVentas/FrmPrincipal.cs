@@ -150,9 +150,10 @@ namespace SistemaVentas
 
             frmCliente.ShowDialog();
         }
-        private void Menu_item_ventas_Click(object sender, EventArgs e)
+        private void Menu_item_ventas_Click_1(object sender, EventArgs e)
         {
-
+            FrmVenta frmVenta = new FrmVenta(_Trabajador);
+            frmVenta.ShowDialog();
         }
 
         //menu mantenimiento

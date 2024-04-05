@@ -47,11 +47,13 @@
     <Compile Include="CN_Categoria.cs" />
     <Compile Include="CN_Cliente.cs" />
     <Compile Include="CN_Detalle_Ingreso.cs" />
+    <Compile Include="CN_Detalle_Venta.cs" />
     <Compile Include="CN_Ingreso.cs" />
     <Compile Include="CN_Metodos.cs" />
     <Compile Include="CN_Trabajador.cs" />
     <Compile Include="CN_Presentacion.cs" />
     <Compile Include="CN_Proveedor.cs" />
+    <Compile Include="CN_Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

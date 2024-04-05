@@ -17,6 +17,7 @@ namespace CapaDominio
         public Categoria Categoria { get; set;}
         public Presentacion Presentacion { get; set;}
 
+        public int Stock { get; set; }
 
         public override string ToString()
         {

@@ -19,6 +19,7 @@ namespace SistemaVentas
         public FrmPresentacion()
         {
             InitializeComponent();
+            Text = "Gestion Presentacion:";
         }
         private void FrmPresentacion_Load(object sender, EventArgs e)
         {

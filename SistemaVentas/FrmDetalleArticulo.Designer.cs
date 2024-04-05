@@ -67,7 +67,7 @@
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.txt_descripcion_producto);
             this.groupBox1.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 400);
+            this.groupBox1.Location = new System.Drawing.Point(15, 475);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1196, 344);
             this.groupBox1.TabIndex = 65;
@@ -90,7 +90,7 @@
             this.txt_url_imagen.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_url_imagen.Enabled = false;
             this.txt_url_imagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_url_imagen.Location = new System.Drawing.Point(610, 206);
+            this.txt_url_imagen.Location = new System.Drawing.Point(610, 239);
             this.txt_url_imagen.Name = "txt_url_imagen";
             this.txt_url_imagen.Size = new System.Drawing.Size(601, 35);
             this.txt_url_imagen.TabIndex = 64;
@@ -102,7 +102,7 @@
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(762, 142);
+            this.label1.Location = new System.Drawing.Point(762, 175);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 35);
             this.label1.TabIndex = 63;
@@ -110,9 +110,9 @@
             // 
             // pbx_img
             // 
-            this.pbx_img.Location = new System.Drawing.Point(1276, 87);
+            this.pbx_img.Location = new System.Drawing.Point(1249, 87);
             this.pbx_img.Name = "pbx_img";
-            this.pbx_img.Size = new System.Drawing.Size(512, 572);
+            this.pbx_img.Size = new System.Drawing.Size(590, 630);
             this.pbx_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbx_img.TabIndex = 62;
             this.pbx_img.TabStop = false;
@@ -143,7 +143,7 @@
             this.lbl_cargo.BackColor = System.Drawing.Color.Black;
             this.lbl_cargo.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_cargo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_cargo.Location = new System.Drawing.Point(776, 267);
+            this.lbl_cargo.Location = new System.Drawing.Point(774, 326);
             this.lbl_cargo.Name = "lbl_cargo";
             this.lbl_cargo.Size = new System.Drawing.Size(222, 35);
             this.lbl_cargo.TabIndex = 56;
@@ -178,7 +178,7 @@
             this.txt_codigo_producto.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_codigo_producto.Enabled = false;
             this.txt_codigo_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_codigo_producto.Location = new System.Drawing.Point(15, 206);
+            this.txt_codigo_producto.Location = new System.Drawing.Point(15, 239);
             this.txt_codigo_producto.Name = "txt_codigo_producto";
             this.txt_codigo_producto.Size = new System.Drawing.Size(528, 35);
             this.txt_codigo_producto.TabIndex = 51;
@@ -189,7 +189,7 @@
             this.lbl_codigo.BackColor = System.Drawing.Color.Black;
             this.lbl_codigo.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_codigo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_codigo.Location = new System.Drawing.Point(142, 142);
+            this.lbl_codigo.Location = new System.Drawing.Point(142, 175);
             this.lbl_codigo.Name = "lbl_codigo";
             this.lbl_codigo.Size = new System.Drawing.Size(212, 35);
             this.lbl_codigo.TabIndex = 50;
@@ -201,7 +201,7 @@
             this.lbl_presentacion.BackColor = System.Drawing.Color.Black;
             this.lbl_presentacion.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_presentacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_presentacion.Location = new System.Drawing.Point(92, 267);
+            this.lbl_presentacion.Location = new System.Drawing.Point(111, 326);
             this.lbl_presentacion.Name = "lbl_presentacion";
             this.lbl_presentacion.Size = new System.Drawing.Size(284, 35);
             this.lbl_presentacion.TabIndex = 54;
@@ -216,7 +216,7 @@
             this.btn_cancelar.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancelar.ForeColor = System.Drawing.Color.AliceBlue;
             this.btn_cancelar.Image = ((System.Drawing.Image)(resources.GetObject("btn_cancelar.Image")));
-            this.btn_cancelar.Location = new System.Drawing.Point(1591, 678);
+            this.btn_cancelar.Location = new System.Drawing.Point(1642, 753);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(197, 66);
             this.btn_cancelar.TabIndex = 68;
@@ -230,7 +230,7 @@
             this.txt_categoria.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_categoria.Enabled = false;
             this.txt_categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_categoria.Location = new System.Drawing.Point(607, 332);
+            this.txt_categoria.Location = new System.Drawing.Point(605, 391);
             this.txt_categoria.Name = "txt_categoria";
             this.txt_categoria.Size = new System.Drawing.Size(601, 35);
             this.txt_categoria.TabIndex = 70;
@@ -240,7 +240,7 @@
             this.txt_presentacion.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_presentacion.Enabled = false;
             this.txt_presentacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_presentacion.Location = new System.Drawing.Point(12, 332);
+            this.txt_presentacion.Location = new System.Drawing.Point(15, 391);
             this.txt_presentacion.Name = "txt_presentacion";
             this.txt_presentacion.Size = new System.Drawing.Size(528, 35);
             this.txt_presentacion.TabIndex = 69;
@@ -249,7 +249,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1801, 760);
+            this.ClientSize = new System.Drawing.Size(1852, 831);
             this.Controls.Add(this.txt_categoria);
             this.Controls.Add(this.txt_presentacion);
             this.Controls.Add(this.btn_cancelar);

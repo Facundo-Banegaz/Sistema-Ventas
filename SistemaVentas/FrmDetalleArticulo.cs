@@ -22,7 +22,7 @@ namespace SistemaVentas
         public FrmDetalleArticulo(Articulo articulo)
         {
             InitializeComponent();
-            Text = "Detalle del Producto";
+            Text = "Detalle del Articulo:";
             this._Articulo = articulo;
         }
 

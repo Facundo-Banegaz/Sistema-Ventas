@@ -18,6 +18,7 @@ namespace SistemaVentas
         public FrmArticulo()
         {
             InitializeComponent();
+            Text = "Gestion Articulo:";
         }
 
         private void FrmCategoria_Load(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace SistemaVentas
 
                 FrmDetalleArticulo frmDetalle = new FrmDetalleArticulo(seleccionado);
                 frmDetalle.ShowDialog();
-                CargarGrilla();
+                //CargarGrilla();
             }
         }
         private void CargarGrilla()

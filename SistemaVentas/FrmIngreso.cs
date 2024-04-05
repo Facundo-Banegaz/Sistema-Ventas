@@ -20,6 +20,7 @@ namespace SistemaVentas
         public FrmIngreso()
         {
             InitializeComponent();
+            Text = "Gestion Ingreso";
         }
         public FrmIngreso(Trabajador trabajador)
         {

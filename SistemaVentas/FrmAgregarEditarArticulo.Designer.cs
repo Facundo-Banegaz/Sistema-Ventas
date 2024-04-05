@@ -66,7 +66,7 @@
             this.btn_subir_imagen.ForeColor = System.Drawing.Color.Ivory;
             this.btn_subir_imagen.Image = ((System.Drawing.Image)(resources.GetObject("btn_subir_imagen.Image")));
             this.btn_subir_imagen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_subir_imagen.Location = new System.Drawing.Point(1271, 668);
+            this.btn_subir_imagen.Location = new System.Drawing.Point(1282, 732);
             this.btn_subir_imagen.Name = "btn_subir_imagen";
             this.btn_subir_imagen.Size = new System.Drawing.Size(512, 60);
             this.btn_subir_imagen.TabIndex = 54;
@@ -89,9 +89,9 @@
             // 
             // pbx_img
             // 
-            this.pbx_img.Location = new System.Drawing.Point(1271, 82);
+            this.pbx_img.Location = new System.Drawing.Point(1243, 82);
             this.pbx_img.Name = "pbx_img";
-            this.pbx_img.Size = new System.Drawing.Size(512, 560);
+            this.pbx_img.Size = new System.Drawing.Size(573, 621);
             this.pbx_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbx_img.TabIndex = 52;
             this.pbx_img.TabStop = false;
@@ -106,7 +106,7 @@
             this.btn_Agregar.ForeColor = System.Drawing.Color.AliceBlue;
             this.btn_Agregar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar.Image")));
             this.btn_Agregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Agregar.Location = new System.Drawing.Point(1271, 768);
+            this.btn_Agregar.Location = new System.Drawing.Point(1282, 837);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(180, 66);
             this.btn_Agregar.TabIndex = 49;
@@ -124,7 +124,7 @@
             this.btn_cancelar.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancelar.ForeColor = System.Drawing.Color.AliceBlue;
             this.btn_cancelar.Image = ((System.Drawing.Image)(resources.GetObject("btn_cancelar.Image")));
-            this.btn_cancelar.Location = new System.Drawing.Point(1586, 768);
+            this.btn_cancelar.Location = new System.Drawing.Point(1597, 837);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(197, 66);
             this.btn_cancelar.TabIndex = 55;
@@ -139,7 +139,7 @@
             this.cbo_presentacion_producto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_presentacion_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_presentacion_producto.FormattingEnabled = true;
-            this.cbo_presentacion_producto.Location = new System.Drawing.Point(22, 394);
+            this.cbo_presentacion_producto.Location = new System.Drawing.Point(21, 450);
             this.cbo_presentacion_producto.Name = "cbo_presentacion_producto";
             this.cbo_presentacion_producto.Size = new System.Drawing.Size(555, 37);
             this.cbo_presentacion_producto.TabIndex = 80;
@@ -150,7 +150,7 @@
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.txt_descripcion_producto);
             this.groupBox1.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(22, 490);
+            this.groupBox1.Location = new System.Drawing.Point(22, 559);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1196, 344);
             this.groupBox1.TabIndex = 79;
@@ -172,7 +172,7 @@
             // 
             this.txt_url_imagen.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_url_imagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_url_imagen.Location = new System.Drawing.Point(663, 230);
+            this.txt_url_imagen.Location = new System.Drawing.Point(666, 270);
             this.txt_url_imagen.Name = "txt_url_imagen";
             this.txt_url_imagen.Size = new System.Drawing.Size(555, 35);
             this.txt_url_imagen.TabIndex = 78;
@@ -184,7 +184,7 @@
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(811, 155);
+            this.label1.Location = new System.Drawing.Point(814, 195);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 35);
             this.label1.TabIndex = 77;
@@ -195,7 +195,7 @@
             this.cbo_tipo_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_tipo_categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_tipo_categoria.FormattingEnabled = true;
-            this.cbo_tipo_categoria.Location = new System.Drawing.Point(663, 394);
+            this.cbo_tipo_categoria.Location = new System.Drawing.Point(662, 450);
             this.cbo_tipo_categoria.Name = "cbo_tipo_categoria";
             this.cbo_tipo_categoria.Size = new System.Drawing.Size(555, 37);
             this.cbo_tipo_categoria.TabIndex = 76;
@@ -227,7 +227,7 @@
             this.lbl_cargo.BackColor = System.Drawing.Color.Black;
             this.lbl_cargo.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_cargo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_cargo.Location = new System.Drawing.Point(811, 313);
+            this.lbl_cargo.Location = new System.Drawing.Point(810, 369);
             this.lbl_cargo.Name = "lbl_cargo";
             this.lbl_cargo.Size = new System.Drawing.Size(222, 35);
             this.lbl_cargo.TabIndex = 73;
@@ -251,7 +251,7 @@
             this.lbl_presentacion.BackColor = System.Drawing.Color.Black;
             this.lbl_presentacion.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_presentacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_presentacion.Location = new System.Drawing.Point(128, 313);
+            this.lbl_presentacion.Location = new System.Drawing.Point(127, 369);
             this.lbl_presentacion.Name = "lbl_presentacion";
             this.lbl_presentacion.Size = new System.Drawing.Size(284, 35);
             this.lbl_presentacion.TabIndex = 71;
@@ -273,7 +273,7 @@
             // 
             this.txt_codigo_producto.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_codigo_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_codigo_producto.Location = new System.Drawing.Point(22, 230);
+            this.txt_codigo_producto.Location = new System.Drawing.Point(25, 270);
             this.txt_codigo_producto.Name = "txt_codigo_producto";
             this.txt_codigo_producto.Size = new System.Drawing.Size(555, 35);
             this.txt_codigo_producto.TabIndex = 69;
@@ -284,7 +284,7 @@
             this.lbl_codigo.BackColor = System.Drawing.Color.Black;
             this.lbl_codigo.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_codigo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_codigo.Location = new System.Drawing.Point(166, 155);
+            this.lbl_codigo.Location = new System.Drawing.Point(169, 195);
             this.lbl_codigo.Name = "lbl_codigo";
             this.lbl_codigo.Size = new System.Drawing.Size(212, 35);
             this.lbl_codigo.TabIndex = 68;
@@ -298,7 +298,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1817, 855);
+            this.ClientSize = new System.Drawing.Size(1828, 924);
             this.Controls.Add(this.cbo_presentacion_producto);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txt_url_imagen);

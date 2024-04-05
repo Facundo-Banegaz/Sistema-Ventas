@@ -188,6 +188,7 @@
             this.Menu_item_ventas.Name = "Menu_item_ventas";
             this.Menu_item_ventas.Size = new System.Drawing.Size(192, 36);
             this.Menu_item_ventas.Text = "Ventas";
+            this.Menu_item_ventas.Click += new System.EventHandler(this.Menu_item_ventas_Click_1);
             // 
             // Menu_item_clientes
             // 

@@ -20,6 +20,12 @@ namespace CapaNegocio
 
             return _CD_Cliente.ListaCliente();
         }
+        public List<Cliente> CargarCbo()
+        {
+            _CD_Cliente = new CD_Cliente();
+
+            return _CD_Cliente.CargarCbo();
+        }
 
         //Metodo para cargar un producto en la Base de Datos
         public void InsertarCliente(Cliente Nuevo)

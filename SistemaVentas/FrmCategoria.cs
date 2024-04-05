@@ -19,6 +19,7 @@ namespace SistemaVentas
         public FrmCategoria()
         {
             InitializeComponent();
+            Text = "Gestion Categoria:";
         }
         private void FrmCategoria_Load(object sender, EventArgs e)
         {

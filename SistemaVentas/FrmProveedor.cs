@@ -18,6 +18,7 @@ namespace SistemaVentas
         public FrmProveedor()
         {
             InitializeComponent();
+            Text = "Gestion Proveedor:";
         }
 
         private void FrmPersona_Load(object sender, EventArgs e)

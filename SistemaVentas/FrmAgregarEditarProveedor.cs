@@ -23,11 +23,13 @@ namespace SistemaVentas
         public FrmAgregarEditarProveedor()
         {
             InitializeComponent();
+            Text = "Agregar Proveedor";
         }
         public FrmAgregarEditarProveedor(Proveedor proveedor)
         {
             InitializeComponent();
             this._Proveedor = proveedor;
+            Text = "Editar Proveedor";
         }
 
         private void FrmAgregarEditarProveedor_Load(object sender, EventArgs e)

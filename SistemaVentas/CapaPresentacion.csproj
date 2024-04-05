@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DsPrincipal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsPrincipal.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmAgregarEditarArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +87,12 @@
     <Compile Include="FrmAgregarEditarTrabajador.Designer.cs">
       <DependentUpon>FrmAgregarEditarTrabajador.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAgregarEditarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarEditarVenta.Designer.cs">
+      <DependentUpon>FrmAgregarEditarVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmArgregarEditarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +128,12 @@
     </Compile>
     <Compile Include="FrmDetalleIngreso.Designer.cs">
       <DependentUpon>FrmDetalleIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDetalleVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetalleVenta.Designer.cs">
+      <DependentUpon>FrmDetalleVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmIngreso.cs">
       <SubType>Form</SubType>
@@ -160,6 +177,12 @@
     <Compile Include="FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVenta.Designer.cs">
+      <DependentUpon>FrmVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAgregarEditarArticulo.resx">
@@ -180,6 +203,9 @@
     <EmbeddedResource Include="FrmAgregarEditarTrabajador.resx">
       <DependentUpon>FrmAgregarEditarTrabajador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarEditarVenta.resx">
+      <DependentUpon>FrmAgregarEditarVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmArgregarEditarCliente.resx">
       <DependentUpon>FrmArgregarEditarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDetalleIngreso.resx">
       <DependentUpon>FrmDetalleIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDetalleVenta.resx">
+      <DependentUpon>FrmDetalleVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIngreso.resx">
       <DependentUpon>FrmIngreso.cs</DependentUpon>
@@ -219,6 +248,9 @@
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmVenta.resx">
+      <DependentUpon>FrmVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -229,6 +261,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\RptComprobanteFactura.rdlc" />
+    <None Include="DsPrincipal.xsc">
+      <DependentUpon>DsPrincipal.xsd</DependentUpon>
+    </None>
+    <None Include="DsPrincipal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsPrincipal.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DsPrincipal.xss">
+      <DependentUpon>DsPrincipal.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -257,5 +301,6 @@
     <Content Include="Resources\defecto.jpg" />
     <Content Include="Resources\foto-portada-tienda.jpeg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

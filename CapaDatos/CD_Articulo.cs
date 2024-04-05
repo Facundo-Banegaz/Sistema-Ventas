@@ -114,6 +114,40 @@ namespace CapaDatos
 
         }
 
+        public List<Articulo> CargarCboPorCant(int Id_articulo)
+        {
+            Conexion = new CD_Conexion();
+            listaArticulo = new List<Articulo>();
+
+            try
+            {
+                Conexion.SetConsutarProcedure("SpObtener_articulos_por_categoria_cantidad");
+                Conexion.SetearParametro("@Id_articulo", Id_articulo);
+                Conexion.EjecutarLectura();
+
+                while (Conexion.Lector.Read())
+                {
+                    Articulo articulo = new Articulo();
+                    articulo.Id_articulo = (int)Conexion.Lector["Id_articulo"];
+                    articulo.Nombre = (string)Conexion.Lector["Nombre"];
+                    articulo.Stock = (int)Conexion.Lector["Stock"];
+
+                    listaArticulo.Add(articulo);
+                }
+
+                return listaArticulo;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+        }
+
+
         //metodo insertar
 
         public void InsertarArticulo(Articulo Nuevo)

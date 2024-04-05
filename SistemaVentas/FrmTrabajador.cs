@@ -18,6 +18,7 @@ namespace SistemaVentas
         public FrmTrabajador()
         {
             InitializeComponent();
+            Text = "Gestion Trabajador:";
         }
 
         private void FrmPersona_Load(object sender, EventArgs e)

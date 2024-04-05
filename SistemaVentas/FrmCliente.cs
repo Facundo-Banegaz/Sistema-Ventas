@@ -19,6 +19,7 @@ namespace SistemaVentas
         public FrmCliente()
         {
             InitializeComponent();
+            Text = "Gestion Cliente:";
         }
 
         private void FrmCliente_Load(object sender, EventArgs e)

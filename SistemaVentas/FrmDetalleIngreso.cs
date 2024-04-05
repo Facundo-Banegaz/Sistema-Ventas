@@ -19,6 +19,7 @@ namespace SistemaVentas
         public FrmDetalleIngreso()
         {
             InitializeComponent();
+            Text = "Agregar Ingreso:";
         }
         public FrmDetalleIngreso(Ingreso ingreso)
         {
@@ -29,6 +30,7 @@ namespace SistemaVentas
         {
             MostrarDetalles();
             ArregloDataGridView(dgv_detalles);
+            lbl_total.Text = "Total de Registros:  " + Convert.ToString(dgv_detalles.Rows.Count);
         }
 
 
@@ -69,7 +71,7 @@ namespace SistemaVentas
             dgv_productos.Columns["Fecha_produccion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_productos.Columns["Fecha_vencimiento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_productos.Columns["Subtotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+            dgv_productos.Columns["Subtotal"].DefaultCellStyle.Format = "N0";
 
             _Metodos.AlternarColor(dgv_productos);
         }
