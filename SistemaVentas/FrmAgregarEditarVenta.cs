@@ -15,6 +15,12 @@ namespace SistemaVentas
 {
     public partial class FrmAgregarEditarVenta : Form
     {
+        //private decimal precioCompra;
+        //private decimal stock;
+        private int cantidad;
+        private decimal subtotal;
+        private decimal precioVenta;
+        private decimal totalPagado = 0;
         public Trabajador _Trabajador;
         public FrmAgregarEditarVenta()
         {
@@ -32,10 +38,11 @@ namespace SistemaVentas
             CargarTextBox();
             CargarCboComprobante();
             MostrarTabla();
-            //ArregloDataGridView(dgv_detalles_ingresos);
-            //// Deshabilitar un ComboBox
-            //btn_editar.Enabled = false;
-            //dtp_fecha.Enabled = false;
+            ArregloDataGridView(dgv_detalles_ventas);
+            // Deshabilitar un ComboBox
+            dtp_fecha.Enabled = false;
+
+
         }
 
         private void CargarCbo()
@@ -108,11 +115,6 @@ namespace SistemaVentas
                 cbo_articulo.DataSource = _Articulo.CargarCbo(Id_categoria);
                 cbo_articulo.ValueMember = "Id_articulo";
                 cbo_articulo.DisplayMember = "Nombre";
-                // Obtener el artículo seleccionado del ComboBox
-                Articulo articuloSeleccionado = (Articulo)cbo_articulo.SelectedItem;
-
-                // Mostrar la cantidad de stock en el TextBox
-                txt_stock.Text = articuloSeleccionado.Stock.ToString();
             }
             catch (Exception ex)
             {
@@ -121,8 +123,64 @@ namespace SistemaVentas
             }
 
         }
+        private void cbo_articulo_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+            try
+            {
+                if (cbo_articulo.SelectedItem != null)
+                {
+                    // Obtener el artículo seleccionado del ComboBox
+                    Articulo articuloSeleccionado = (Articulo)cbo_articulo.SelectedItem;
+                    int Id_articulo = (int)articuloSeleccionado.Id_articulo;
 
+                    // Mostrar la cantidad de stock en el TextBox
+                    CargarStock(Id_articulo);
+                }
+                else
+                {
+                    txt_stock.Text = ""; // Limpiar el TextBox si no hay artículo seleccionado
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private void CargarStock(int Id_articulo)
+        {
+            CN_Articulo _Articulo = new CN_Articulo();
+
+            try
+            {
+                // Llamar a tu función para cargar el stock
+                List<Articulo> listaArticulos = _Articulo.CargarCboPorCan(Id_articulo);
+
+                // Verificar si se encontró algún artículo
+                if (listaArticulos.Count > 0)
+                {
+                    // Obtener el primer artículo de la lista (debería haber solo uno)
+                    Articulo articulo = listaArticulos[0];
+
+                    // Mostrar el stock en el TextBox
+                    txt_stock.Text = articulo.Stock.ToString();
+                    txt_precio_compra.Text= articulo.Precio_Compra.ToString();
+                    txt_precio_venta.Text = articulo.Precio_Venta.ToString();
+                    dtp_fecha_vencimiento.Value = articulo.Fecha_Vencimiento;
+                    lbl_id_detalle_ingreso.Text = articulo.Id_detalle_ingreso.ToString();
+                }
+                else
+                {
+                    // Si no se encontró el artículo, limpiar el TextBox
+                    txt_stock.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción aquí
+                MessageBox.Show("Error al cargar el stock: " + ex.Message);
+            }
+        }
         //Crea la tabla de Detalle 
 
 
@@ -133,6 +191,7 @@ namespace SistemaVentas
             dgv_detalles_ventas.Columns.Add("Id_detalle_ingreso", "Id_detalle_ingreso");
             dgv_detalles_ventas.Columns.Add("Articulo", "Articulo");
             dgv_detalles_ventas.Columns.Add("cantidad", "cantidad");
+            dgv_detalles_ventas.Columns.Add("Precio_venta", "Precio_venta");
             dgv_detalles_ventas.Columns.Add("Descuento", "Descuento");
             dgv_detalles_ventas.Columns.Add("Subtotal", "Subtotal");
         }
@@ -147,6 +206,7 @@ namespace SistemaVentas
             dgv_productos.Columns["Id_detalle_ingreso"].Width = 250;
             dgv_productos.Columns["Articulo"].Width = 450;// nombre_producto
             dgv_productos.Columns["cantidad"].Width = 300;// nombre_producto
+            dgv_productos.Columns["Precio_venta"].Width = 300;// nombre_producto
             dgv_productos.Columns["Descuento"].Width = 300;// descripcion_producto 
             dgv_productos.Columns["Subtotal"].Width = 300;// Categoria
 
@@ -155,9 +215,10 @@ namespace SistemaVentas
             dgv_productos.Columns["Id_detalle_ingreso"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_productos.Columns["Articulo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_productos.Columns["cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_productos.Columns["Precio_venta"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_productos.Columns["Descuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_productos.Columns["Subtotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-     
+            dgv_productos.Columns["Subtotal"].DefaultCellStyle.Format = "N0";
 
             _Metodos.AlternarColor(dgv_productos);
         }
@@ -167,18 +228,20 @@ namespace SistemaVentas
         //Limpiar todos los controles del formulario
         private void Limpiar()
         {
-        //    dtp_fecha.Value = DateTime.Today;
-        //    cbo_comprobante.SelectedIndex = 0;
+
             txt_stock.Clear();
             txt_precio_compra.Clear();
             txt_precio_venta.Clear();
+            txt_cantidad.Clear();
             dtp_fecha_vencimiento.Value = DateTime.Today;
+            txt_descuento.Clear();
 
         }
         private void AgregarFila()
         {
             try
             {
+
                 if (ValidarVacioDetalle())
                 {
                     // Obtener el artículo seleccionado
@@ -188,8 +251,8 @@ namespace SistemaVentas
                     bool articuloYaPresente = false;
                     foreach (DataGridViewRow row in dgv_detalles_ventas.Rows)
                     {
-                        int idArticuloExistente = Convert.ToInt32(row.Cells[0].Value);
-                        if (idArticuloExistente == articuloSeleccionado.Id_articulo)
+                        int idArticuloExistente = Convert.ToInt32(lbl_id_detalle_ingreso.Text);
+                        if (idArticuloExistente == Convert.ToInt32(row.Cells[0].Value))
                         {
                             articuloYaPresente = true;
 
@@ -209,21 +272,21 @@ namespace SistemaVentas
                         fila.CreateCells(dgv_detalles_ventas);
 
                         // Convertir los valores de los TextBox a decimal
-                        precioCompra = Convert.ToDecimal(txt_precio_compra.Text);
+               
                         precioVenta = Convert.ToDecimal(txt_precio_venta.Text);
-                        stock = Convert.ToDecimal(txt_stock.Text);
+               
+                        cantidad= Convert.ToInt32(txt_cantidad.Text);
+
+
 
                         // Asignar los valores de las celdas
-                        fila.Cells[0].Value = articuloSeleccionado.Id_articulo;
+                        fila.Cells[0].Value = Convert.ToInt32(lbl_id_detalle_ingreso.Text);
                         fila.Cells[1].Value = articuloSeleccionado.Nombre;
-                        fila.Cells[2].Value = precioCompra;
+                        fila.Cells[2].Value = cantidad;
                         fila.Cells[3].Value = precioVenta;
-                        fila.Cells[4].Value = stock;
-                        fila.Cells[5].Value = dtp_fecha_produccion.Value.ToString("yyyy-MM-dd");
-                        fila.Cells[6].Value = dtp_fecha_vencimiento.Value.ToString("yyyy-MM-dd");
-
-                        decimal subtotal = precioCompra * stock;
-                        fila.Cells[7].Value = subtotal;
+                        fila.Cells[4].Value = Convert.ToDecimal(txt_descuento.Text);
+                        decimal subtotal = precioVenta * cantidad;
+                        fila.Cells[5].Value = subtotal;
                         totalPagado += subtotal;
                         lbl_total.Text = "Total a Pagar $: " + totalPagado.ToString("N2");
 
@@ -246,119 +309,6 @@ namespace SistemaVentas
         }
 
 
-        private void VerFila()
-        {
-            try
-            {
-                // Verificar si hay alguna fila seleccionada
-                if (dgv_detalles_ventas.CurrentRow != null)
-                {
-                    DialogResult respuesta = MessageBox.Show("¿Quieres Modificar este Ingreso?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                    if (respuesta == DialogResult.Yes)
-                    {
-                        // Obtener la fila seleccionada
-                        DataGridViewRow filaSeleccionada = dgv_detalles_ventas.CurrentRow;
-
-                        // Obtener los valores de las celdas de la fila seleccionada
-
-                        precioCompra = Convert.ToDecimal(filaSeleccionada.Cells[2].Value);
-                        precioVenta = Convert.ToDecimal(filaSeleccionada.Cells[3].Value);
-                        stock = Convert.ToInt32(filaSeleccionada.Cells[4].Value);
-                        DateTime fechaProduccion = Convert.ToDateTime(filaSeleccionada.Cells[5].Value);
-                        DateTime fechaVencimiento = Convert.ToDateTime(filaSeleccionada.Cells[6].Value);
-
-
-                        // Asignar los valores a tus campos
-                        // Supongamos que tienes campos llamados txtIdArticulo, txtNombreArticulo, etc.
-
-                        txt_precio_compra.Text = precioCompra.ToString();
-                        txt_precio_venta.Text = precioVenta.ToString();
-                        txt_stock.Text = stock.ToString();
-                        dtp_fecha_produccion.Value = fechaProduccion;
-                        dtp_fecha_vencimiento.Value = fechaVencimiento;
-
-
-
-                        // Deshabilitar un ComboBox
-                        cbo_articulo.Enabled = false;
-                        cbo_cat.Enabled = false;
-                        btn_agregar.Enabled = false;
-                        // Habilitar un btn
-                        btn_editar.Enabled = true;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No hay una fila seleccionada para Modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al modificar fila: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void ModificarFila()
-        {
-            try
-            {
-                if (ValidarVacioDetalle())
-                {
-                    // Obtener el artículo seleccionado
-                    Articulo articuloSeleccionado = (Articulo)cbo_articulo.SelectedItem;
-
-                    // Verificar si el artículo ya está presente en el DataGridView
-                    foreach (DataGridViewRow row in dgv_detalles_ventas.Rows)
-                    {
-                        int idArticuloExistente = Convert.ToInt32(row.Cells[0].Value);
-                        if (idArticuloExistente == articuloSeleccionado.Id_articulo)
-                        {
-
-
-                            // Si el artículo está presente, actualizar los valores de las celdas en la fila correspondiente
-                            row.Cells[2].Value = txt_precio_compra.Text;
-                            row.Cells[3].Value = txt_precio_venta.Text;
-                            row.Cells[4].Value = txt_stock.Text;
-                            row.Cells[5].Value = dtp_fecha_produccion.Value.ToString("yyyy-MM-dd");
-                            row.Cells[6].Value = dtp_fecha_vencimiento.Value.ToString("yyyy-MM-dd");
-
-                            precioCompra = Convert.ToDecimal(txt_precio_compra.Text);
-                            precioVenta = Convert.ToDecimal(txt_precio_venta.Text);
-                            stock = Convert.ToDecimal(txt_stock.Text);
-                            subtotal = precioCompra * stock;
-                            row.Cells[7].Value = subtotal;
-
-                            totalPagado += subtotal;
-                            lbl_total.Text = "Total a Pagar $: " + totalPagado.ToString("N2");
-
-                            // Limpiar los controles después de actualizar la fila
-
-                            Limpiar();
-                            // Habilitar un ComboBox
-                            cbo_articulo.Enabled = true;
-                            cbo_cat.Enabled = true;
-                            btn_agregar.Enabled = true;
-                            btn_editar.Enabled = false;
-
-                            // Salir del método después de actualizar los valores
-                            return;
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Debe Completar Todos los Campos!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al agregar fila: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
 
 
         private void QuitarFila()
@@ -367,7 +317,7 @@ namespace SistemaVentas
             {
                 if (dgv_detalles_ventas.CurrentRow != null)
                 {
-                    DialogResult respuesta = MessageBox.Show("¿Quieres eliminar este Ingreso?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult respuesta = MessageBox.Show("¿Quieres eliminar esta Venta?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     if (respuesta == DialogResult.Yes)
                     {
@@ -406,60 +356,63 @@ namespace SistemaVentas
 
 
 
-        private void GuardarIngreso()
+        private void GuardarVenta()
         {
-            CN_Ingreso _CN_Ingreso = new CN_Ingreso();
-            CN_Detalle_Ingreso _CN_Detalle_Ingreso = new CN_Detalle_Ingreso();
+            CN_Venta _CN_Venta = new CN_Venta();
+   
 
 
             try
             {
-
+                // Verificar si el DataGridView está vacío
+                if (dgv_detalles_ventas.Rows.Count == 0)
+                {
+                    MessageBox.Show("Debe agregar al menos un detalle de Venta.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 if (ValidarVacio())
                 {
                     errorIcono.Clear();
-                    Ingreso _Ingreso = new Ingreso();
-                    List<Detalle_Ingreso> _Detalle_Ingreso = new List<Detalle_Ingreso>();
+                    Venta venta = new Venta();
+
+                    List<Detalle_Venta> _Detalle_Venta = new List<Detalle_Venta>();
 
 
 
-                    _Ingreso.Trabajador = new Trabajador();
-                    _Ingreso.Trabajador.Id_trabajador = _Trabajador.Id_trabajador;
-                    _Ingreso.Proveedor = (Proveedor)cbo_cliente.SelectedItem;
-                    _Ingreso.Fecha = dtp_fecha.Value;
-                    _Ingreso.Tipo_Comprobante = (string)cbo_comprobante.SelectedItem;
-                    _Ingreso.Serie = txt_serie.Text;
-                    _Ingreso.Correlativo = txt_numero.Text;
-                    _Ingreso.Iva = decimal.Parse(txt_iva.Text);
-                    _Ingreso.Estado = "EMITIDO";
+                    venta.Trabajador = new Trabajador();
+                    venta.Trabajador.Id_trabajador = _Trabajador.Id_trabajador;
+                    venta.Cliente = (Cliente)cbo_cliente.SelectedItem;
+                    venta.Fecha = dtp_fecha.Value;
+                    venta.Tipo_Comprobante = (string)cbo_comprobante.SelectedItem;
+                    venta.Serie = txt_serie.Text;
+                    venta.Correlativo = txt_numero.Text;
+                    venta.Iva = decimal.Parse(txt_iva.Text);
+                    venta.Estado = "EMITIDO";
 
 
 
 
                     foreach (DataGridViewRow fila in dgv_detalles_ventas.Rows)
                     {
-                        Detalle_Ingreso detalle = new Detalle_Ingreso();
+                        Detalle_Venta detalle = new Detalle_Venta();
 
 
-                        detalle.Ingreso = new Ingreso();
+                        detalle.Venta = new Venta();
 
-                        detalle.Articulo = new Articulo();
+                        detalle.Detalle_Ingreso = new Detalle_Ingreso();
 
-                        detalle.Articulo.Id_articulo = (int)fila.Cells["Id_articulo"].Value;
-                        detalle.Articulo.Nombre = (string)fila.Cells["Articulo"].Value;
-                        detalle.Precio_Compra = (decimal)fila.Cells["Precio_compra"].Value;
+
+                        detalle.Detalle_Ingreso.Id_detalle_ingreso = (int)fila.Cells["Id_detalle_ingreso"].Value;
+                        detalle.Cantidad = (int)fila.Cells["Cantidad"].Value;
                         detalle.Precio_Venta = (decimal)fila.Cells["Precio_venta"].Value;
-                        detalle.Stock_Inicial = Convert.ToInt32(fila.Cells["Stock_inicial"].Value);
-                        detalle.Fecha_Produccion = Convert.ToDateTime(fila.Cells["Fecha_produccion"].Value);
-                        detalle.Fecha_Vencimiento = Convert.ToDateTime(fila.Cells["Fecha_vencimiento"].Value);
-                        detalle.SubTotal = (decimal)fila.Cells["Subtotal"].Value;
+                        detalle.Descuento = (decimal)fila.Cells["Descuento"].Value;
 
-                        _Detalle_Ingreso.Add(detalle);
+                        _Detalle_Venta.Add(detalle);
                     }
 
-                    _CN_Ingreso.InsertarIngreso(_Ingreso, _Detalle_Ingreso);
+                    _CN_Venta.InsertarVenta(venta, _Detalle_Venta);
 
-                    MessageBox.Show("El Ingreso  Fue Agregada Exitosamente!!", "Agregado");
+                    MessageBox.Show("La venta   Fue Agregada Exitosamente!!", "Agregado");
                     this.Close();
 
                 }
@@ -481,7 +434,6 @@ namespace SistemaVentas
         {
             bool error = true;
 
-
             if (txt_stock.Text == string.Empty)
             {
                 errorIcono.SetError(txt_stock, "El campo es obligatorio, ingrese el Stock");
@@ -497,26 +449,25 @@ namespace SistemaVentas
                 errorIcono.SetError(txt_precio_venta, "El campo es obligatorio, ingrese el Precio de Venta");
                 error = false;
             }
-            else if (dtp_fecha_produccion.Value == DateTime.MinValue)
-            {
-                errorIcono.SetError(dtp_fecha_produccion, "Debe completar el campo Fecha Produccion");
-                error = false;
-            }
+
             else if (dtp_fecha_vencimiento.Value == DateTime.MinValue)
             {
                 errorIcono.SetError(dtp_fecha_vencimiento, "Debe completar el campo Fecha Vencimiento");
                 error = false;
             }
-            // Validación de fechas de producción y vencimiento
-            else if (dtp_fecha_produccion.Value >= dtp_fecha_vencimiento.Value)
-            {
-                errorIcono.SetError(dtp_fecha_produccion, "La fecha de producción debe ser anterior a la fecha de vencimiento");
-                errorIcono.SetError(dtp_fecha_vencimiento, "La fecha de vencimiento debe ser posterior a la fecha de producción");
-                error = false;
-            }
             else if (cbo_articulo.SelectedItem == null)
             {
                 errorIcono.SetError(cbo_articulo, "La categoria seleccionada no tiene Articulos");
+                error = false;
+            }
+            else if (txt_cantidad.Text == string.Empty)
+            {
+                errorIcono.SetError(txt_cantidad, "El campo es obligatorio, ingrese la Cantidad ");
+                error = false;
+            }
+            else if (txt_descuento.Text == string.Empty)
+            {
+                errorIcono.SetError(txt_descuento, "El campo es obligatorio, ingrese el Descuento ");
                 error = false;
             }
             else
@@ -549,14 +500,10 @@ namespace SistemaVentas
             AgregarFila();
         }
 
-        private void btn_editar_Click(object sender, EventArgs e)
-        {
-            ModificarFila();
-        }
 
         private void btn_quitar_Click(object sender, EventArgs e)
         {
-            QuitarFila();   
+            QuitarFila();
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -566,13 +513,9 @@ namespace SistemaVentas
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            GuardarIngreso();
+            GuardarVenta();
         }
 
-        private void txt_stock_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
 
         private void txt_precio_compra_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -595,6 +538,27 @@ namespace SistemaVentas
         }
 
         private void txt_iva_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter presionado no es un número, el carácter de retroceso, ni el carácter decimal
+            if (!(char.IsDigit(e.KeyChar)) && !(e.KeyChar == (char)Keys.Back) && !(e.KeyChar == '.' || e.KeyChar == ','))
+            {
+                MessageBox.Show("Solo se permiten números y el carácter decimal.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txt_cantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txt_descuento_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si el carácter presionado no es un número, el carácter de retroceso, ni el carácter decimal
             if (!(char.IsDigit(e.KeyChar)) && !(e.KeyChar == (char)Keys.Back) && !(e.KeyChar == '.' || e.KeyChar == ','))

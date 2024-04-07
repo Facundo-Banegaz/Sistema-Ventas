@@ -24,12 +24,13 @@ namespace SistemaVentas
         {
             InitializeComponent();
             this._Venta = venta;
-            lbl_total.Text = "Total de Registros:  " + Convert.ToString(dgv_detalles.Rows.Count);
         }
         private void FrmDetalleVenta_Load(object sender, EventArgs e)
         {
             MostrarDetalles();
             ArregloDataGridView(dgv_detalles);
+            lbl_total.Text = "Total de Registros:  " + Convert.ToString(dgv_detalles.Rows.Count);
+
         }
 
 
@@ -47,32 +48,32 @@ namespace SistemaVentas
             //logica del dataGridView
             CN_Metodos _Metodos = new CN_Metodos();
             dgv_productos.Columns["Id_detalle_venta"].Visible = false;
-            dgv_productos.Columns["Ingreso"].Visible = false;
-            dgv_productos.Columns["Stock_Actual"].Visible = false;
+            dgv_productos.Columns["Venta"].Visible = false;
+            dgv_productos.Columns["Detalle_ingreso"].Visible = false;
 
 
 
             dgv_productos.Columns["Articulo"].Width = 450;// nombre_producto
-            dgv_productos.Columns["Precio_compra"].Width = 300;// nombre_producto
-            dgv_productos.Columns["Precio_venta"].Width = 300;// descripcion_producto 
-            dgv_productos.Columns["Stock_inicial"].Width = 300;// Categoria
-            dgv_productos.Columns["Fecha_produccion"].Width = 350;// Presentacion
-            dgv_productos.Columns["Fecha_vencimiento"].Width = 350;// Categoria
+            dgv_productos.Columns["Cantidad"].Width = 300;// descripcion_producto 
+            dgv_productos.Columns["Precio_venta"].Width = 300;// Categoria
+            dgv_productos.Columns["Descuento"].Width = 350;// Presentacion
             dgv_productos.Columns["Subtotal"].Width = 300;// Presentacion
 
 
 
             dgv_productos.Columns["Articulo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_productos.Columns["Precio_compra"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_productos.Columns["Cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_productos.Columns["Precio_venta"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_productos.Columns["Stock_inicial"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_productos.Columns["Fecha_produccion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_productos.Columns["Fecha_vencimiento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_productos.Columns["Descuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_productos.Columns["Subtotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_productos.Columns["Subtotal"].DefaultCellStyle.Format = "N0";
 
             _Metodos.AlternarColor(dgv_productos);
         }
 
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();   
+        }
     }
 }

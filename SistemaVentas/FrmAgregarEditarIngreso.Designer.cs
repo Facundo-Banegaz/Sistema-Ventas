@@ -38,11 +38,9 @@
             this.txt_serie = new System.Windows.Forms.TextBox();
             this.lbl_iva = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_id = new System.Windows.Forms.TextBox();
             this.lbl_fecha = new System.Windows.Forms.Label();
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.lbl_cat = new System.Windows.Forms.Label();
-            this.lbl_Id = new System.Windows.Forms.Label();
             this.txt_stock = new System.Windows.Forms.TextBox();
             this.lbl_sector = new System.Windows.Forms.Label();
             this.dgv_detalle_ingreso = new System.Windows.Forms.GroupBox();
@@ -107,8 +105,9 @@
             // dtp_fecha
             // 
             this.dtp_fecha.CalendarFont = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_fecha.Enabled = false;
             this.dtp_fecha.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_fecha.Location = new System.Drawing.Point(1326, 87);
+            this.dtp_fecha.Location = new System.Drawing.Point(1252, 86);
             this.dtp_fecha.Name = "dtp_fecha";
             this.dtp_fecha.Size = new System.Drawing.Size(446, 37);
             this.dtp_fecha.TabIndex = 166;
@@ -149,26 +148,13 @@
             this.label4.TabIndex = 162;
             this.label4.Text = "Serie:";
             // 
-            // txt_id
-            // 
-            this.txt_id.BackColor = System.Drawing.Color.GhostWhite;
-            this.txt_id.Enabled = false;
-            this.txt_id.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_id.ForeColor = System.Drawing.Color.DarkOrange;
-            this.txt_id.Location = new System.Drawing.Point(16, 82);
-            this.txt_id.Name = "txt_id";
-            this.txt_id.ReadOnly = true;
-            this.txt_id.Size = new System.Drawing.Size(146, 42);
-            this.txt_id.TabIndex = 161;
-            this.txt_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // lbl_fecha
             // 
             this.lbl_fecha.AutoSize = true;
             this.lbl_fecha.BackColor = System.Drawing.Color.Black;
             this.lbl_fecha.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_fecha.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_fecha.Location = new System.Drawing.Point(1437, 22);
+            this.lbl_fecha.Location = new System.Drawing.Point(1363, 21);
             this.lbl_fecha.Name = "lbl_fecha";
             this.lbl_fecha.Size = new System.Drawing.Size(219, 35);
             this.lbl_fecha.TabIndex = 159;
@@ -180,7 +166,7 @@
             this.lbl_nombre.BackColor = System.Drawing.Color.Black;
             this.lbl_nombre.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_nombre.Location = new System.Drawing.Point(367, 23);
+            this.lbl_nombre.Location = new System.Drawing.Point(293, 22);
             this.lbl_nombre.Name = "lbl_nombre";
             this.lbl_nombre.Size = new System.Drawing.Size(102, 35);
             this.lbl_nombre.TabIndex = 158;
@@ -197,18 +183,6 @@
             this.lbl_cat.Size = new System.Drawing.Size(271, 35);
             this.lbl_cat.TabIndex = 157;
             this.lbl_cat.Text = "Categoria Del Artículo:";
-            // 
-            // lbl_Id
-            // 
-            this.lbl_Id.AutoSize = true;
-            this.lbl_Id.BackColor = System.Drawing.Color.Black;
-            this.lbl_Id.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Id.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_Id.Location = new System.Drawing.Point(11, 28);
-            this.lbl_Id.Name = "lbl_Id";
-            this.lbl_Id.Size = new System.Drawing.Size(151, 29);
-            this.lbl_Id.TabIndex = 156;
-            this.lbl_Id.Text = "Id del Ingreso:";
             // 
             // txt_stock
             // 
@@ -227,7 +201,7 @@
             this.lbl_sector.BackColor = System.Drawing.Color.Black;
             this.lbl_sector.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_sector.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_sector.Location = new System.Drawing.Point(866, 22);
+            this.lbl_sector.Location = new System.Drawing.Point(792, 21);
             this.lbl_sector.Name = "lbl_sector";
             this.lbl_sector.Size = new System.Drawing.Size(139, 35);
             this.lbl_sector.TabIndex = 154;
@@ -250,12 +224,10 @@
             this.dgv_detalle_ingreso.Controls.Add(this.txt_numero);
             this.dgv_detalle_ingreso.Controls.Add(this.lbl_sector);
             this.dgv_detalle_ingreso.Controls.Add(this.dtp_fecha);
-            this.dgv_detalle_ingreso.Controls.Add(this.lbl_Id);
             this.dgv_detalle_ingreso.Controls.Add(this.lbl_iva);
             this.dgv_detalle_ingreso.Controls.Add(this.label5);
             this.dgv_detalle_ingreso.Controls.Add(this.lbl_fecha);
             this.dgv_detalle_ingreso.Controls.Add(this.lbl_nombre);
-            this.dgv_detalle_ingreso.Controls.Add(this.txt_id);
             this.dgv_detalle_ingreso.Controls.Add(this.txt_serie);
             this.dgv_detalle_ingreso.Controls.Add(this.label4);
             this.dgv_detalle_ingreso.Location = new System.Drawing.Point(12, 12);
@@ -270,7 +242,7 @@
             this.txt_codigo.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_codigo.Enabled = false;
             this.txt_codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_codigo.Location = new System.Drawing.Point(238, 87);
+            this.txt_codigo.Location = new System.Drawing.Point(164, 86);
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.ReadOnly = true;
             this.txt_codigo.Size = new System.Drawing.Size(379, 35);
@@ -349,7 +321,7 @@
             this.cbo_proveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_proveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_proveedor.FormattingEnabled = true;
-            this.cbo_proveedor.Location = new System.Drawing.Point(730, 89);
+            this.cbo_proveedor.Location = new System.Drawing.Point(656, 88);
             this.cbo_proveedor.Name = "cbo_proveedor";
             this.cbo_proveedor.Size = new System.Drawing.Size(425, 34);
             this.cbo_proveedor.TabIndex = 180;
@@ -660,11 +632,9 @@
         private System.Windows.Forms.TextBox txt_serie;
         private System.Windows.Forms.Label lbl_iva;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.Label lbl_fecha;
         private System.Windows.Forms.Label lbl_nombre;
         private System.Windows.Forms.Label lbl_cat;
-        private System.Windows.Forms.Label lbl_Id;
         private System.Windows.Forms.TextBox txt_stock;
         private System.Windows.Forms.Label lbl_sector;
         private System.Windows.Forms.GroupBox dgv_detalle_ingreso;

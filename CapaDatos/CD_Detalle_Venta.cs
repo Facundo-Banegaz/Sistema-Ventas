@@ -81,7 +81,7 @@ namespace CapaDatos
                 Conexion.SetConsutarProcedure("SpInsertar_detalle_venta");
 
                 Conexion.SetearParametro("@Id_venta", Nuevo.Venta.Id_venta);
-                Conexion.SetearParametro("@Id_detalle_venta", Nuevo.Id_detalle_venta);
+                Conexion.SetearParametro("@Id_detalle_ingreso", Nuevo.Detalle_Ingreso.Id_detalle_ingreso);
                 Conexion.SetearParametro("@Cantidad", Nuevo.Cantidad);
                 Conexion.SetearParametro("@Precio_venta", Nuevo.Precio_Venta);
                 Conexion.SetearParametro("@Descuento", Nuevo.Descuento);

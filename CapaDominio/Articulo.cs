@@ -17,8 +17,12 @@ namespace CapaDominio
         public Categoria Categoria { get; set;}
         public Presentacion Presentacion { get; set;}
 
+        //atributos necesarios
         public int Stock { get; set; }
-
+        public decimal Precio_Compra { get; set; }
+        public decimal Precio_Venta { get; set; }
+        public DateTime Fecha_Vencimiento { get; set; }
+        public int Id_detalle_ingreso { get; set; }
         public override string ToString()
         {
             return Nombre;

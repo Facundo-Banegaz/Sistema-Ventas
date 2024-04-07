@@ -45,8 +45,6 @@ namespace SistemaVentas
             ArregloDataGridView(dgv_detalles_ingresos);
             // Deshabilitar un ComboBox
             btn_editar.Enabled = false;
-            dtp_fecha.Enabled = false;
-
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -184,7 +182,7 @@ namespace SistemaVentas
             dgv_productos.Columns["Fecha_produccion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_productos.Columns["Fecha_vencimiento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_productos.Columns["Subtotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+            dgv_productos.Columns["Subtotal"].DefaultCellStyle.Format = "N0";
 
             _Metodos.AlternarColor(dgv_productos);
         }
@@ -194,8 +192,6 @@ namespace SistemaVentas
         //Limpiar todos los controles del formulario
         private void Limpiar()
         {
-            dtp_fecha.Value = DateTime.Today;
-            cbo_comprobante.SelectedIndex = 0;
             txt_stock.Clear();
             txt_precio_compra.Clear();
             txt_precio_venta.Clear();
@@ -495,19 +491,22 @@ namespace SistemaVentas
         private void GuardarIngreso()
         {
             CN_Ingreso _CN_Ingreso = new CN_Ingreso();
-            CN_Detalle_Ingreso _CN_Detalle_Ingreso = new CN_Detalle_Ingreso();
-
 
             try
             {
+                // Verificar si el DataGridView está vacío
+                if (dgv_detalles_ingresos.Rows.Count == 0)
+                {
+                    MessageBox.Show("Debe agregar al menos un detalle de ingreso.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                // Verificar la validación de los campos del DataGridView
                 if (ValidarVacio())
                 {
                     errorIcono.Clear();
                     Ingreso _Ingreso = new Ingreso();
                     List<Detalle_Ingreso> _Detalle_Ingreso = new List<Detalle_Ingreso>();
-
-
 
                     _Ingreso.Trabajador = new Trabajador();
                     _Ingreso.Trabajador.Id_trabajador = _Trabajador.Id_trabajador;
@@ -519,49 +518,41 @@ namespace SistemaVentas
                     _Ingreso.Iva = decimal.Parse(txt_iva.Text);
                     _Ingreso.Estado = "EMITIDO";
 
-
-
-
                     foreach (DataGridViewRow fila in dgv_detalles_ingresos.Rows)
                     {
                         Detalle_Ingreso detalle = new Detalle_Ingreso();
 
-
                         detalle.Ingreso = new Ingreso();
-
                         detalle.Articulo = new Articulo();
 
-                        detalle.Articulo.Id_articulo = (int)fila.Cells["Id_articulo"].Value; 
+                        detalle.Articulo.Id_articulo = (int)fila.Cells["Id_articulo"].Value;
                         detalle.Articulo.Nombre = (string)fila.Cells["Articulo"].Value;
                         detalle.Precio_Compra = (decimal)fila.Cells["Precio_compra"].Value;
                         detalle.Precio_Venta = (decimal)fila.Cells["Precio_venta"].Value;
                         detalle.Stock_Inicial = Convert.ToInt32(fila.Cells["Stock_inicial"].Value);
                         detalle.Fecha_Produccion = Convert.ToDateTime(fila.Cells["Fecha_produccion"].Value);
                         detalle.Fecha_Vencimiento = Convert.ToDateTime(fila.Cells["Fecha_vencimiento"].Value);
-                        detalle.SubTotal = (decimal)fila.Cells["Subtotal"].Value; 
+                        detalle.SubTotal = (decimal)fila.Cells["Subtotal"].Value;
 
                         _Detalle_Ingreso.Add(detalle);
                     }
 
                     _CN_Ingreso.InsertarIngreso(_Ingreso, _Detalle_Ingreso);
 
-                    MessageBox.Show("El Ingreso  Fue Agregada Exitosamente!!", "Agregado");
-                        this.Close();
-                    
+                    MessageBox.Show("El Ingreso Fue Agregado Exitosamente!!", "Agregado");
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Debe Completar Todos los Campos!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Debe completar todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Error: " + ex.ToString());
             }
-
-
         }
+
 
         private bool ValidarVacioDetalle()
         {

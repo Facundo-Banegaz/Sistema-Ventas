@@ -158,6 +158,26 @@ namespace SistemaVentas
         private void btn_imprimir_Click(object sender, EventArgs e)
         {
 
+            Venta seleccionado = null;
+
+            if (dgv_ventas.CurrentRow != null)
+            {
+                DialogResult respuesta = MessageBox.Show("¿Quieres Imprimir esta Venta?", "Imprimir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Venta)dgv_ventas.CurrentRow.DataBoundItem;
+
+                    FrmReporteFactura frmReporte = new FrmReporteFactura(seleccionado);
+
+                    frmReporte.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay ninguna fila seleccionada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)

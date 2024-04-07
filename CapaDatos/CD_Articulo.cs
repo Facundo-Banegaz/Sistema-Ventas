@@ -129,9 +129,12 @@ namespace CapaDatos
                 {
                     Articulo articulo = new Articulo();
                     articulo.Id_articulo = (int)Conexion.Lector["Id_articulo"];
+                    articulo.Id_detalle_ingreso = (int)Conexion.Lector["Id_detalle_ingreso"];
                     articulo.Nombre = (string)Conexion.Lector["Nombre"];
                     articulo.Stock = (int)Conexion.Lector["Stock"];
-
+                    articulo.Precio_Compra = (decimal)Conexion.Lector["Precio_compra"];
+                    articulo.Precio_Venta = (decimal)Conexion.Lector["Precio_venta"];
+                    articulo.Fecha_Vencimiento = (DateTime)Conexion.Lector["Fecha_Vencimiento"];
                     listaArticulo.Add(articulo);
                 }
 

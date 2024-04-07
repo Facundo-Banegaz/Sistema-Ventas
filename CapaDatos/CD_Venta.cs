@@ -81,7 +81,6 @@ namespace CapaDatos
                 //Conexion.IniciarTransaccion();
 
                 Conexion.SetConsutarProcedure("SpInsertar_Venta");
-
                 Conexion.SetearParametro("@Id_trabajador", Nuevo.Trabajador.Id_trabajador);
                 Conexion.SetearParametro("@Id_cliente", Nuevo.Cliente.Id_cliente);
                 Conexion.SetearParametro("@Fecha", Nuevo.Fecha.ToString("yyyy-MM-dd hh:mm:ss"));

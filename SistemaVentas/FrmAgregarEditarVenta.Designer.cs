@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarEditarVenta));
             this.dgv_detalle_ingreso = new System.Windows.Forms.GroupBox();
+            this.lbl_id_detalle_ingreso = new System.Windows.Forms.Label();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.dgv_detalles_ventas = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,11 +45,10 @@
             this.cbo_comprobante = new System.Windows.Forms.ComboBox();
             this.lbl_comprobante = new System.Windows.Forms.Label();
             this.pl_art = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btn_editar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_descuento = new System.Windows.Forms.TextBox();
             this.cbo_cat = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbo_articulo = new System.Windows.Forms.ComboBox();
@@ -83,6 +83,7 @@
             // dgv_detalle_ingreso
             // 
             this.dgv_detalle_ingreso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_detalle_ingreso.Controls.Add(this.lbl_id_detalle_ingreso);
             this.dgv_detalle_ingreso.Controls.Add(this.txt_codigo);
             this.dgv_detalle_ingreso.Controls.Add(this.dgv_detalles_ventas);
             this.dgv_detalle_ingreso.Controls.Add(this.label6);
@@ -109,6 +110,16 @@
             this.dgv_detalle_ingreso.TabIndex = 173;
             this.dgv_detalle_ingreso.TabStop = false;
             this.dgv_detalle_ingreso.Text = "Ingresos Almacén";
+            // 
+            // lbl_id_detalle_ingreso
+            // 
+            this.lbl_id_detalle_ingreso.AutoSize = true;
+            this.lbl_id_detalle_ingreso.Location = new System.Drawing.Point(30, 34);
+            this.lbl_id_detalle_ingreso.Name = "lbl_id_detalle_ingreso";
+            this.lbl_id_detalle_ingreso.Size = new System.Drawing.Size(51, 20);
+            this.lbl_id_detalle_ingreso.TabIndex = 185;
+            this.lbl_id_detalle_ingreso.Text = "label9";
+            this.lbl_id_detalle_ingreso.Visible = false;
             // 
             // txt_codigo
             // 
@@ -176,6 +187,7 @@
             // txt_iva
             // 
             this.txt_iva.BackColor = System.Drawing.Color.GhostWhite;
+            this.txt_iva.Enabled = false;
             this.txt_iva.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_iva.ForeColor = System.Drawing.Color.OrangeRed;
             this.txt_iva.Location = new System.Drawing.Point(1613, 222);
@@ -270,11 +282,10 @@
             // pl_art
             // 
             this.pl_art.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pl_art.Controls.Add(this.textBox2);
-            this.pl_art.Controls.Add(this.label8);
+            this.pl_art.Controls.Add(this.txt_cantidad);
             this.pl_art.Controls.Add(this.label7);
-            this.pl_art.Controls.Add(this.btn_editar);
-            this.pl_art.Controls.Add(this.textBox1);
+            this.pl_art.Controls.Add(this.label8);
+            this.pl_art.Controls.Add(this.txt_descuento);
             this.pl_art.Controls.Add(this.cbo_cat);
             this.pl_art.Controls.Add(this.label3);
             this.pl_art.Controls.Add(this.cbo_articulo);
@@ -295,27 +306,16 @@
             this.pl_art.Size = new System.Drawing.Size(1816, 229);
             this.pl_art.TabIndex = 173;
             // 
-            // textBox2
+            // txt_cantidad
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(606, 175);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(299, 35);
-            this.textBox2.TabIndex = 187;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Black;
-            this.label8.Font = new System.Drawing.Font("Impact", 13F);
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(680, 119);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(117, 33);
-            this.label8.TabIndex = 188;
-            this.label8.Text = "Cantidad:";
+            this.txt_cantidad.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_cantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_cantidad.Location = new System.Drawing.Point(950, 170);
+            this.txt_cantidad.Name = "txt_cantidad";
+            this.txt_cantidad.Size = new System.Drawing.Size(319, 35);
+            this.txt_cantidad.TabIndex = 187;
+            this.txt_cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cantidad_KeyPress);
             // 
             // label7
             // 
@@ -323,36 +323,36 @@
             this.label7.BackColor = System.Drawing.Color.Black;
             this.label7.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(1597, 163);
+            this.label7.Location = new System.Drawing.Point(1607, 173);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(34, 35);
             this.label7.TabIndex = 186;
             this.label7.Text = "%";
             // 
-            // btn_editar
+            // label8
             // 
-            this.btn_editar.BackColor = System.Drawing.Color.Orange;
-            this.btn_editar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_editar.Image = ((System.Drawing.Image)(resources.GetObject("btn_editar.Image")));
-            this.btn_editar.Location = new System.Drawing.Point(1714, 85);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(86, 60);
-            this.btn_editar.TabIndex = 184;
-            this.btn_editar.UseVisualStyleBackColor = false;
-            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Black;
+            this.label8.Font = new System.Drawing.Font("Impact", 13F);
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(1068, 114);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(117, 33);
+            this.label8.TabIndex = 188;
+            this.label8.Text = "Cantidad:";
             // 
-            // textBox1
+            // txt_descuento
             // 
-            this.textBox1.BackColor = System.Drawing.Color.GhostWhite;
-            this.textBox1.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.textBox1.Location = new System.Drawing.Point(1472, 160);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(119, 42);
-            this.textBox1.TabIndex = 185;
-            this.textBox1.Text = "5";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_descuento.BackColor = System.Drawing.Color.GhostWhite;
+            this.txt_descuento.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_descuento.ForeColor = System.Drawing.Color.OrangeRed;
+            this.txt_descuento.Location = new System.Drawing.Point(1463, 170);
+            this.txt_descuento.Name = "txt_descuento";
+            this.txt_descuento.Size = new System.Drawing.Size(138, 42);
+            this.txt_descuento.TabIndex = 185;
+            this.txt_descuento.Text = "0";
+            this.txt_descuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_descuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_descuento_KeyPress);
             // 
             // cbo_cat
             // 
@@ -386,13 +386,14 @@
             this.cbo_articulo.Name = "cbo_articulo";
             this.cbo_articulo.Size = new System.Drawing.Size(537, 34);
             this.cbo_articulo.TabIndex = 181;
+            this.cbo_articulo.SelectedIndexChanged += new System.EventHandler(this.cbo_articulo_SelectedIndexChanged);
             // 
             // btn_quitar
             // 
             this.btn_quitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(192)))));
             this.btn_quitar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_quitar.Image = ((System.Drawing.Image)(resources.GetObject("btn_quitar.Image")));
-            this.btn_quitar.Location = new System.Drawing.Point(1714, 160);
+            this.btn_quitar.Location = new System.Drawing.Point(1714, 152);
             this.btn_quitar.Name = "btn_quitar";
             this.btn_quitar.Size = new System.Drawing.Size(86, 60);
             this.btn_quitar.TabIndex = 175;
@@ -402,6 +403,7 @@
             // dtp_fecha_vencimiento
             // 
             this.dtp_fecha_vencimiento.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dtp_fecha_vencimiento.Enabled = false;
             this.dtp_fecha_vencimiento.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_fecha_vencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_fecha_vencimiento.Location = new System.Drawing.Point(1322, 66);
@@ -414,7 +416,7 @@
             this.btn_agregar.BackColor = System.Drawing.Color.Green;
             this.btn_agregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_agregar.Image = ((System.Drawing.Image)(resources.GetObject("btn_agregar.Image")));
-            this.btn_agregar.Location = new System.Drawing.Point(1714, 10);
+            this.btn_agregar.Location = new System.Drawing.Point(1714, 25);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(86, 60);
             this.btn_agregar.TabIndex = 174;
@@ -439,7 +441,7 @@
             this.lb_img.BackColor = System.Drawing.Color.Black;
             this.lb_img.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_img.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_img.Location = new System.Drawing.Point(1316, 166);
+            this.lb_img.Location = new System.Drawing.Point(1313, 175);
             this.lb_img.Name = "lb_img";
             this.lb_img.Size = new System.Drawing.Size(144, 35);
             this.lb_img.TabIndex = 171;
@@ -448,9 +450,11 @@
             // txt_precio_compra
             // 
             this.txt_precio_compra.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_precio_compra.Enabled = false;
             this.txt_precio_compra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_precio_compra.Location = new System.Drawing.Point(948, 65);
+            this.txt_precio_compra.Location = new System.Drawing.Point(595, 175);
             this.txt_precio_compra.Name = "txt_precio_compra";
+            this.txt_precio_compra.ReadOnly = true;
             this.txt_precio_compra.Size = new System.Drawing.Size(319, 35);
             this.txt_precio_compra.TabIndex = 178;
             this.txt_precio_compra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -462,7 +466,7 @@
             this.lbl_precio.BackColor = System.Drawing.Color.Black;
             this.lbl_precio.Font = new System.Drawing.Font("Impact", 13F);
             this.lbl_precio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_precio.Location = new System.Drawing.Point(1024, 18);
+            this.lbl_precio.Location = new System.Drawing.Point(680, 128);
             this.lbl_precio.Name = "lbl_precio";
             this.lbl_precio.Size = new System.Drawing.Size(175, 33);
             this.lbl_precio.TabIndex = 177;
@@ -471,9 +475,11 @@
             // txt_precio_venta
             // 
             this.txt_precio_venta.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_precio_venta.Enabled = false;
             this.txt_precio_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_precio_venta.Location = new System.Drawing.Point(948, 170);
+            this.txt_precio_venta.Location = new System.Drawing.Point(950, 64);
             this.txt_precio_venta.Name = "txt_precio_venta";
+            this.txt_precio_venta.ReadOnly = true;
             this.txt_precio_venta.Size = new System.Drawing.Size(319, 35);
             this.txt_precio_venta.TabIndex = 176;
             this.txt_precio_venta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -497,7 +503,7 @@
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(1024, 122);
+            this.label1.Location = new System.Drawing.Point(1026, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 35);
             this.label1.TabIndex = 175;
@@ -671,7 +677,6 @@
         private System.Windows.Forms.ComboBox cbo_comprobante;
         private System.Windows.Forms.Label lbl_comprobante;
         private System.Windows.Forms.Panel pl_art;
-        private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.ComboBox cbo_cat;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbo_articulo;
@@ -696,10 +701,11 @@
         private System.Windows.Forms.Label lbl_nombre;
         private System.Windows.Forms.TextBox txt_serie;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_cantidad;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_descuento;
         private System.Windows.Forms.ErrorProvider errorIcono;
+        private System.Windows.Forms.Label lbl_id_detalle_ingreso;
     }
 }

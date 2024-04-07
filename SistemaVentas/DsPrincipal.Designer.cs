@@ -10,6 +10,8 @@
 
 #pragma warning disable 1591
 
+using System;
+
 namespace SistemaVentas {
     
     
@@ -268,7 +270,9 @@ namespace SistemaVentas {
             xs.Add(dsSchema);
             return type;
         }
-        
+
+
+
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void SpReporte_facturaRowChangeEventHandler(object sender, SpReporte_facturaRowChangeEvent e);
         
@@ -1316,6 +1320,16 @@ namespace SistemaVentas.DsPrincipalTableAdapters {
             DsPrincipal.SpReporte_facturaDataTable dataTable = new DsPrincipal.SpReporte_facturaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+
+        internal void Fill(DsPrincipal.SpReporte_facturaDataTable spReporte_facturaDataTable)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void Fill(Func<int, DsPrincipal.SpReporte_facturaDataTable> spReporte_factura, int id_venta)
+        {
+            throw new NotImplementedException();
         }
     }
     
