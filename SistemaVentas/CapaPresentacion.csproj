@@ -210,6 +210,12 @@
     <Compile Include="Reportes\FrmReporteFactura.Designer.cs">
       <DependentUpon>FrmReporteFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmReporteFacturaIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteFacturaIngreso.Designer.cs">
+      <DependentUpon>FrmReporteFacturaIngreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="FrmAgregarEditarArticulo.resx">
       <DependentUpon>FrmAgregarEditarArticulo.cs</DependentUpon>
@@ -290,7 +296,11 @@
     <EmbeddedResource Include="Reportes\FrmReporteFactura.resx">
       <DependentUpon>FrmReporteFactura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteFacturaIngreso.resx">
+      <DependentUpon>FrmReporteFacturaIngreso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptComprobanteFactura.rdlc" />
+    <EmbeddedResource Include="Reportes\RptReporteFacturaIngreso.rdlc" />
     <None Include="DsPrincipal.xsc">
       <DependentUpon>DsPrincipal.xsd</DependentUpon>
     </None>

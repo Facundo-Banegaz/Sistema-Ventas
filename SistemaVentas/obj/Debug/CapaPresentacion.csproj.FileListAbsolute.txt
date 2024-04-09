@@ -90,3 +90,4 @@ C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\bin\Debug\ru\Microsoft.R
 C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmReporteFactura.resources
+C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.Reportes.FrmReporteFacturaIngreso.resources

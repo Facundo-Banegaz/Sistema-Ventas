@@ -1,5 +1,6 @@
 ﻿using CapaDominio;
 using CapaNegocio;
+using SistemaVentas.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -140,25 +141,46 @@ namespace SistemaVentas
 
         private void btn_imprimir_Click(object sender, EventArgs e)
         {
+            Ingreso seleccionado = null;
 
+            if (dgv_ingresos.CurrentRow != null)
+            {
+                DialogResult respuesta = MessageBox.Show("¿Quieres Imprimir este Ingreso?", "Imprimir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Ingreso)dgv_ingresos.CurrentRow.DataBoundItem;
+
+                    FrmReporteFacturaIngreso frmReporte = new FrmReporteFacturaIngreso(seleccionado);
+
+                    frmReporte.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay ninguna fila seleccionada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_anular_Click(object sender, EventArgs e)
         {
             CN_Ingreso _Ingreso = new CN_Ingreso();
-            Ingreso seleccionado;
+            Ingreso seleccionado= null;
 
 
             try
             {
-                DialogResult respuesta = MessageBox.Show("¿Quieres Anular este Ingreso?", "Anular", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (respuesta == DialogResult.Yes)
+                if(dgv_ingresos.CurrentRow != null)
                 {
-                    seleccionado = (Ingreso)dgv_ingresos.CurrentRow.DataBoundItem;
-                    _Ingreso.AnularIngreso(seleccionado.Id_ingreso);
+                    DialogResult respuesta = MessageBox.Show("¿Quieres Anular este Ingreso?", "Anular", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                    CargarGrilla();
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        seleccionado = (Ingreso)dgv_ingresos.CurrentRow.DataBoundItem;
+                        _Ingreso.AnularIngreso(seleccionado.Id_ingreso);
+
+                        CargarGrilla();
+                    }
                 }
             }
             catch (Exception ex)
@@ -170,16 +192,20 @@ namespace SistemaVentas
 
         private void btn_ver_detalle_Click(object sender, EventArgs e)
         {
-            Ingreso seleccionado;
-            DialogResult respuesta = MessageBox.Show("¿Quieres Ver el detalle este Ingreso?", "Detalle", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            Ingreso seleccionado = null;
 
-            if (respuesta == DialogResult.Yes)
+            if(dgv_ingresos.CurrentRow != null)
             {
-                seleccionado = (Ingreso)dgv_ingresos.CurrentRow.DataBoundItem;
+                DialogResult respuesta = MessageBox.Show("¿Quieres Ver el detalle este Ingreso?", "Detalle", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                FrmDetalleIngreso frmDetalle = new FrmDetalleIngreso(seleccionado);
-                frmDetalle.ShowDialog();
-                CargarGrilla();
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Ingreso)dgv_ingresos.CurrentRow.DataBoundItem;
+
+                    FrmDetalleIngreso frmDetalle = new FrmDetalleIngreso(seleccionado);
+                    frmDetalle.ShowDialog();
+                    CargarGrilla();
+                }
             }
         }
     }
