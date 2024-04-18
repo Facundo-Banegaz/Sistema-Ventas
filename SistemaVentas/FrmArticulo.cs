@@ -1,5 +1,6 @@
 ﻿using CapaDominio;
 using CapaNegocio;
+using SistemaVentas.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -86,7 +87,11 @@ namespace SistemaVentas
             CN_Metodos _Metodos = new CN_Metodos();
             //UrlImagen
             dgv_productos.Columns["UrlImagen"].Visible = false;
-
+            dgv_productos.Columns["Stock"].Visible = false;
+            dgv_productos.Columns["Precio_compra"].Visible = false;
+            dgv_productos.Columns["Precio_venta"].Visible = false;
+            dgv_productos.Columns["Fecha_vencimiento"].Visible = false;
+            dgv_productos.Columns["Id_detalle_ingreso"].Visible = false;
 
             dgv_productos.Columns["Id_articulo"].Width = 200;
             dgv_productos.Columns["Nombre"].Width = 400;// nombre_producto
@@ -171,6 +176,10 @@ namespace SistemaVentas
             _Metodos.CargarImg(pbx_img, seleccionado.UrlImagen);
         }
 
-       
+        private void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            FrmReporteArticulo frmReporte = new FrmReporteArticulo();
+            frmReporte.ShowDialog();
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CapaDominio;
 using CapaNegocio;
+using SistemaVentas.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,8 +59,7 @@ namespace SistemaVentas
                 this.Menu_consultas.Enabled = true;
                 this.Menu_mantenimiento.Enabled = true;
                 this.Menu_herramientas.Enabled = true;
-                this.Menu_secundario_compras.Enabled=true;
-                this.Menu_secundario_ventas.Enabled=true;
+
             }
 
             else if(_Trabajador.Acceso == "VENDEDOR")
@@ -70,8 +70,6 @@ namespace SistemaVentas
                 this.Menu_consultas.Enabled = true;
                 this.Menu_mantenimiento.Enabled = false;
                 this.Menu_herramientas.Enabled = true;
-                this.Menu_secundario_compras.Enabled = false;
-                this.Menu_secundario_ventas.Enabled = true;
             }
             else if (_Trabajador.Acceso == "ALMACENERO")
             {
@@ -81,8 +79,7 @@ namespace SistemaVentas
                 this.Menu_consultas.Enabled = true;
                 this.Menu_mantenimiento.Enabled = false;
                 this.Menu_herramientas.Enabled = true;
-                this.Menu_secundario_compras.Enabled = true;
-                this.Menu_secundario_ventas.Enabled = false;
+
             }
 
             else
@@ -93,8 +90,7 @@ namespace SistemaVentas
                 this.Menu_consultas.Enabled = false;
                 this.Menu_mantenimiento.Enabled = false;
                 this.Menu_herramientas.Enabled = false;
-                this.Menu_secundario_compras.Enabled = false;
-                this.Menu_secundario_ventas.Enabled = false;
+
 
             }
         }
@@ -176,6 +172,12 @@ namespace SistemaVentas
                 Application.Exit();
             } 
 
+        }
+
+        private void menu_item_stock_Click(object sender, EventArgs e)
+        {
+            FrmReporteStock frmReporte = new FrmReporteStock();
+            frmReporte.ShowDialog();
         }
     }
 }

@@ -32,7 +32,22 @@ namespace SistemaVentas
         private void FrmAgregarEditarArticulo_Load(object sender, EventArgs e)
         {
             MostrarDatos();
-            
+            CargarTextBox();
+        }
+        private void CargarTextBox()
+        {
+            if (_Articulo == null)
+            {
+                CN_Metodos _Metodos = new CN_Metodos();
+                try
+                {
+                    txt_codigo_producto.Text = _Metodos.GenerarCodigo("Articulo");
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
         }
 
 
@@ -192,6 +207,11 @@ namespace SistemaVentas
             }
 
             return error;
+        }
+
+        private void txt_codigo_producto_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

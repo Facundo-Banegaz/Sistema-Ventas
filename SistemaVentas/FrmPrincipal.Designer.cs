@@ -43,8 +43,6 @@
             this.Menu_item_clientes = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_consultas = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_item_stock = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_item_informe_ventas = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_item_informe_compras = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_mantenimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_item_trabajador = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_herramientas = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,14 +54,10 @@
             this.lbl_hora = new System.Windows.Forms.Label();
             this.lbl_titulo_hora = new System.Windows.Forms.Label();
             this.lbl_titulo_fecha = new System.Windows.Forms.Label();
-            this.Menu_secundario = new System.Windows.Forms.MenuStrip();
-            this.Menu_secundario_compras = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_secundario_ventas = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_trabajador = new System.Windows.Forms.Label();
             this.pbx_img = new System.Windows.Forms.PictureBox();
             this.Menu_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.Menu_secundario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).BeginInit();
             this.SuspendLayout();
             // 
@@ -204,9 +198,7 @@
             // 
             this.Menu_consultas.BackColor = System.Drawing.Color.Black;
             this.Menu_consultas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menu_item_stock,
-            this.Menu_item_informe_ventas,
-            this.Menu_item_informe_compras});
+            this.menu_item_stock});
             this.Menu_consultas.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold);
             this.Menu_consultas.ForeColor = System.Drawing.Color.Orange;
             this.Menu_consultas.Image = ((System.Drawing.Image)(resources.GetObject("Menu_consultas.Image")));
@@ -220,26 +212,9 @@
             this.menu_item_stock.ForeColor = System.Drawing.Color.Orange;
             this.menu_item_stock.Image = ((System.Drawing.Image)(resources.GetObject("menu_item_stock.Image")));
             this.menu_item_stock.Name = "menu_item_stock";
-            this.menu_item_stock.Size = new System.Drawing.Size(329, 36);
+            this.menu_item_stock.Size = new System.Drawing.Size(302, 42);
             this.menu_item_stock.Text = "Stock de Articulos";
-            // 
-            // Menu_item_informe_ventas
-            // 
-            this.Menu_item_informe_ventas.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.Menu_item_informe_ventas.ForeColor = System.Drawing.Color.Orange;
-            this.Menu_item_informe_ventas.Image = ((System.Drawing.Image)(resources.GetObject("Menu_item_informe_ventas.Image")));
-            this.Menu_item_informe_ventas.Name = "Menu_item_informe_ventas";
-            this.Menu_item_informe_ventas.Size = new System.Drawing.Size(329, 36);
-            this.Menu_item_informe_ventas.Text = "Informes de Ventas";
-            // 
-            // Menu_item_informe_compras
-            // 
-            this.Menu_item_informe_compras.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.Menu_item_informe_compras.ForeColor = System.Drawing.Color.Orange;
-            this.Menu_item_informe_compras.Image = ((System.Drawing.Image)(resources.GetObject("Menu_item_informe_compras.Image")));
-            this.Menu_item_informe_compras.Name = "Menu_item_informe_compras";
-            this.Menu_item_informe_compras.Size = new System.Drawing.Size(329, 36);
-            this.Menu_item_informe_compras.Text = "Informes de Compras";
+            this.menu_item_stock.Click += new System.EventHandler(this.menu_item_stock_Click);
             // 
             // Menu_mantenimiento
             // 
@@ -368,42 +343,6 @@
             this.lbl_titulo_fecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_titulo_fecha.Click += new System.EventHandler(this.tn_tiempo_Tick);
             // 
-            // Menu_secundario
-            // 
-            this.Menu_secundario.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.Menu_secundario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Menu_secundario.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.Menu_secundario.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.Menu_secundario.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Menu_secundario_compras,
-            this.Menu_secundario_ventas});
-            this.Menu_secundario.Location = new System.Drawing.Point(0, 66);
-            this.Menu_secundario.Name = "Menu_secundario";
-            this.Menu_secundario.Padding = new System.Windows.Forms.Padding(9, 10, 0, 10);
-            this.Menu_secundario.Size = new System.Drawing.Size(1924, 56);
-            this.Menu_secundario.TabIndex = 15;
-            this.Menu_secundario.Text = "Menu";
-            // 
-            // Menu_secundario_compras
-            // 
-            this.Menu_secundario_compras.BackColor = System.Drawing.Color.Black;
-            this.Menu_secundario_compras.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold);
-            this.Menu_secundario_compras.ForeColor = System.Drawing.Color.Orange;
-            this.Menu_secundario_compras.Image = ((System.Drawing.Image)(resources.GetObject("Menu_secundario_compras.Image")));
-            this.Menu_secundario_compras.Name = "Menu_secundario_compras";
-            this.Menu_secundario_compras.Size = new System.Drawing.Size(211, 36);
-            this.Menu_secundario_compras.Text = "Hacer Compras";
-            // 
-            // Menu_secundario_ventas
-            // 
-            this.Menu_secundario_ventas.BackColor = System.Drawing.Color.Black;
-            this.Menu_secundario_ventas.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold);
-            this.Menu_secundario_ventas.ForeColor = System.Drawing.Color.Orange;
-            this.Menu_secundario_ventas.Image = ((System.Drawing.Image)(resources.GetObject("Menu_secundario_ventas.Image")));
-            this.Menu_secundario_ventas.Name = "Menu_secundario_ventas";
-            this.Menu_secundario_ventas.Size = new System.Drawing.Size(196, 36);
-            this.Menu_secundario_ventas.Text = "Hacer  Ventas";
-            // 
             // lbl_trabajador
             // 
             this.lbl_trabajador.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -434,7 +373,6 @@
             this.ClientSize = new System.Drawing.Size(1924, 652);
             this.Controls.Add(this.pbx_img);
             this.Controls.Add(this.lbl_trabajador);
-            this.Controls.Add(this.Menu_secundario);
             this.Controls.Add(this.lbl_fecha);
             this.Controls.Add(this.lbl_hora);
             this.Controls.Add(this.lbl_titulo_hora);
@@ -451,8 +389,6 @@
             this.Menu_principal.ResumeLayout(false);
             this.Menu_principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.Menu_secundario.ResumeLayout(false);
-            this.Menu_secundario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -483,12 +419,7 @@
         private System.Windows.Forms.ToolStripMenuItem Menu_item_clientes;
         private System.Windows.Forms.ToolStripMenuItem Menu_herramientas;
         private System.Windows.Forms.ToolStripMenuItem Menu_item_db;
-        private System.Windows.Forms.ToolStripMenuItem Menu_item_informe_ventas;
-        private System.Windows.Forms.ToolStripMenuItem Menu_item_informe_compras;
         private System.Windows.Forms.ToolStripMenuItem Menu_item_salir;
-        private System.Windows.Forms.MenuStrip Menu_secundario;
-        private System.Windows.Forms.ToolStripMenuItem Menu_secundario_compras;
-        private System.Windows.Forms.ToolStripMenuItem Menu_secundario_ventas;
         private System.Windows.Forms.Label lbl_trabajador;
         private System.Windows.Forms.PictureBox pbx_img;
     }

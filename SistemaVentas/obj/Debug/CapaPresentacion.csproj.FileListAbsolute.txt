@@ -91,3 +91,10 @@ C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\bin\Debug\zh-CHS\Microso
 C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.FrmReporteFactura.resources
 C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.Reportes.FrmReporteFacturaIngreso.resources
+C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.Reportes.FrmReportePresentacion.resources
+C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.Reportes.FrmReporteCategoria.resources
+C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.Reportes.FrmReporteArticulo.resources
+C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.Reportes.FrmReporteProveedor.resources
+C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.Reportes.FrmRepoteCliente.resources
+C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.Reportes.FrmReporteTrabajador.resources
+C:\Users\baneg\source\repos\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.Reportes.FrmReporteStock.resources

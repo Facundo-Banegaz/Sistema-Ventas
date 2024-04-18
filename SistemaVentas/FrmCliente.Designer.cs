@@ -86,6 +86,7 @@
             this.btn_imprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_imprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_imprimir.UseVisualStyleBackColor = false;
+            this.btn_imprimir.Click += new System.EventHandler(this.btn_imprimir_Click);
             // 
             // btn_limpiar
             // 

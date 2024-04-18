@@ -272,11 +272,15 @@
             // txt_codigo_producto
             // 
             this.txt_codigo_producto.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_codigo_producto.Enabled = false;
             this.txt_codigo_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_codigo_producto.Location = new System.Drawing.Point(25, 270);
             this.txt_codigo_producto.Name = "txt_codigo_producto";
+            this.txt_codigo_producto.ReadOnly = true;
             this.txt_codigo_producto.Size = new System.Drawing.Size(555, 35);
             this.txt_codigo_producto.TabIndex = 69;
+            this.txt_codigo_producto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_codigo_producto.TextChanged += new System.EventHandler(this.txt_codigo_producto_TextChanged);
             // 
             // lbl_codigo
             // 

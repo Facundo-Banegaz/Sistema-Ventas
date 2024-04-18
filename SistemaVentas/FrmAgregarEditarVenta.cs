@@ -18,7 +18,6 @@ namespace SistemaVentas
         //private decimal precioCompra;
         //private decimal stock;
         private int cantidad;
-        private decimal subtotal;
         private decimal precioVenta;
         private decimal totalPagado = 0;
         public Trabajador _Trabajador;
@@ -262,6 +261,18 @@ namespace SistemaVentas
                             return;
                         }
                     }
+
+                    // Verificar si la cantidad a agregar supera el stock disponible
+                    cantidad = Convert.ToInt32(txt_cantidad.Text);
+                    int  stock = Convert.ToInt32(txt_stock.Text);
+                    if (cantidad > stock)
+                    {
+                        MessageBox.Show("La cantidad a comprar supera el stock disponible", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        txt_cantidad.Clear();
+                        return;
+                    }
+
                     // Si el artículo no está presente, agregar una nueva fila al DataGridView
                     if (!articuloYaPresente)
                     {
@@ -408,11 +419,18 @@ namespace SistemaVentas
                         detalle.Descuento = (decimal)fila.Cells["Descuento"].Value;
 
                         _Detalle_Venta.Add(detalle);
+
+                        // Llamar a la función para disminuir el stock
+                        _CN_Venta.DisminuirStock(detalle.Detalle_Ingreso.Id_detalle_ingreso, detalle.Cantidad);
+
                     }
 
                     _CN_Venta.InsertarVenta(venta, _Detalle_Venta);
 
                     MessageBox.Show("La venta   Fue Agregada Exitosamente!!", "Agregado");
+
+
+
                     this.Close();
 
                 }

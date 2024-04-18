@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDominio;
 using CapaNegocio;
+using SistemaVentas.Reportes;
 
 namespace SistemaVentas
 {
@@ -163,6 +164,12 @@ namespace SistemaVentas
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            FrmReporteCategoria frmReporte = new FrmReporteCategoria();
+            frmReporte.ShowDialog();
         }
     }
 }

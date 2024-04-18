@@ -35,6 +35,12 @@ namespace CapaNegocio
             _Venta.EliminarVenta(Id_Venta);
         }
 
+        public void DisminuirStock(int Id_detalle_ingreso, int Stock_Actual)
+        {
+            _Venta = new CD_Venta();
+
+            _Venta.DisminuirStock( Id_detalle_ingreso,  Stock_Actual);
+        }
         public List<Venta> VentaBuscarFecha(DateTime FechaInicio, DateTime FechaFin)
         {
             _Venta = new CD_Venta();

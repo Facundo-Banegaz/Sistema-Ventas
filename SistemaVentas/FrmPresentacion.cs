@@ -1,5 +1,6 @@
 ﻿using CapaDominio;
 using CapaNegocio;
+using SistemaVentas.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -160,6 +161,13 @@ namespace SistemaVentas
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            FrmReportePresentacion frmReporte = new  FrmReportePresentacion();
+
+            frmReporte.ShowDialog();
         }
     }
 }

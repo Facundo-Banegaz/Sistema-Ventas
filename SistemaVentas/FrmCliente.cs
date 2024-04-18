@@ -1,5 +1,6 @@
 ﻿using CapaDominio;
 using CapaNegocio;
+using SistemaVentas.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -160,6 +161,13 @@ namespace SistemaVentas
             CN_Metodos _Metodos = new CN_Metodos();
 
             _Metodos.CargarImg(pbx_img, seleccionado.UrlImagen);
+        }
+
+        private void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            FrmRepoteCliente frmRepote = new FrmRepoteCliente();
+            frmRepote.ShowDialog();
+
         }
     }
 }

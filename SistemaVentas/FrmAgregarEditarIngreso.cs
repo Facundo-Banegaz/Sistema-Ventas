@@ -530,6 +530,7 @@ namespace SistemaVentas
                         detalle.Precio_Compra = (decimal)fila.Cells["Precio_compra"].Value;
                         detalle.Precio_Venta = (decimal)fila.Cells["Precio_venta"].Value;
                         detalle.Stock_Inicial = Convert.ToInt32(fila.Cells["Stock_inicial"].Value);
+                        detalle.Stock_Actual = Convert.ToInt32(fila.Cells["Stock_inicial"].Value);
                         detalle.Fecha_Produccion = Convert.ToDateTime(fila.Cells["Fecha_produccion"].Value);
                         detalle.Fecha_Vencimiento = Convert.ToDateTime(fila.Cells["Fecha_vencimiento"].Value);
                         detalle.SubTotal = (decimal)fila.Cells["Subtotal"].Value;

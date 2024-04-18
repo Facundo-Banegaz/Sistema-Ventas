@@ -178,7 +178,7 @@
             this.btn_ver_detalle.Name = "btn_ver_detalle";
             this.btn_ver_detalle.Size = new System.Drawing.Size(284, 65);
             this.btn_ver_detalle.TabIndex = 101;
-            this.btn_ver_detalle.Text = "Ver Detalle Ingreso";
+            this.btn_ver_detalle.Text = "Ver Detalle Venta\r\n";
             this.btn_ver_detalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_ver_detalle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_ver_detalle.UseVisualStyleBackColor = false;

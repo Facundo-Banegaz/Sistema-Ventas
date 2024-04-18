@@ -1,5 +1,6 @@
 ﻿using CapaDominio;
 using CapaNegocio;
+using SistemaVentas.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -158,6 +159,12 @@ namespace SistemaVentas
         {
             txt_buscar.Clear();
             CargarGrilla();
+        }
+
+        private void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            FrmReporteProveedor frmReporte = new FrmReporteProveedor();
+            frmReporte.ShowDialog();
         }
     }
 }

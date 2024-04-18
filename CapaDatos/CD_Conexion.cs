@@ -18,8 +18,11 @@ public class CD_Conexion
 
     public CD_Conexion()
     {
-        //conection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conexion_DB"].ConnectionString);
-        conection = new SqlConnection("server=.\\SQLEXPRESS; database=DB-VENTAS; integrated security=true");
+
+
+        string connectionString = ConfigurationManager.ConnectionStrings["Conexion_DB"].ConnectionString;
+        conection = new SqlConnection(connectionString);
+        ////conection = new SqlConnection("server=.\\SQLEXPRESS; database=DB-VENTAS; integrated security=true");
         comand = new SqlCommand();
     }
 

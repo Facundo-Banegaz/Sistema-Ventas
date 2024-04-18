@@ -69,8 +69,7 @@ namespace CapaDatos
 
         }
 
-
-
+    
         public List<Articulo> CargarCbo(int Id_categoria)
         {
 

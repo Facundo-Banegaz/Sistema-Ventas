@@ -163,6 +163,34 @@ namespace CapaDatos
             }
         }
 
+
+        //Metodo modificar stock
+        public void DisminuirStock(int Id_detalle_ingreso, int Stock_Actual)
+        {
+
+            Conexion = new CD_Conexion();
+
+            try
+            {
+                Conexion.SetConsutarProcedure("SpDisminuir_stock");
+
+                Conexion.SetearParametro("@Id_detalle_ingreso", Id_detalle_ingreso);
+                Conexion.SetearParametro("@Cantidad", Stock_Actual);
+
+                Conexion.EjecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+        }
         //Metodo Buscar
 
         public List<Venta> VentaBuscarFecha(DateTime FechaInicio, DateTime FechaFin)

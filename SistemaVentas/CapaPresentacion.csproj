@@ -204,6 +204,42 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\FrmReporteStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteStock.Designer.cs">
+      <DependentUpon>FrmReporteStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteTrabajador.Designer.cs">
+      <DependentUpon>FrmReporteTrabajador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmRepoteCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmRepoteCliente.Designer.cs">
+      <DependentUpon>FrmRepoteCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteArticulo.Designer.cs">
+      <DependentUpon>FrmReporteArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteCategoria.Designer.cs">
+      <DependentUpon>FrmReporteCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReportePresentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReportePresentacion.Designer.cs">
+      <DependentUpon>FrmReportePresentacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmReporteFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +251,12 @@
     </Compile>
     <Compile Include="Reportes\FrmReporteFacturaIngreso.Designer.cs">
       <DependentUpon>FrmReporteFacturaIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteProveedor.Designer.cs">
+      <DependentUpon>FrmReporteProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="FrmAgregarEditarArticulo.resx">
@@ -293,14 +335,42 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\FrmReporteStock.resx">
+      <DependentUpon>FrmReporteStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteTrabajador.resx">
+      <DependentUpon>FrmReporteTrabajador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmRepoteCliente.resx">
+      <DependentUpon>FrmRepoteCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteArticulo.resx">
+      <DependentUpon>FrmReporteArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteCategoria.resx">
+      <DependentUpon>FrmReporteCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporteFactura.resx">
       <DependentUpon>FrmReporteFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporteFacturaIngreso.resx">
       <DependentUpon>FrmReporteFacturaIngreso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReportePresentacion.resx">
+      <DependentUpon>FrmReportePresentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteProveedor.resx">
+      <DependentUpon>FrmReporteProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptReporteCliente.rdlc" />
+    <EmbeddedResource Include="Reportes\RptReporteProveedor.rdlc" />
+    <EmbeddedResource Include="Reportes\RptReporteArticulo.rdlc" />
+    <EmbeddedResource Include="Reportes\RptReporteCategoria.rdlc" />
+    <EmbeddedResource Include="Reportes\RptReportePresentacion.rdlc" />
     <EmbeddedResource Include="Reportes\RptComprobanteFactura.rdlc" />
     <EmbeddedResource Include="Reportes\RptReporteFacturaIngreso.rdlc" />
+    <EmbeddedResource Include="Reportes\RptReporteStock.rdlc" />
+    <EmbeddedResource Include="Reportes\RptReporteTrabajador.rdlc" />
     <None Include="DsPrincipal.xsc">
       <DependentUpon>DsPrincipal.xsd</DependentUpon>
     </None>
