@@ -220,6 +220,7 @@
             this.txt_nombre_producto.Name = "txt_nombre_producto";
             this.txt_nombre_producto.Size = new System.Drawing.Size(555, 35);
             this.txt_nombre_producto.TabIndex = 74;
+            this.txt_nombre_producto.TextChanged += new System.EventHandler(this.txt_nombre_producto_TextChanged);
             // 
             // lbl_cargo
             // 
@@ -280,7 +281,6 @@
             this.txt_codigo_producto.Size = new System.Drawing.Size(555, 35);
             this.txt_codigo_producto.TabIndex = 69;
             this.txt_codigo_producto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_codigo_producto.TextChanged += new System.EventHandler(this.txt_codigo_producto_TextChanged);
             // 
             // lbl_codigo
             // 

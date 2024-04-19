@@ -27,7 +27,20 @@ namespace CapaNegocio
             return _CD_Cliente.CargarCbo();
         }
 
+        //Metodo para validar dni
+        ////public string ValidarCliente(string Dni)
+        ////{
+        ////    _CD_Cliente = new CD_Cliente();
+
+        ////   return _CD_Cliente.ValidarCliente(Dni);
+        ////}
         //Metodo para cargar un producto en la Base de Datos
+        public bool ValidarCliente(string Dni)
+        {
+            _CD_Cliente = new CD_Cliente();
+
+            return _CD_Cliente.ValidarCliente(Dni);
+        }
         public void InsertarCliente(Cliente Nuevo)
         {
             _CD_Cliente = new CD_Cliente();

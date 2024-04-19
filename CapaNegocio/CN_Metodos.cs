@@ -13,7 +13,7 @@ namespace CapaNegocio
 {
     public class CN_Metodos
     {
-        CD_Metodos objMetodos = new CD_Metodos();
+        CD_Metodos objMetodos = new CD_Metodos();       
 
 
         // Metodo para alternar los colores en las filas de un data grid
@@ -22,8 +22,6 @@ namespace CapaNegocio
             objMetodos.AlternarColor(Dgv);
         }
         //Metodo para cargar cbo
-
-     
 
 
         public void CargarImg(PictureBox picture, string img)

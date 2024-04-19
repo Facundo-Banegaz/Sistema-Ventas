@@ -20,7 +20,12 @@ namespace CapaNegocio
 
             return _CD_Articulo.ListaArticulos();
         }
+        public bool ValidarArticulo(string Nombre)
+        {
+             _CD_Articulo= new CD_Articulo();
 
+            return _CD_Articulo.ValidarArticulo(Nombre);
+        }
         public List<Articulo> CargarCbo(int Id_categoria)
         {
             _CD_Articulo = new CD_Articulo();

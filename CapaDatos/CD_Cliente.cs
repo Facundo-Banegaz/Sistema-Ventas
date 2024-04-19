@@ -106,6 +106,79 @@ namespace CapaDatos
             }
 
         }
+
+        ////public string ValidarCliente(string Dni)
+        ////{
+
+        ////    Conexion = new CD_Conexion();
+        ////    try
+        ////    {
+
+        ////        Conexion.SetConsutar("select  Numero_documento from cliente where Numero_documento = @Dni");
+        ////        Conexion.SetearParametro("@Dni", Dni);
+
+        ////        Conexion.EjecutarLectura();
+
+        ////        string Numero_Documento = "";
+
+        ////        if (Conexion.Lector.Read())
+        ////        {
+
+
+
+        ////            Numero_Documento = (string)Conexion.Lector["Numero_documento"];
+
+        ////        }
+
+        ////        return Numero_Documento;
+        ////    }
+        ////    catch (Exception ex)
+        ////    {
+
+        ////        throw ex;
+        ////    }
+        ////    finally
+        ////    {
+        ////        Conexion.CerrarConection();
+        ////    }
+
+        ////}
+
+        public bool ValidarCliente(string Dni)
+        {
+            Conexion = new CD_Conexion();
+            try
+            {
+                Conexion.SetConsutar("SELECT COUNT(*) FROM cliente WHERE Numero_documento = @Dni");
+                Conexion.SetearParametro("@Dni", Dni);
+
+                Conexion.EjecutarLectura();
+
+                // Verificar si hay alguna fila devuelta por la consulta
+                if (Conexion.Lector.HasRows)
+                {
+                    // Leer el valor del primer campo (que es el resultado del conteo)
+                    Conexion.Lector.Read();
+                    int count = Convert.ToInt32(Conexion.Lector[0]);
+                    return count > 0;
+                }
+                else
+                {
+                    // Si no hay filas, no hay resultados, por lo que el cliente no existe
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+        }
+
         //metodo insertar
 
         public void InsertarCliente(Cliente Nuevo)

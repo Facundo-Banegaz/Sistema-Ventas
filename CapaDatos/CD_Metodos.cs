@@ -10,6 +10,7 @@ using System.Data;
 using System.Windows.Input;
 using CapaDominio;
 using System.Globalization;
+using System.Net;
 
 namespace CapaDatos
 {
@@ -49,7 +50,8 @@ namespace CapaDatos
         public string GenerarCodigo(string Tabla)
         {
             Conexion = new CD_Conexion();
-            Conexion.SetConsutar("Select COUNT(*) as TotalRegistros from " + Tabla);
+            Conexion.SetConsutar("Select COUNT(*) as TotalRegistros from " +Tabla);
+ 
             Conexion.EjecutarLectura();
 
             long total = 0;

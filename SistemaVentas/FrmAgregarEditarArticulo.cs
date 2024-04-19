@@ -209,9 +209,22 @@ namespace SistemaVentas
             return error;
         }
 
-        private void txt_codigo_producto_TextChanged(object sender, EventArgs e)
-        {
 
+        private void txt_nombre_producto_TextChanged(object sender, EventArgs e)
+        {
+            CN_Articulo _Articulo = new CN_Articulo();
+
+
+
+            bool articuloExistente = _Articulo.ValidarArticulo(txt_nombre_producto.Text.ToUpper());
+
+
+            if (articuloExistente)
+            {
+                MessageBox.Show("El El Articulo  ya existe en la base de datos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_nombre_producto.Clear();
+
+            }
         }
     }
 }

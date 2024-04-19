@@ -97,6 +97,7 @@
             this.txt_razon_social.Name = "txt_razon_social";
             this.txt_razon_social.Size = new System.Drawing.Size(555, 35);
             this.txt_razon_social.TabIndex = 90;
+            this.txt_razon_social.TextChanged += new System.EventHandler(this.txt_razon_social_TextChanged);
             // 
             // lbl_cargo
             // 
@@ -281,6 +282,7 @@
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(555, 35);
             this.txt_telefono.TabIndex = 103;
+            this.txt_telefono.TextChanged += new System.EventHandler(this.txt_telefono_TextChanged);
             this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
             // 
             // label3

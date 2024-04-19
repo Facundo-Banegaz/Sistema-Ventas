@@ -257,5 +257,39 @@ namespace SistemaVentas
                 MessageBox.Show("Por favor, ingrese una dirección de correo electrónico de Gmail válida.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void txt_razon_social_TextChanged(object sender, EventArgs e)
+        {
+           CN_Proveedor _Proveedor = new CN_Proveedor();
+
+
+            // Llama al método ValidarCliente para verificar si el cliente ya existe
+            bool clienteExistente = _Proveedor.ValidarProveedor(txt_razon_social.Text.ToUpper());
+
+            // Si el cliente ya existe, muestra un mensaje de advertencia
+            if (clienteExistente)
+            {
+                MessageBox.Show("El Nombre del Proveedor ya existe en la base de datos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_razon_social.Clear();
+
+            }
+        }
+
+        private void txt_telefono_TextChanged(object sender, EventArgs e)
+        {
+            CN_Proveedor _Proveedor = new CN_Proveedor();
+
+
+            // Llama al método ValidarCliente para verificar si el cliente ya existe
+            bool clienteExistente = _Proveedor.ValidarProveedorTelf(txt_telefono.Text);
+
+            // Si el cliente ya existe, muestra un mensaje de advertencia
+            if (clienteExistente)
+            {
+                MessageBox.Show("El Telefono del Proveedor ya existe en la base de datos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_telefono.Clear();
+
+            }
+        }
     }
 }

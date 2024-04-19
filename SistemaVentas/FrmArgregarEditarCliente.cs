@@ -264,12 +264,14 @@ namespace SistemaVentas
 
         private void txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
         {
+
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
                 MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
+            
         }
 
 
@@ -295,5 +297,24 @@ namespace SistemaVentas
         {
             validarEmail(txt_email.Text);
         }
+
+        private void txt_numero_documento_TextChanged(object sender, EventArgs e)
+        {
+            CN_Cliente _Cliente = new CN_Cliente();
+
+            // Llama al método ValidarCliente para verificar si el cliente ya existe
+            bool clienteExistente = _Cliente.ValidarCliente(txt_numero_documento.Text);
+
+            // Si el cliente ya existe, muestra un mensaje de advertencia
+            if (clienteExistente)
+            {
+                MessageBox.Show("El cliente ya existe en la base de datos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txt_numero_documento.Clear();
+
+            }
+        }
+
+
+     
     }
 }

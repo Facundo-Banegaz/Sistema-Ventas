@@ -371,5 +371,21 @@ namespace SistemaVentas
             }
 
         }
+
+        private void txt_numero_documento_TextChanged(object sender, EventArgs e)
+        {
+            CN_Trabajador _Trabajador = new CN_Trabajador();
+
+            // Llama al método ValidarCliente para verificar si el cliente ya existe
+            bool clienteExistente = _Trabajador.ValidarTrabajador(txt_numero_documento.Text);
+
+            // Si el cliente ya existe, muestra un mensaje de advertencia
+            if (clienteExistente)
+            {
+                MessageBox.Show("El Trabajador ya existe en la base de datos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_numero_documento.Clear();
+
+            }
+        }
     }
 }

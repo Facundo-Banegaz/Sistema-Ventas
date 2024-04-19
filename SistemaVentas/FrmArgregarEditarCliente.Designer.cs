@@ -223,6 +223,7 @@
             this.txt_numero_documento.Name = "txt_numero_documento";
             this.txt_numero_documento.Size = new System.Drawing.Size(555, 35);
             this.txt_numero_documento.TabIndex = 128;
+            this.txt_numero_documento.TextChanged += new System.EventHandler(this.txt_numero_documento_TextChanged);
             this.txt_numero_documento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_numero_documento_KeyPress);
             // 
             // label5

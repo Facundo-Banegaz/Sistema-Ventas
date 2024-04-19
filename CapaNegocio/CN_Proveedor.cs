@@ -26,8 +26,18 @@ namespace CapaNegocio
             return _Proveedor.CargarCbo();
         }
 
+        public bool ValidarProveedor(string Nombre)
+        {
+            _Proveedor = new CD_Proveedor();
 
+            return _Proveedor.ValidarProveedor(Nombre);
+        }
+        public bool ValidarProveedorTelf(string Telefono)
+        {
+            _Proveedor = new CD_Proveedor();
 
+            return _Proveedor.ValidarProveedorTelf(Telefono);
+        }
         //Metodo para cargar un producto en la Base de Datos
         public void InsertarProveedor(Proveedor Nuevo)
         {

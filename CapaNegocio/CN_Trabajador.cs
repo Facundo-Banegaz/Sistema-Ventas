@@ -34,7 +34,12 @@ namespace CapaNegocio
             CD_Trabajador.InsertarTrabajador(Nuevo);
 
         }
+        public bool ValidarTrabajador(string Dni)
+        {
+            CD_Trabajador = new CD_Trabajador();
 
+            return CD_Trabajador.ValidarTrabajador(Dni);
+        }
         //Metodo para Editar un producto en la Base de Datos
         public void EditarTrabajador(Trabajador trabajador)
         {
