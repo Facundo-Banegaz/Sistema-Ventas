@@ -148,7 +148,6 @@ namespace CapaDatos
                 Conexion.CerrarConection();
             }
         }
-
         public bool ValidarArticulo(string Nombre)
         {
             Conexion = new CD_Conexion();
@@ -183,7 +182,6 @@ namespace CapaDatos
                 Conexion.CerrarConection();
             }
         }
-
         //metodo insertar
 
         public void InsertarArticulo(Articulo Nuevo)

@@ -46,6 +46,7 @@ namespace SistemaVentas
             {
                 seleccionado = (Articulo)dgv_productos.CurrentRow.DataBoundItem;
                 FrmAgregarEditarArticulo frmEditar = new FrmAgregarEditarArticulo(seleccionado);
+               
                 frmEditar.ShowDialog();
                 CargarGrilla();
             }

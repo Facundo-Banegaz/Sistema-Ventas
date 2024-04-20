@@ -26,7 +26,7 @@ namespace SistemaVentas
 
             if (pb_barra_progreso.Value < 100)
             {
-                pb_barra_progreso.Value += 1;
+                pb_barra_progreso.Value += 2;
 
                 pb_barra_progreso.Text = pb_barra_progreso.Value.ToString() + " %";
             }

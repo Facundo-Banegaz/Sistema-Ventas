@@ -22,7 +22,7 @@ namespace CapaNegocio
         }
         public bool ValidarArticulo(string Nombre)
         {
-             _CD_Articulo= new CD_Articulo();
+            _CD_Articulo = new CD_Articulo();
 
             return _CD_Articulo.ValidarArticulo(Nombre);
         }

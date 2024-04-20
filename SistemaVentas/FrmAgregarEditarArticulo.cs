@@ -26,7 +26,7 @@ namespace SistemaVentas
         {
             InitializeComponent();
             Text = "Modificar Articulo";
-            this._Articulo= articulo;
+            this._Articulo = articulo;
 
         }
         private void FrmAgregarEditarArticulo_Load(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace SistemaVentas
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-           this.Close();
+            this.Close();
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace SistemaVentas
         {
 
             CN_Categoria categoria = new CN_Categoria();
-            CN_Presentacion presentacion = new CN_Presentacion();   
+            CN_Presentacion presentacion = new CN_Presentacion();
 
 
             try
@@ -151,13 +151,15 @@ namespace SistemaVentas
                     if (_Articulo.Id_articulo != 0)
                     {
                         _CN_Articulo.EditarArticulo(_Articulo);
-                        MessageBox.Show("La Categoria Fue Modificada Exitosamente!!", "Modificado");
+                        MessageBox.Show("El Articulo Fue Modificada Exitosamente!!", "Modificado");
                         this.Close();
                     }
                     else
                     {
+
+
                         _CN_Articulo.InsertarArticulo(_Articulo);
-                        MessageBox.Show("La Categoria Fue Agregada Exitosamente!!", "Agregado");
+                        MessageBox.Show("El Articulo Fue Agregada Exitosamente!!", "Agregado");
                         this.Close();
                     }
                 }
@@ -221,10 +223,18 @@ namespace SistemaVentas
 
             if (articuloExistente)
             {
-                MessageBox.Show("El El Articulo  ya existe en la base de datos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_nombre_producto.Clear();
+                DialogResult respuesta = MessageBox.Show("El Articulo ya existe. Si es una Modificacion Ignora el mensaje!!", "Si desea limpiar el campo presione SI ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    txt_nombre_producto.Clear();
+                }
 
             }
         }
+
+
+
+
     }
 }

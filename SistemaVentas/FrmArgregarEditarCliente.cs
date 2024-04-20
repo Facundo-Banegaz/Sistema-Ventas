@@ -308,10 +308,14 @@ namespace SistemaVentas
             // Si el cliente ya existe, muestra un mensaje de advertencia
             if (clienteExistente)
             {
-                MessageBox.Show("El cliente ya existe en la base de datos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txt_numero_documento.Clear();
-
+                DialogResult respuesta = MessageBox.Show("El cliente ya existe en la base de datos.", "Si desea limpiar el campo presione SI", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+              
+                if (respuesta == DialogResult.Yes)
+                {
+                    txt_numero_documento.Clear();
+                }
             }
+
         }
 
 

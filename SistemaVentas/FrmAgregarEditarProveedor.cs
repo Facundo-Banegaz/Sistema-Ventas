@@ -281,13 +281,20 @@ namespace SistemaVentas
 
 
             // Llama al método ValidarCliente para verificar si el cliente ya existe
-            bool clienteExistente = _Proveedor.ValidarProveedorTelf(txt_telefono.Text);
+            bool ProveedorExistente = _Proveedor.ValidarProveedorTelf(txt_telefono.Text);
 
-            // Si el cliente ya existe, muestra un mensaje de advertencia
-            if (clienteExistente)
+
+
+
+ 
+            if (ProveedorExistente)
             {
-                MessageBox.Show("El Telefono del Proveedor ya existe en la base de datos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_telefono.Clear();
+                DialogResult respuesta = MessageBox.Show("El Telefono del Proveedor ya existe en la base de datos. Si es una Modificacion Ignora el mensaje!!", "Si desea limpiar el campo presione SI ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    txt_telefono.Clear();
+                }
 
             }
         }

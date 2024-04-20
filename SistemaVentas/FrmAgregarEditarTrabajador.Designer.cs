@@ -371,7 +371,6 @@
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(379, 35);
             this.txt_usuario.TabIndex = 159;
-            this.txt_usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_usuario_KeyPress);
             // 
             // label1
             // 
@@ -405,7 +404,6 @@
             this.txt_clave.Name = "txt_clave";
             this.txt_clave.Size = new System.Drawing.Size(375, 35);
             this.txt_clave.TabIndex = 156;
-            this.txt_clave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_clave_KeyPress);
             // 
             // label7
             // 

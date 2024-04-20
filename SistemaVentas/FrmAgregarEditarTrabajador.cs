@@ -336,16 +336,6 @@ namespace SistemaVentas
 
 
 
-        private void txt_usuario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void txt_clave_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
 
 
 
@@ -377,15 +367,19 @@ namespace SistemaVentas
             CN_Trabajador _Trabajador = new CN_Trabajador();
 
             // Llama al método ValidarCliente para verificar si el cliente ya existe
-            bool clienteExistente = _Trabajador.ValidarTrabajador(txt_numero_documento.Text);
+            bool TrabajadorExistente = _Trabajador.ValidarTrabajador(txt_numero_documento.Text);
 
             // Si el cliente ya existe, muestra un mensaje de advertencia
-            if (clienteExistente)
+            if (TrabajadorExistente)
             {
-                MessageBox.Show("El Trabajador ya existe en la base de datos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_numero_documento.Clear();
-
+                DialogResult respuesta = MessageBox.Show("El Articulo ya existe. Si es una Modificacion Ignora el mensaje!!", "Si desea limpiar el campo presione SI ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    txt_numero_documento.Clear();
+                }
             }
+
+            
         }
     }
 }
