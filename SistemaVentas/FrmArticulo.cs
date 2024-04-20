@@ -207,8 +207,5 @@ namespace SistemaVentas
 
             cbo_opcion.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-
-
-
     }
 }

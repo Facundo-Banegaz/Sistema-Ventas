@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dsPrincipal = new SistemaVentas.DsPrincipal();
             this.spMostrarcategoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsPrincipal = new SistemaVentas.DsPrincipal();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.spMostrar_categoriaTableAdapter = new SistemaVentas.DsPrincipalTableAdapters.SpMostrar_categoriaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spMostrarcategoriaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
             this.SuspendLayout();
+            // 
+            // spMostrarcategoriaBindingSource
+            // 
+            this.spMostrarcategoriaBindingSource.DataMember = "SpMostrar_categoria";
+            this.spMostrarcategoriaBindingSource.DataSource = this.dsPrincipal;
+            // 
+            // dsPrincipal
+            // 
+            this.dsPrincipal.DataSetName = "DsPrincipal";
+            this.dsPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -51,16 +61,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(1336, 829);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dsPrincipal
-            // 
-            this.dsPrincipal.DataSetName = "DsPrincipal";
-            this.dsPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // spMostrarcategoriaBindingSource
-            // 
-            this.spMostrarcategoriaBindingSource.DataMember = "SpMostrar_categoria";
-            this.spMostrarcategoriaBindingSource.DataSource = this.dsPrincipal;
-            // 
             // spMostrar_categoriaTableAdapter
             // 
             this.spMostrar_categoriaTableAdapter.ClearBeforeFill = true;
@@ -73,10 +73,11 @@
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmReporteCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmReporteCategoria";
             this.Load += new System.EventHandler(this.FrmReporteCategoria_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spMostrarcategoriaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
             this.ResumeLayout(false);
 
         }

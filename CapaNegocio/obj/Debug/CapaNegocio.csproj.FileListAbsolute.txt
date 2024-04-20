@@ -9,3 +9,14 @@ C:\Users\baneg\source\repos\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.cspr
 C:\Users\baneg\source\repos\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\Users\baneg\source\repos\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\baneg\source\repos\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaNegocio\bin\Debug\CapaDominio.dll
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaNegocio\bin\Debug\CapaDominio.pdb
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaNegocio\obj\Debug\CapaNegocio.pdb

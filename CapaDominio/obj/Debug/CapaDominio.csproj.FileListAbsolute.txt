@@ -4,3 +4,9 @@ C:\Users\baneg\source\repos\SistemaVentas\CapaDominio\obj\Debug\CapaDominio.cspr
 C:\Users\baneg\source\repos\SistemaVentas\CapaDominio\obj\Debug\CapaDominio.csproj.CoreCompileInputs.cache
 C:\Users\baneg\source\repos\SistemaVentas\CapaDominio\obj\Debug\CapaDominio.dll
 C:\Users\baneg\source\repos\SistemaVentas\CapaDominio\obj\Debug\CapaDominio.pdb
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaDominio\bin\Debug\CapaDominio.dll
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaDominio\bin\Debug\CapaDominio.pdb
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaDominio\obj\Debug\CapaDominio.csproj.AssemblyReference.cache
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaDominio\obj\Debug\CapaDominio.csproj.CoreCompileInputs.cache
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaDominio\obj\Debug\CapaDominio.dll
+C:\Users\baneg\OneDrive\Escritorio\Nueva carpeta (2)\Sistema-Ventas\CapaDominio\obj\Debug\CapaDominio.pdb
