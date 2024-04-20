@@ -15,6 +15,7 @@ namespace SistemaVentas
         public FrmInicio()
         {
             InitializeComponent();
+            pb_barra_progreso.Value = 0;
         }
         private void FrmPresentacion_Load(object sender, EventArgs e)
         {
@@ -22,11 +23,12 @@ namespace SistemaVentas
         }
         private void tm_tiempo_Tick(object sender, EventArgs e)
         {
+
             if (pb_barra_progreso.Value < 100)
             {
-                pb_barra_progreso.Value += 5;
+                pb_barra_progreso.Value += 1;
 
-                lbl_porcentaje.Text = "CARGANDO... " + pb_barra_progreso.Value.ToString() + " %";
+                pb_barra_progreso.Text = pb_barra_progreso.Value.ToString() + " %";
             }
             else
             {
@@ -36,7 +38,5 @@ namespace SistemaVentas
                 frmLogin.Show();
             }
         }
-
-        
     }
 }

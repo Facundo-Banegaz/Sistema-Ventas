@@ -214,7 +214,7 @@ namespace CapaDatos
 
         //Metodo Buscar
 
-        public List<Trabajador> TrabajadorBuscar(string buscar)
+        public List<Trabajador> TrabajadorBuscarApellido(string buscar)
         {
             Conexion = new CD_Conexion();
             listaTrabajador = new List<Trabajador>();
@@ -269,7 +269,168 @@ namespace CapaDatos
         }
 
 
-       
+        public List<Trabajador> TrabajadorBuscarNombre(string buscar)
+        {
+            Conexion = new CD_Conexion();
+            listaTrabajador = new List<Trabajador>();
+
+            try
+            {
+                Conexion.SetConsutarProcedure("SpBuscar_trabajador_nombre");
+
+
+                Conexion.SetearParametro("@txt_buscar", buscar);
+
+
+                Conexion.EjecutarLectura();
+
+                while (Conexion.Lector.Read())
+                {
+
+                    trabajador = new Trabajador();
+
+                    trabajador.Id_trabajador = (int)Conexion.Lector["Id_trabajador"];
+                    trabajador.Nombre = (string)Conexion.Lector["Nombre"];
+                    trabajador.Apellido = (string)Conexion.Lector["Apellido"];
+                    trabajador.Sexo = (string)Conexion.Lector["Sexo"];
+                    trabajador.FechaNacimiento = (DateTime)Conexion.Lector["Fecha_nacimiento"];
+                    trabajador.NumeroDocumento = (string)Conexion.Lector["Numero_documento"];
+                    trabajador.Direccion = (string)Conexion.Lector["Direccion"];
+                    trabajador.Telefono = (string)Conexion.Lector["Telefono"];
+                    trabajador.Email = (string)Conexion.Lector["Email"];
+                    trabajador.Acceso = (string)Conexion.Lector["Acceso"];
+                    trabajador.Usuario = (string)Conexion.Lector["Usuario"];
+                    trabajador.Clave = (string)Conexion.Lector["Clave"];
+
+
+                    if (!(Conexion.Lector["Url_imagen"] is DBNull))
+                        trabajador.UrlImagen = (string)Conexion.Lector["Url_imagen"];
+
+                    listaTrabajador.Add(trabajador);
+                }
+
+
+                return listaTrabajador;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+        }
+
+        public List<Trabajador> TrabajadorBuscarDni(string buscar)
+        {
+            Conexion = new CD_Conexion();
+            listaTrabajador = new List<Trabajador>();
+
+            try
+            {
+                Conexion.SetConsutarProcedure("SpBuscar_trabajador_num_documento");
+
+
+                Conexion.SetearParametro("@txt_buscar", buscar);
+
+
+                Conexion.EjecutarLectura();
+
+                while (Conexion.Lector.Read())
+                {
+
+                    trabajador = new Trabajador();
+
+                    trabajador.Id_trabajador = (int)Conexion.Lector["Id_trabajador"];
+                    trabajador.Nombre = (string)Conexion.Lector["Nombre"];
+                    trabajador.Apellido = (string)Conexion.Lector["Apellido"];
+                    trabajador.Sexo = (string)Conexion.Lector["Sexo"];
+                    trabajador.FechaNacimiento = (DateTime)Conexion.Lector["Fecha_nacimiento"];
+                    trabajador.NumeroDocumento = (string)Conexion.Lector["Numero_documento"];
+                    trabajador.Direccion = (string)Conexion.Lector["Direccion"];
+                    trabajador.Telefono = (string)Conexion.Lector["Telefono"];
+                    trabajador.Email = (string)Conexion.Lector["Email"];
+                    trabajador.Acceso = (string)Conexion.Lector["Acceso"];
+                    trabajador.Usuario = (string)Conexion.Lector["Usuario"];
+                    trabajador.Clave = (string)Conexion.Lector["Clave"];
+
+
+                    if (!(Conexion.Lector["Url_imagen"] is DBNull))
+                        trabajador.UrlImagen = (string)Conexion.Lector["Url_imagen"];
+
+                    listaTrabajador.Add(trabajador);
+                }
+
+
+                return listaTrabajador;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+        }
+
+        public List<Trabajador> TrabajadorBuscarAcceso(string buscar)
+        {
+            Conexion = new CD_Conexion();
+            listaTrabajador = new List<Trabajador>();
+
+            try
+            {
+                Conexion.SetConsutarProcedure("SpBuscar_trabajador_acceso");
+
+
+                Conexion.SetearParametro("@txt_buscar", buscar);
+
+
+                Conexion.EjecutarLectura();
+
+                while (Conexion.Lector.Read())
+                {
+
+                    trabajador = new Trabajador();
+
+                    trabajador.Id_trabajador = (int)Conexion.Lector["Id_trabajador"];
+                    trabajador.Nombre = (string)Conexion.Lector["Nombre"];
+                    trabajador.Apellido = (string)Conexion.Lector["Apellido"];
+                    trabajador.Sexo = (string)Conexion.Lector["Sexo"];
+                    trabajador.FechaNacimiento = (DateTime)Conexion.Lector["Fecha_nacimiento"];
+                    trabajador.NumeroDocumento = (string)Conexion.Lector["Numero_documento"];
+                    trabajador.Direccion = (string)Conexion.Lector["Direccion"];
+                    trabajador.Telefono = (string)Conexion.Lector["Telefono"];
+                    trabajador.Email = (string)Conexion.Lector["Email"];
+                    trabajador.Acceso = (string)Conexion.Lector["Acceso"];
+                    trabajador.Usuario = (string)Conexion.Lector["Usuario"];
+                    trabajador.Clave = (string)Conexion.Lector["Clave"];
+
+
+                    if (!(Conexion.Lector["Url_imagen"] is DBNull))
+                        trabajador.UrlImagen = (string)Conexion.Lector["Url_imagen"];
+
+                    listaTrabajador.Add(trabajador);
+                }
+
+
+                return listaTrabajador;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+        }
+
         public Trabajador Login(string Usuario, string Clave)
         {
             Conexion = new CD_Conexion();

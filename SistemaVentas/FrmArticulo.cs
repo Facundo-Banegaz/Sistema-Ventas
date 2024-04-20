@@ -22,10 +22,12 @@ namespace SistemaVentas
             Text = "Gestion Articulo:";
         }
 
-        private void FrmCategoria_Load(object sender, EventArgs e)
+        private void FrmArticulo_Load(object sender, EventArgs e)
         {
             CargarGrilla();
             ArregloDataGridView(dgv_productos);
+            CargarCbo();
+
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
@@ -147,9 +149,21 @@ namespace SistemaVentas
 
                 lbl_resultado.Text = "No escribio nada en el campo  'Buscador'.";
             }
-            else
+            else if (cbo_opcion.SelectedIndex == 0)
             {
-                dgv_productos.DataSource = _Articulo.ArticuloBuscar(txt_buscar.Text);
+                MessageBox.Show("Por favor, seleccione por que campo Buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_buscar.Clear();
+            }
+            else if (cbo_opcion.SelectedIndex == 1)
+            {
+                dgv_productos.DataSource = _Articulo.ArticuloBuscarCodigo(txt_buscar.Text);
+
+                lbl_total.Text = "Total de Registros Encontrados:" + " " + Convert.ToString(dgv_productos.Rows.Count);
+                lbl_resultado.Text = "Para volver a ver el listado completo 'Limpiar' el campo!!.";
+            }
+            else if (cbo_opcion.SelectedIndex == 2)
+            {
+                dgv_productos.DataSource = _Articulo.ArticuloBuscarNombre(txt_buscar.Text);
 
                 lbl_total.Text = "Total de Registros Encontrados:" + " " + Convert.ToString(dgv_productos.Rows.Count);
                 lbl_resultado.Text = "Para volver a ver el listado completo 'Limpiar' el campo!!.";
@@ -181,5 +195,20 @@ namespace SistemaVentas
             FrmReporteArticulo frmReporte = new FrmReporteArticulo();
             frmReporte.ShowDialog();
         }
+
+        private void CargarCbo()
+        {
+            cbo_opcion.Items.Add("SELECCIONAR");
+
+            cbo_opcion.Items.Add("CODIGO");
+            cbo_opcion.Items.Add("NOMBRE");
+
+            cbo_opcion.SelectedIndex = 0;
+
+            cbo_opcion.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+
+
     }
 }

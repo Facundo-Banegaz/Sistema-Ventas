@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmArticulo));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_ver_detalle = new System.Windows.Forms.Button();
             this.btn_editar = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@
             this.btn_buscar = new System.Windows.Forms.Button();
             this.lbl_resultado = new System.Windows.Forms.Label();
             this.lbl_total = new System.Windows.Forms.Label();
+            this.cbo_opcion = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
             this.SuspendLayout();
@@ -143,26 +143,26 @@
             // 
             this.lbl_buscar.AutoSize = true;
             this.lbl_buscar.Font = new System.Drawing.Font("Impact", 14F);
-            this.lbl_buscar.Location = new System.Drawing.Point(531, 23);
+            this.lbl_buscar.Location = new System.Drawing.Point(316, 23);
             this.lbl_buscar.Name = "lbl_buscar";
-            this.lbl_buscar.Size = new System.Drawing.Size(102, 35);
+            this.lbl_buscar.Size = new System.Drawing.Size(145, 35);
             this.lbl_buscar.TabIndex = 29;
-            this.lbl_buscar.Text = "Buscar:";
+            this.lbl_buscar.Text = "Buscar Por:";
             // 
             // txt_buscar
             // 
             this.txt_buscar.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.txt_buscar.Location = new System.Drawing.Point(695, 21);
+            this.txt_buscar.Location = new System.Drawing.Point(777, 21);
             this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Size = new System.Drawing.Size(495, 37);
+            this.txt_buscar.Size = new System.Drawing.Size(449, 37);
             this.txt_buscar.TabIndex = 28;
             // 
             // pbx_img
             // 
             this.pbx_img.Location = new System.Drawing.Point(34, 2);
             this.pbx_img.Name = "pbx_img";
-            this.pbx_img.Size = new System.Drawing.Size(457, 129);
+            this.pbx_img.Size = new System.Drawing.Size(276, 129);
             this.pbx_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbx_img.TabIndex = 31;
             this.pbx_img.TabStop = false;
@@ -177,23 +177,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_productos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_productos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_productos.EnableHeadersVisualStyles = false;
             this.dgv_productos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dgv_productos.Location = new System.Drawing.Point(34, 137);
@@ -283,11 +275,21 @@
             this.lbl_total.Size = new System.Drawing.Size(0, 25);
             this.lbl_total.TabIndex = 48;
             // 
+            // cbo_opcion
+            // 
+            this.cbo_opcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_opcion.FormattingEnabled = true;
+            this.cbo_opcion.Location = new System.Drawing.Point(476, 23);
+            this.cbo_opcion.Name = "cbo_opcion";
+            this.cbo_opcion.Size = new System.Drawing.Size(295, 37);
+            this.cbo_opcion.TabIndex = 50;
+            // 
             // FrmArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1798, 852);
+            this.ClientSize = new System.Drawing.Size(1798, 724);
+            this.Controls.Add(this.cbo_opcion);
             this.Controls.Add(this.lbl_resultado);
             this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.btn_imprimir);
@@ -306,7 +308,7 @@
             this.Name = "FrmArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Articulo.";
-            this.Load += new System.EventHandler(this.FrmCategoria_Load);
+            this.Load += new System.EventHandler(this.FrmArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).EndInit();
             this.ResumeLayout(false);
@@ -330,5 +332,6 @@
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.Label lbl_resultado;
         private System.Windows.Forms.Label lbl_total;
+        private System.Windows.Forms.ComboBox cbo_opcion;
     }
 }

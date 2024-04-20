@@ -58,7 +58,6 @@ namespace SistemaVentas
                 this.Menu_gestion_ventas.Enabled = true;
                 this.Menu_consultas.Enabled = true;
                 this.Menu_mantenimiento.Enabled = true;
-                this.Menu_herramientas.Enabled = true;
 
             }
 
@@ -69,7 +68,6 @@ namespace SistemaVentas
                 this.Menu_gestion_ventas.Enabled = true;
                 this.Menu_consultas.Enabled = true;
                 this.Menu_mantenimiento.Enabled = false;
-                this.Menu_herramientas.Enabled = true;
             }
             else if (_Trabajador.Acceso == "ALMACENERO")
             {
@@ -78,7 +76,7 @@ namespace SistemaVentas
                 this.Menu_gestion_ventas.Enabled = false;
                 this.Menu_consultas.Enabled = true;
                 this.Menu_mantenimiento.Enabled = false;
-                this.Menu_herramientas.Enabled = true;
+
 
             }
 
@@ -89,7 +87,6 @@ namespace SistemaVentas
                 this.Menu_gestion_ventas.Enabled = false;
                 this.Menu_consultas.Enabled = false;
                 this.Menu_mantenimiento.Enabled = false;
-                this.Menu_herramientas.Enabled = false;
 
 
             }

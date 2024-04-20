@@ -280,7 +280,7 @@ namespace CapaDatos
 
         //Metodo Buscar
 
-        public List<Articulo> ArticuloBuscar(string buscar)
+        public List<Articulo> ArticuloBuscarNombre(string buscar)
         {
             Conexion = new CD_Conexion();
             listaArticulo = new List<Articulo>();
@@ -336,6 +336,61 @@ namespace CapaDatos
             }
         }
 
-        
+        public List<Articulo> ArticuloBuscarCodigo(string buscar)
+        {
+            Conexion = new CD_Conexion();
+            listaArticulo = new List<Articulo>();
+
+            try
+            {
+                Conexion.SetConsutarProcedure("SpBuscar_articulo_codigo");
+
+
+                Conexion.SetearParametro("@txt_buscar", buscar);
+
+
+                Conexion.EjecutarLectura();
+
+                while (Conexion.Lector.Read())
+                {
+
+                    articulo = new Articulo();
+
+                    articulo.Id_articulo = (int)Conexion.Lector["Id_articulo"];
+                    articulo.Codigo = (string)Conexion.Lector["Codigo"];
+                    articulo.Nombre = (string)Conexion.Lector["Nombre"];
+                    articulo.Descripcion = (string)Conexion.Lector["Descripcion"];
+
+                    articulo.Categoria = new Categoria();
+
+                    articulo.Categoria.Id_categoria = (int)Conexion.Lector["Id_categoria"];
+                    articulo.Categoria.Nombre = (string)Conexion.Lector["Categoria"];
+
+
+                    articulo.Presentacion = new Presentacion();
+                    articulo.Presentacion.Id_presentacion = (int)Conexion.Lector["Id_presentacion"];
+                    articulo.Presentacion.Nombre = (string)Conexion.Lector["Presentacion"];
+
+                    if (!(Conexion.Lector["UrlImagen"] is DBNull))
+
+                        articulo.UrlImagen = (string)Conexion.Lector["UrlImagen"];
+
+                    listaArticulo.Add(articulo);
+                }
+
+
+                return listaArticulo;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+        }
+
     }
 }

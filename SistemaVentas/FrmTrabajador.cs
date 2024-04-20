@@ -25,10 +25,21 @@ namespace SistemaVentas
         private void FrmPersona_Load(object sender, EventArgs e)
         {
             CargarGrilla();
-
+            CargarCbo();
             ArregloDataGridView(dgv_trabajador);
         }
+        private void CargarCbo()
+        {
+            cbo_opcion.Items.Add("SELECCIONAR");
 
+            cbo_opcion.Items.Add("APELLIDO");
+            cbo_opcion.Items.Add("NOMBRE");
+            cbo_opcion.Items.Add("DNI");
+            cbo_opcion.Items.Add("ACCESO");
+            cbo_opcion.SelectedIndex = 0;
+
+            cbo_opcion.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
         private void CargarGrilla()
         {
             //logica del dataGridView
@@ -84,6 +95,50 @@ namespace SistemaVentas
 
         }
 
+        private void BuscarTrabajador()
+        {
+            CN_Trabajador _Trabajador = new CN_Trabajador();
+
+            if (txt_buscar.Text == string.Empty)
+            {
+                MessageBox.Show("El CAMPO NO PUEDE QUEDAR VACIO!!", "ADVERTENCIA");
+
+                lbl_resultado.Text = "No escribio nada en el campo  'Buscador'.";
+            }
+            else if (cbo_opcion.SelectedIndex == 0)
+            {
+                MessageBox.Show("Por favor, seleccione por que campo Buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_buscar.Clear();
+            }
+            else if (cbo_opcion.SelectedIndex == 1)
+            {
+                dgv_trabajador.DataSource = _Trabajador.TrabajadorBuscarApellido(txt_buscar.Text);
+
+                lbl_total.Text = "Total de Registros Encontrados:" + " " + Convert.ToString(dgv_trabajador.Rows.Count);
+                lbl_resultado.Text = "Para volver a ver el listado completo 'Limpiar' el campo!!.";
+            }
+            else if (cbo_opcion.SelectedIndex == 2)
+            {
+                dgv_trabajador.DataSource = _Trabajador.TrabajadorBuscarNombre(txt_buscar.Text);
+
+                lbl_total.Text = "Total de Registros Encontrados:" + " " + Convert.ToString(dgv_trabajador.Rows.Count);
+                lbl_resultado.Text = "Para volver a ver el listado completo 'Limpiar' el campo!!.";
+            }
+            else if (cbo_opcion.SelectedIndex == 3)
+            {
+                dgv_trabajador.DataSource = _Trabajador.TrabajadorBuscarDni(txt_buscar.Text);
+
+                lbl_total.Text = "Total de Registros Encontrados:" + " " + Convert.ToString(dgv_trabajador.Rows.Count);
+                lbl_resultado.Text = "Para volver a ver el listado completo 'Limpiar' el campo!!.";
+            }
+            else if (cbo_opcion.SelectedIndex == 4)
+            {
+                dgv_trabajador.DataSource = _Trabajador.TrabajadorBuscarAcceso(txt_buscar.Text);
+
+                lbl_total.Text = "Total de Registros Encontrados:" + " " + Convert.ToString(dgv_trabajador.Rows.Count);
+                lbl_resultado.Text = "Para volver a ver el listado completo 'Limpiar' el campo!!.";
+            }
+        }
 
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -111,25 +166,7 @@ namespace SistemaVentas
         {
             BuscarTrabajador();
         }
-        private void BuscarTrabajador()
-        {
-           CN_Trabajador _Trabajador = new CN_Trabajador();
-
-
-            if (txt_buscar.Text == string.Empty)
-            {
-                MessageBox.Show("El CAMPO NO PUEDE QUEDAR VACIO!!", "ADVERTENCIA");
-
-                lbl_resultado.Text = "No escribio nada en el campo  'Buscador'.";
-            }
-            else
-            {
-                dgv_trabajador.DataSource = _Trabajador.TrabajadorBuscar(txt_buscar.Text);
-
-                lbl_total.Text = "Total de Registros Encontrados:" + " " + Convert.ToString(dgv_trabajador.Rows.Count);
-                lbl_resultado.Text = "Para volver a ver el listado completo 'Limpiar' el campo!!.";
-            }
-        }
+    
         private void btn_limpiar_Click(object sender, EventArgs e)
         {
             txt_buscar.Clear();

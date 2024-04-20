@@ -66,11 +66,20 @@ namespace CapaNegocio
         
 
         //Metodo para Buscar un producto en la Base de Datos
-        public List<Articulo> ArticuloBuscar(string buscar)
+        public List<Articulo> ArticuloBuscarNombre(string buscar)
         {
             _CD_Articulo = new CD_Articulo();
 
-            return _CD_Articulo.ArticuloBuscar(buscar);
+            return _CD_Articulo.ArticuloBuscarNombre(buscar);
         }
+
+        //Metodo para Buscar un producto en la Base de Datos
+        public List<Articulo> ArticuloBuscarCodigo(string buscar)
+        {
+            _CD_Articulo = new CD_Articulo();
+
+            return _CD_Articulo.ArticuloBuscarCodigo(buscar);
+        }
+
     }
 }

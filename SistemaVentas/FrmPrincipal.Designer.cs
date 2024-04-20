@@ -45,8 +45,6 @@
             this.menu_item_stock = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_mantenimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_item_trabajador = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_herramientas = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_item_db = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_item_salir = new System.Windows.Forms.ToolStripMenuItem();
             this.tn_tiempo = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -73,7 +71,6 @@
             this.Menu_gestion_ventas,
             this.Menu_consultas,
             this.Menu_mantenimiento,
-            this.Menu_herramientas,
             this.Menu_item_salir});
             this.Menu_principal.Location = new System.Drawing.Point(0, 0);
             this.Menu_principal.Name = "Menu_principal";
@@ -212,7 +209,7 @@
             this.menu_item_stock.ForeColor = System.Drawing.Color.Orange;
             this.menu_item_stock.Image = ((System.Drawing.Image)(resources.GetObject("menu_item_stock.Image")));
             this.menu_item_stock.Name = "menu_item_stock";
-            this.menu_item_stock.Size = new System.Drawing.Size(302, 42);
+            this.menu_item_stock.Size = new System.Drawing.Size(294, 36);
             this.menu_item_stock.Text = "Stock de Articulos";
             this.menu_item_stock.Click += new System.EventHandler(this.menu_item_stock_Click);
             // 
@@ -237,27 +234,6 @@
             this.menu_item_trabajador.Size = new System.Drawing.Size(223, 36);
             this.menu_item_trabajador.Text = "Trabajador";
             this.menu_item_trabajador.Click += new System.EventHandler(this.menu_item_trabajador_Click);
-            // 
-            // Menu_herramientas
-            // 
-            this.Menu_herramientas.BackColor = System.Drawing.Color.Black;
-            this.Menu_herramientas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Menu_item_db});
-            this.Menu_herramientas.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold);
-            this.Menu_herramientas.ForeColor = System.Drawing.Color.Orange;
-            this.Menu_herramientas.Image = ((System.Drawing.Image)(resources.GetObject("Menu_herramientas.Image")));
-            this.Menu_herramientas.Name = "Menu_herramientas";
-            this.Menu_herramientas.Size = new System.Drawing.Size(194, 46);
-            this.Menu_herramientas.Text = "Herramientas";
-            // 
-            // Menu_item_db
-            // 
-            this.Menu_item_db.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.Menu_item_db.ForeColor = System.Drawing.Color.Orange;
-            this.Menu_item_db.Image = ((System.Drawing.Image)(resources.GetObject("Menu_item_db.Image")));
-            this.Menu_item_db.Name = "Menu_item_db";
-            this.Menu_item_db.Size = new System.Drawing.Size(230, 36);
-            this.Menu_item_db.Text = "Back Up DB";
             // 
             // Menu_item_salir
             // 
@@ -417,8 +393,6 @@
         private System.Windows.Forms.ToolStripMenuItem Menu_item_proveedores;
         private System.Windows.Forms.ToolStripMenuItem Menu_item_ventas;
         private System.Windows.Forms.ToolStripMenuItem Menu_item_clientes;
-        private System.Windows.Forms.ToolStripMenuItem Menu_herramientas;
-        private System.Windows.Forms.ToolStripMenuItem Menu_item_db;
         private System.Windows.Forms.ToolStripMenuItem Menu_item_salir;
         private System.Windows.Forms.Label lbl_trabajador;
         private System.Windows.Forms.PictureBox pbx_img;

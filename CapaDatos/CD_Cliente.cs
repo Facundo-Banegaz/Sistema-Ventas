@@ -107,43 +107,6 @@ namespace CapaDatos
 
         }
 
-        ////public string ValidarCliente(string Dni)
-        ////{
-
-        ////    Conexion = new CD_Conexion();
-        ////    try
-        ////    {
-
-        ////        Conexion.SetConsutar("select  Numero_documento from cliente where Numero_documento = @Dni");
-        ////        Conexion.SetearParametro("@Dni", Dni);
-
-        ////        Conexion.EjecutarLectura();
-
-        ////        string Numero_Documento = "";
-
-        ////        if (Conexion.Lector.Read())
-        ////        {
-
-
-
-        ////            Numero_Documento = (string)Conexion.Lector["Numero_documento"];
-
-        ////        }
-
-        ////        return Numero_Documento;
-        ////    }
-        ////    catch (Exception ex)
-        ////    {
-
-        ////        throw ex;
-        ////    }
-        ////    finally
-        ////    {
-        ////        Conexion.CerrarConection();
-        ////    }
-
-        ////}
-
         public bool ValidarCliente(string Dni)
         {
             Conexion = new CD_Conexion();
@@ -284,7 +247,7 @@ namespace CapaDatos
 
         //Metodo Buscar
 
-        public List<Cliente> ClienteBuscar(string buscar)
+        public List<Cliente> ClienteBuscarApellido(string buscar)
         {
             Conexion = new CD_Conexion();
             listaCliente = new List<Cliente>();
@@ -333,6 +296,106 @@ namespace CapaDatos
                 Conexion.CerrarConection();
             }
         }
+        public List<Cliente> ClienteBuscarNombre(string buscar)
+        {
+            Conexion = new CD_Conexion();
+            listaCliente = new List<Cliente>();
+
+            try
+            {
+                Conexion.SetConsutarProcedure("SpBuscar_cliente_nombre");
+
+
+                Conexion.SetearParametro("@txt_buscar", buscar);
+
+
+                Conexion.EjecutarLectura();
+
+                while (Conexion.Lector.Read())
+                {
+
+                    Cliente = new Cliente();
+
+                    Cliente.Id_cliente = (int)Conexion.Lector["Id_cliente"];
+                    Cliente.Nombre = (string)Conexion.Lector["Nombre"];
+                    Cliente.Apellido = (string)Conexion.Lector["Apellido"];
+                    Cliente.Sexo = (string)Conexion.Lector["Sexo"];
+                    Cliente.FechaNacimiento = (DateTime)Conexion.Lector["Fecha_nacimiento"];
+                    Cliente.NumeroDocumento = (string)Conexion.Lector["Numero_documento"];
+                    Cliente.Direccion = (string)Conexion.Lector["Direccion"];
+                    Cliente.Telefono = (string)Conexion.Lector["Telefono"];
+                    Cliente.Email = (string)Conexion.Lector["Email"];
+
+                    if (!(Conexion.Lector["UrlImagen"] is DBNull))
+                        Cliente.UrlImagen = (string)Conexion.Lector["UrlImagen"];
+
+                    listaCliente.Add(Cliente);
+                }
+
+
+                return listaCliente;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+        }
+
+        public List<Cliente> ClienteBuscarDni(string buscar)
+        {
+            Conexion = new CD_Conexion();
+            listaCliente = new List<Cliente>();
+
+            try
+            {
+                Conexion.SetConsutarProcedure("SpBuscar_cliente_num_documento");
+
+
+                Conexion.SetearParametro("@txt_buscar", buscar);
+
+
+                Conexion.EjecutarLectura();
+
+                while (Conexion.Lector.Read())
+                {
+
+                    Cliente = new Cliente();
+
+                    Cliente.Id_cliente = (int)Conexion.Lector["Id_cliente"];
+                    Cliente.Nombre = (string)Conexion.Lector["Nombre"];
+                    Cliente.Apellido = (string)Conexion.Lector["Apellido"];
+                    Cliente.Sexo = (string)Conexion.Lector["Sexo"];
+                    Cliente.FechaNacimiento = (DateTime)Conexion.Lector["Fecha_nacimiento"];
+                    Cliente.NumeroDocumento = (string)Conexion.Lector["Numero_documento"];
+                    Cliente.Direccion = (string)Conexion.Lector["Direccion"];
+                    Cliente.Telefono = (string)Conexion.Lector["Telefono"];
+                    Cliente.Email = (string)Conexion.Lector["Email"];
+
+                    if (!(Conexion.Lector["UrlImagen"] is DBNull))
+                        Cliente.UrlImagen = (string)Conexion.Lector["UrlImagen"];
+
+                    listaCliente.Add(Cliente);
+                }
+
+
+                return listaCliente;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Conexion.CerrarConection();
+            }
+        }
+
 
 
     }

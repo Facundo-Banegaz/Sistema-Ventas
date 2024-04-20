@@ -27,6 +27,7 @@ namespace SistemaVentas
         {
             CargarGrilla();
             ArregloDataGridView(dgv_clientes);
+            CargarCbo();
         }
         private void CargarGrilla()
         {
@@ -72,10 +73,22 @@ namespace SistemaVentas
             _Metodos.AlternarColor(dgv_clientes);
         }
 
-
-         private void BuscarCliente()
+        private void CargarCbo()
         {
-            CN_Cliente _Cliente = new CN_Cliente();
+            cbo_opcion.Items.Add("SELECCIONAR");
+
+            cbo_opcion.Items.Add("APELLIDO");
+            cbo_opcion.Items.Add("NOMBRE");
+            cbo_opcion.Items.Add("DNI");
+
+            cbo_opcion.SelectedIndex = 0;
+
+            cbo_opcion.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void BuscarCliente()
+        {
+           CN_Cliente _Cliente = new CN_Cliente();
 
             if (txt_buscar.Text == string.Empty)
             {
@@ -83,14 +96,34 @@ namespace SistemaVentas
 
                 lbl_resultado.Text = "No escribio nada en el campo  'Buscador'.";
             }
-            else
+            else if (cbo_opcion.SelectedIndex == 0)
             {
-                dgv_clientes.DataSource = _Cliente.ClienteBuscar(txt_buscar.Text);
+                MessageBox.Show("Por favor, seleccione por que campo Buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_buscar.Clear();
+            }
+            else if (cbo_opcion.SelectedIndex == 1)
+            {
+                dgv_clientes.DataSource = _Cliente.ClienteBuscarApellido(txt_buscar.Text);
+
+                lbl_total.Text = "Total de Registros Encontrados:" + " " + Convert.ToString(dgv_clientes.Rows.Count);
+                lbl_resultado.Text = "Para volver a ver el listado completo 'Limpiar' el campo!!.";
+            }
+            else if (cbo_opcion.SelectedIndex == 2)
+            {
+                dgv_clientes.DataSource = _Cliente.ClienteBuscarNombre(txt_buscar.Text);
+
+                lbl_total.Text = "Total de Registros Encontrados:" + " " + Convert.ToString(dgv_clientes.Rows.Count);
+                lbl_resultado.Text = "Para volver a ver el listado completo 'Limpiar' el campo!!.";
+            }
+            else if (cbo_opcion.SelectedIndex == 3)
+            {
+                dgv_clientes.DataSource = _Cliente.ClienteBuscarDni(txt_buscar.Text);
 
                 lbl_total.Text = "Total de Registros Encontrados:" + " " + Convert.ToString(dgv_clientes.Rows.Count);
                 lbl_resultado.Text = "Para volver a ver el listado completo 'Limpiar' el campo!!.";
             }
         }
+
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
