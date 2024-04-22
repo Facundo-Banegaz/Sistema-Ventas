@@ -21,7 +21,6 @@ Sistema-Ventas es un Sistema de Ventas sencillo desarrollado en C# utilizando Wi
 - Gestión de almacén: Permite gestionar los artículos, categorías y presentaciones en el almacén.
 - Gestión de compras: Permite realizar ingresos de productos al almacén y gestionar los proveedores asociados.
 - Gestión de ventas y clientes: Permite realizar ventas y gestionar la información de los clientes.
-- Backup de base de datos: Ofrece la posibilidad de realizar copias de seguridad de la base de datos del sistema.
 - Generación de reportes: Permite generar reportes con información relevante del sistema.
 
 ## Video Demostrativo
