@@ -1,12 +1,11 @@
 # Sistema-Ventas
 
-Sistema-Ventas es un Sistema de Ventas sencillo desarrollado en C# utilizando Windows Forms y SQL Server. Este proyecto me ha permitido aprender y aplicar una variedad de conceptos y técnicas de programación en C#, así como trabajar con bases de datos SQL Server.
+Es un Sistema de Ventas sencillo desarrollado en C# utilizando Windows Forms y SQL Server. Este proyecto me ha permitido aprender y aplicar una variedad de conceptos y técnicas de programación en C#, así como trabajar con bases de datos SQL Server.
 
 ## Características
 
 - Programación en capas: El proyecto está organizado en capas para una mejor modularidad y mantenibilidad del código.
 - Procedimientos almacenados: Se utilizan procedimientos almacenados en SQL Server para realizar operaciones en la base de datos.
-- Triggers: Se han implementado triggers para ejecutar acciones automáticamente en respuesta a ciertos eventos en la base de datos.
 - Re-utilización de código: Se ha buscado maximizar la re-utilización de código para evitar redundancias y mejorar la eficiencia.
 - Controles más comunes en Windows Forms: Se utilizan los controles proporcionados por Windows Forms para crear la interfaz de usuario.
 - Debug: Se ha realizado un proceso exhaustivo de depuración para identificar y corregir errores en el código.
